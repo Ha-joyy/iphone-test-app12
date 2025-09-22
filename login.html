@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- 아이폰 노치 영역 처리를 위한 뷰포트 메타 태그 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>edms 회원가입</title>
+  <!-- Google Fonts에서 Noto Sans KR 폰트 불러오기 -->
+   <link rel="stylesheet" href="_css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- 상단 헤더 영역: 닫기 버튼 -->
+    <header class="header">
+      <!-- edms 로고 -->
+      <img src="_img/logo_edms.png" alt="edms Logo" class="edms-logo">
+
+      <!-- 환영 문구 -->
+      <h1 class="welcome-text">
+          고객님<br/>환영합니다!
+      </h1>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="main-content">
+
+      <!-- 약관 동의 목록 -->
+      <div class="terms-list">
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-all">
+            <label for="check-all" class="bold-label">약관 전체동의</label>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-terms">
+            <label for="check-terms">이용약관 동의<span class="required-text">(필수)</span></label>
+          </div>
+          <span class="terms-item-end"></span>
+        </div>
+
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-privacy">
+            <label for="check-privacy">개인정보 수집 및 이용동의<span class="required-text">(필수)</span></label>
+          </div>
+          <span class="terms-item-end"></span>
+        </div>
+
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-privacy">
+            <label for="check-privacy">E-mail 및 SMS 광고성 정보 수신동의<span class="optional-text">(선택)</span></label>
+          </div>
+          <span class="terms-item-end"></span>
+        </div>
+    </div>
+    </main>
+
+    <!-- 하단 '다음' 버튼 영역 -->
+    <footer class="footer">
+      <button class="next-button" id="next-button" disabled>
+          다음
+      </button>
+    </footer>
+  </div>
+</body>
+</html>

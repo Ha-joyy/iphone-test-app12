@@ -1,0 +1,178 @@
+/* CSS 환경 변수를 사용 -> iOS 안전 영역 값 가져옴. */
+:root {
+  --safe-area-top: env(safe-area-inset-top);
+  --safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  padding-top: var(--safe-area-top);
+  padding-bottom: var(--safe-area-bottom);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - var(--safe-area-top) - var(--safe-area-bottom));
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.header {
+}
+
+.close-button {
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4b5563;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.welcome-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
+
+.terms-list {
+  width: 100%;
+  max-width: 24rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.terms-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terms-item-start {
+  display: flex;
+  align-items: center;
+}
+
+.terms-item-end {
+  width: 24px;
+  height: 24px;
+  background: url("/_img/arrow_link.png") no-repeat center;
+  background-size: cover;
+  color: #9ca3af;
+  font-size: 1.125rem;
+}
+
+.terms-item-start .item-text-container p {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+  line-height: 1.25;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0.5rem 0;
+}
+
+.next-button {
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.125rem;
+  background-color: #d1d5db;
+  border: none;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: not-allowed;
+}
+
+.next-button:not([disabled]) {
+  background-color: #015bab;
+  cursor: pointer;
+}
+
+/* 커스텀 체크박스 스타일 */
+.custom-checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 1.5px solid #a6a6a6;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  border-color: #015bab;
+  background-color: #015bab;
+}
+
+.custom-checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: url("/_img/ico_checkbox.png") no-repeat center;
+  background-size: cover;
+}
+
+.custom-checkbox label {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.custom-checkbox .bold-label {
+  font-weight: bold;
+}
+
+.required-text {
+  color: #015bab;
+  font-weight: bold;
+  margin-left: 0.25rem;
+}
+
+.optional-text {
+  color: #9ca3af;
+  font-weight: normal;
+  margin-left: 0.25rem;
+}
+
+/* 마지막 체크박스 스타일 수정 */
+.terms-item-start.last-item {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.terms-item-start.last-item .main-text {
+  display: flex;
+  align-items: center;
+}
+
+.terms-item-start.last-item p {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+  line-height: 1.25;
+  margin-left: 2.25rem; /* 체크박스와 간격 맞추기 */
+}
