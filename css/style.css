@@ -72,7 +72,7 @@ body {
 .terms-item-end {
   width: 24px;
   height: 24px;
-  background: url("/_img/arrow_link.png") no-repeat center;
+  background: url("/img/arrow_link.png") no-repeat center;
   background-size: cover;
   color: #9ca3af;
   font-size: 1.125rem;
@@ -132,7 +132,7 @@ body {
   position: absolute;
   width: 18px;
   height: 18px;
-  background: url("/_img/ico_checkbox.png") no-repeat center;
+  background: url("/img/ico_checkbox.png") no-repeat center;
   background-size: cover;
 }
 
