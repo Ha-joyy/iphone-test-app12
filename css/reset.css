@@ -315,3 +315,41 @@ noscript p {
   border: 0;
   clip: rect(0 0 0 0);
 }
+
+:root {
+  --safe-area-top: env(safe-area-inset-top);
+  --safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  padding-top: var(--safe-area-top);
+  padding-bottom: var(--safe-area-bottom);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - var(--safe-area-top) - var(--safe-area-bottom));
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.header {
+}
+
+.top-nav {
+  margin-bottom: 4rem;
+}
+
+.close-btn button {
+  width: 32px;
+  height: 32px;
+  background: url(../img/ico_layer_close.png) no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+}
