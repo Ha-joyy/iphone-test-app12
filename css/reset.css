@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+/*****************************
+	Base(reset) style
+*****************************/
+html {
+  font-size: 14px;
+}
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html,
+body,
+blockquote,
+caption,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+frame,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+iframe,
+input,
+legend,
+li,
+object,
+ol,
+p,
+pre,
+q,
+select,
+table,
+textarea,
+ul,
+tr,
+td {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.7142rem;
+  font-weight: 400;
+  color: #666;
+  font-family: "Noto Sans KR", sans-serif;
+  letter-spacing: -0.3px;
+  -webkit-text-size-adjust: none;
+}
+body.isPop {
+  position: fixed;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  touch-action: none;
+}
+
+pre,
+textarea,
+select {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+fieldset {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+legend {
+  position: absolute;
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+  line-height: 24px;
+  font-size: 14px;
+  color: #111;
+}
+
+input,
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 28px;
+  font-size: 14px;
+  color: #111;
+  letter-spacing: -0.3px;
+  vertical-align: middle;
+  background: none;
+  font-family: "Noto Sans KR", sans-serif;
+  -webkit-appearance: none;
+}
+button,
+label {
+  line-height: 24px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"] {
+  background: #fff;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #ccc !important;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+*[tabindex]:focus,
+input:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+em,
+address {
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+caption {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+noscript {
+  position: absolute;
+  z-index: 10;
+  background: #efefef;
+}
+noscript p {
+  margin: 0;
+}
+
+.blind {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 1px !important;
+  line-height: 0 !important;
+  color: transparent !important;
+}
+
+/*****************************
+	set
+*****************************/
+/* text align */
+.alignR {
+  text-align: right !important;
+}
+.alignC {
+  text-align: center !important;
+}
+.alignL {
+  text-align: left !important;
+}
+
+/* ele align */
+.vAlignT {
+  vertical-align: top !important;
+}
+.vAlignM {
+  vertical-align: middle !important;
+}
+.vAlignB {
+  vertical-align: bottom !important;
+}
+
+/* clipping */
+.clipping {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* font weight */
+.bold4 {
+  font-weight: 400 !important;
+}
+.bold5 {
+  font-weight: 500 !important;
+}
+.bold7 {
+  font-weight: 700 !important;
+}
+.bold8 {
+  font-weight: 800 !important;
+}
+
+/* flex */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section + .section {
+  border-top: 4px solid #ddd;
+  padding: 24px 24px 0;
+  margin: 24px -24px 0;
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 0.1rem;
+  height: 0.1rem;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
