@@ -86,7 +86,10 @@
 }
 
 [class^="mssg_error"] {
-  margin-top: -0.5rem;
+  position: relative;
+  padding-left: 19px;
+  margin-top: -1rem;
+  font-size: 0.9rem;
   text-align: left;
   color: #ff6d64;
 }
@@ -96,10 +99,10 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 4px;
   width: 16px;
   height: 16px;
-  background: url(../_img/ico_error.png) no-repeat center / 100% auto;
+  background: url(../img/ico_error.png) no-repeat center / 100% auto;
 }
 
 [class^="mssg_error"].active {
