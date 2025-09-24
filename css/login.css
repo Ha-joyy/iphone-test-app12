@@ -86,13 +86,7 @@
 }
 
 [class^="mssg_error"] {
-  visibility: hidden;
-  position: relative;
-  height: 0;
-  padding: 0;
-  margin: 0;
-  line-height: 0;
-  font-size: 0;
+  margin-top: -0.5rem;
   text-align: left;
   color: #ff6d64;
 }
@@ -110,9 +104,6 @@
 
 [class^="mssg_error"].active {
   visibility: visible;
-  height: auto;
-  padding: 0 0 0 26px;
-  margin: 8px 0 0;
   line-height: 20px;
   font-size: 13px;
 }
