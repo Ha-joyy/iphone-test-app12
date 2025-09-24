@@ -25,10 +25,14 @@ body {
 .header {
 }
 
-.close-btn span {
+.top-nav {
+  margin-bottom: 4rem;
+}
+
+.close-btn button {
   width: 32px;
   height: 32px;
-  background: url(../img/ico_layer_close.png) no-repeat 32px;
+  background: url(../img/ico_layer_close.png) no-repeat center;
   background-size: cover;
   cursor: pointer;
 }
@@ -38,8 +42,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-top: auto;
   box-sizing: border-box;
+}
+
+.agreement-page .main-content {
+  margin-top: auto;
 }
 
 .welcome-text {
