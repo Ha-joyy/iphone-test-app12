@@ -77,7 +77,7 @@ body {
   font-size: 1rem;
   line-height: 1.7142rem;
   font-weight: 400;
-  color: #666;
+  color: #010101;
   font-family: "Noto Sans KR", sans-serif;
   letter-spacing: -0.3px;
   -webkit-text-size-adjust: none;
@@ -124,7 +124,7 @@ a:hover {
   text-decoration: none;
   line-height: 24px;
   font-size: 14px;
-  color: #111;
+  color: #010101;
 }
 
 input,
@@ -134,7 +134,7 @@ button {
   border: 0;
   line-height: 28px;
   font-size: 14px;
-  color: #111;
+  color: #010101;
   letter-spacing: -0.3px;
   vertical-align: middle;
   background: none;
