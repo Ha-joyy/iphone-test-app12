@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 아이폰 노치 영역 처리를 위한 뷰포트 메타 태그 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>스타벅스 로그인</title>
+    <!-- Google Fonts에서 Noto Sans KR 폰트 불러오기 -->
+     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 상단 헤더 영역 -->
+        <header class="header">
+            <h1 class="header-title">로그인</h1>
+        </header>
+
+        <!-- 메인 컨텐츠 영역 -->
+        <main class="main-content">
+            <!-- 스타벅스 로고 -->
+            <img src="img/logo_edms.png" alt="edms Logo" class="logo">
+
+            <!-- 환영 및 안내 문구 -->
+            <div class="welcome-text">
+                <h1>안녕하세요.<br>EDMS 입니다.</h1>
+                <p>회원 서비스 이용을 위해 로그인해 주세요.</p>
+            </div>
+
+            <!-- 로그인 폼 -->
+            <form class="login-form">
+                <div class="input-group">
+                    <input type="text" id="id-input" placeholder=" " autocomplete="off">
+                    <label for="id-input">아이디</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password-input" placeholder=" " autocomplete="off">
+                    <label for="password-input">비밀번호</label>
+                </div>
+            </form>
+
+            <!-- 링크 그룹 -->
+            <div class="link-group">
+                <a href="#">아이디 찾기</a>
+                <span>|</span>
+                <a href="#">비밀번호 찾기</a>
+                <span>|</span>
+                <a href="#">회원가입</a>
+            </div>
+        </main>
+
+        <!-- 하단 '로그인하기' 버튼 영역 -->
+        <footer class="footer">
+            <button class="login-button" id="login-button">
+                로그인하기
+            </button>
+        </footer>
+    </div>
+</body>
+</html>
