@@ -353,3 +353,137 @@ body {
   background-size: cover;
   cursor: pointer;
 }
+
+/* button */
+
+[class^="btn_group_wrap"] {
+  display: flex;
+  justify-content: space-between;
+}
+
+[class^="btn_group_wrap"] + [class^="btn_group_wrap"] {
+  margin-top: 8px;
+}
+
+[class^="btn_group_wrap"] .btn_col {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 0 9px;
+}
+
+[class^="btn_group_wrap"] .btn_col:first-child {
+  margin: 0;
+}
+
+[class^="btn_group_wrap"] .btn_col button {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+[class^="btn_group_wrap"] button span .num_count {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #ff6d64;
+  border-radius: 50%;
+  line-height: 20px;
+  font-size: 13px;
+  color: #fff;
+}
+
+[class^="btn_primary"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #015bab;
+  border-radius: 12px;
+  background-color: #015bab;
+}
+
+[class^="btn_primary"] span {
+  display: inline-block;
+  padding: 15px 0;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  vertical-align: top;
+}
+
+[class^="btn_primary"]:disabled,
+[class^="btn_primary"].disabled {
+  border: 1px solid #999;
+  background-color: #999;
+  opacity: 0.3;
+}
+
+[class^="btn_secondary"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #f3fad3;
+  border-radius: 12px;
+  background-color: #f3fad3;
+}
+
+[class^="btn_secondary"] span {
+  display: inline-block;
+  padding: 15px 0;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  vertical-align: top;
+}
+
+[class^="btn_secondary"]:disabled span {
+  opacity: 0.3;
+}
+
+.btn_group_wrap02 .btn_col:first-child {
+  width: 38%;
+}
+
+.btn_group_wrap02 .btn_col:last-child {
+  width: 62%;
+}
+
+.btn_primary02 span,
+.btn_secondary02 span {
+  padding: 10px 0;
+  line-height: 26px;
+  font-size: 16px;
+}
+
+[class^="btn_tertiary"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+[class^="btn_tertiary"] span {
+  display: inline-block;
+  padding: 15px 0;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  vertical-align: top;
+}
+
+[class^="btn_tertiary"]:disabled span {
+  opacity: 0.3;
+}
+
+.btn_tertiary02 span {
+  padding: 10px 0;
+  line-height: 26px;
+  font-size: 16px;
+}

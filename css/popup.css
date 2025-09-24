@@ -123,7 +123,8 @@
   left: -1px;
   bottom: 0;
   right: -1px;
-  padding: 16px 24px;
+  padding: 32px;
+  background-color: #fff;
   background: url(../_img/bg_btn_group.png) repeat-x left top / auto 100%;
   border-radius: 0 0 16px 16px;
   z-index: 50;
@@ -192,6 +193,8 @@
 }
 
 [class^="layer_wrap"].full [class^="layer_box"] {
+  display: flex;
+  flex-flow: column;
   left: auto;
   right: 0;
   top: 0;
@@ -211,7 +214,7 @@
 }
 
 [class^="layer_wrap"].full [class^="layer_box"] .layer_header {
-  padding: 9px 24px;
+  padding: 24px 0;
   margin: 0;
 }
 
@@ -234,7 +237,7 @@
 }
 
 [class^="layer_wrap"].full [class^="layer_box"] .layer_close {
-  top: 11px;
+  top: 25px;
 }
 
 /* layer - alert */
