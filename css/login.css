@@ -81,6 +81,27 @@
   font-size: 0.625rem;
 }
 
+[class^="regist_unit"] {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+[class^="regist_unit"] [class^="col_"] {
+  margin-top: 8px;
+}
+
+[class^="regist_unit"] [class^="mssg_error"].active {
+  margin-top: 0;
+}
+
+[class^="regist_unit"] [class^="txt"] {
+  display: inline-block;
+  font-size: 13px;
+  color: #999;
+  line-height: 20px;
+}
+
 .link-group {
   display: flex;
   justify-content: center;
