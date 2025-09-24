@@ -81,25 +81,40 @@
   font-size: 0.625rem;
 }
 
-[class^="regist_unit"] {
-  display: flex;
-  justify-content: space-between;
-  line-height: 1;
+.regist_unit {
+  margin-top: -0.4rem;
 }
 
-[class^="regist_unit"] [class^="col_"] {
-  margin-top: 8px;
+[class^="mssg_error"] {
+  visibility: hidden;
+  position: relative;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  font-size: 0;
+  text-align: left;
+  color: #ff6d64;
 }
 
-[class^="regist_unit"] [class^="mssg_error"].active {
-  margin-top: 0;
+[class^="mssg_error"]:before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background: url(../_img/ico_error.png) no-repeat center / 100% auto;
 }
 
-[class^="regist_unit"] [class^="txt"] {
-  display: inline-block;
-  font-size: 13px;
-  color: #999;
+[class^="mssg_error"].active {
+  visibility: visible;
+  height: auto;
+  padding: 0 0 0 26px;
+  margin: 8px 0 0;
   line-height: 20px;
+  font-size: 13px;
 }
 
 .link-group {

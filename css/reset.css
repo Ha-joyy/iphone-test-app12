@@ -398,7 +398,7 @@ body {
   width: 100%;
   text-align: center;
   border: 1px solid #015bab;
-  border-radius: 12px;
+  border-radius: 9999px;
   background-color: #015bab;
 }
 
@@ -425,7 +425,7 @@ body {
   width: 100%;
   text-align: center;
   border: 1px solid #f3fad3;
-  border-radius: 12px;
+  border-radius: 9999px;
   background-color: #f3fad3;
 }
 
@@ -451,20 +451,13 @@ body {
   width: 62%;
 }
 
-.btn_primary02 span,
-.btn_secondary02 span {
-  padding: 10px 0;
-  line-height: 26px;
-  font-size: 16px;
-}
-
 [class^="btn_tertiary"] {
   display: block;
   box-sizing: border-box;
   width: 100%;
   text-align: center;
   border: 1px solid #ddd;
-  border-radius: 12px;
+  border-radius: 9999px;
   background-color: #fff;
 }
 
@@ -480,10 +473,4 @@ body {
 
 [class^="btn_tertiary"]:disabled span {
   opacity: 0.3;
-}
-
-.btn_tertiary02 span {
-  padding: 10px 0;
-  line-height: 26px;
-  font-size: 16px;
 }
