@@ -187,7 +187,7 @@
   top: 30px;
   width: 24px;
   height: 24px;
-  background: url(../_img/ico_layer_close.png) no-repeat center / 100% auto;
+  background: url(../img/ico_layer_close.png) no-repeat center / 100% auto;
   z-index: 60;
 }
 
