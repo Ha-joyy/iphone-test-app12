@@ -99,7 +99,9 @@
 }
 
 .footer {
-  padding: 1.5rem;
+  margin: 0 -32px -32px;
+  padding: 32px;
+  background-color: #fff;
 }
 
 .login-button {

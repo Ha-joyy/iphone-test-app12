@@ -15,6 +15,31 @@
   margin-bottom: 6rem;
 }
 
+.header-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-left: 0.5rem;
+}
+
+.logo {
+  height: 3rem;
+  margin-bottom: 2rem;
+}
+
+.welcome-text h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.welcome-text p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4b5563;
+}
+
 .terms-list {
   width: 100%;
   display: flex;
