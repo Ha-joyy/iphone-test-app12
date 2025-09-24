@@ -346,10 +346,10 @@ body {
   margin-bottom: 4rem;
 }
 
-.close-btn button {
+.back-btn button {
   width: 32px;
   height: 32px;
-  background: url(../img/ico_layer_close.png) no-repeat center;
+  background: url(../img/ico_prev.png) no-repeat center;
   background-size: cover;
   cursor: pointer;
 }
