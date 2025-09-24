@@ -202,7 +202,6 @@ body {
 }
 
 .logo {
-  width: 4rem;
   height: 4rem;
   margin-bottom: 2rem;
 }
@@ -219,9 +218,10 @@ body {
 }
 
 .welcome-text p {
-  font-size: 1rem;
-  color: #4b5563;
   margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4b5563;
 }
 
 .login-form {
@@ -248,12 +248,11 @@ body {
 
 .input-group input {
   width: 100%;
-  padding: 1rem;
-  padding-top: 1.25rem;
+  padding: 1.25rem 1rem 0.4rem;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
-  font-size: 1rem;
   box-sizing: border-box;
+  font-size: 1rem;
   outline: none;
 }
 
