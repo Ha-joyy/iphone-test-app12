@@ -25,15 +25,12 @@ body {
 .header {
 }
 
-.close-btn {
+.close-btn span {
   width: 32px;
   height: 32px;
   background: url(../img/ico_layer_close.png) no-repeat 32px;
   background-size: cover;
   cursor: pointer;
-}
-.close-btn span {
-  font-size: 0;
 }
 
 .main-content {
