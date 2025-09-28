@@ -325,20 +325,35 @@
   transform: translateY(0);
 }
 
-.sheet-header {
+.layer_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.layer_header {
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 
-.sheet-header h2 {
+.layer_title {
   font-size: 1.125rem;
   font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+  margin-right: 3rem; /* 닫기 버튼 공간 확보 */
 }
 
 .sheet-close-button {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -348,23 +363,50 @@
   line-height: 1;
 }
 
-.sheet-content {
-  padding: 1.5rem;
-  overflow-y: auto; /* 내용이 길어지면 스크롤 가능 */
+/* 불필요한 레이어 닫기 버튼 숨김 처리 (X 버튼 사용) */
+.layer_close,
+.btn_layer_expanded {
+  display: none !important;
 }
 
-.sheet-content ul {
+.layer_container {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* 콤보 리스트 스타일 */
+.combo_list {
   list-style: none;
   padding: 0;
 }
-.sheet-content li {
-  padding: 15px 0;
+.combo_list li {
   border-bottom: 1px solid #f3f4f6;
+}
+.combo_list li:last-child {
+  border-bottom: none;
+}
+.combo_list button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1rem;
+  text-align: left;
   font-size: 1rem;
   color: #333;
-  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
-.sheet-content li:last-child {
-  border-bottom: none;
+.combo_list button[aria-pressed="true"] {
+  color: var(--main-blue);
+  font-weight: bold;
+}
+.combo_list button .nick {
+  font-weight: 700;
+}
+.combo_list button .code {
+  font-size: 0.875rem;
+  color: #9ca3af;
 }
 /* --- 바텀 시트(Bottom Sheet) 스타일 종료 --- */
