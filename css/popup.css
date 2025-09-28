@@ -299,7 +299,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  max-height: 80vh; /* 최대 높이 설정 */
+  height: 100%;
+  max-height: 80vh;
   background-color: #fff;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -373,7 +374,6 @@
 
 /* 콤보 리스트 스타일 */
 .combo_list {
-  padding-bottom: 219px;
 }
 .combo_list li {
   border-bottom: 1px solid #f3f4f6;
