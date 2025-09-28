@@ -149,10 +149,13 @@
 
 .select-btn {
   position: relative;
-  padding-left: 30px;
+  padding: 1rem 1rem 1rem 2.4rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
   line-height: 1.2;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: left;
+  color: #a6a6a6;
 }
 .select-btn::before {
   content: "";
@@ -160,10 +163,11 @@
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   background: url(../img/location-pin.png) no-repeat center;
   background-size: cover;
+  margin-top: -9px;
 }
 .select-btn::after {
   content: "";
@@ -171,8 +175,9 @@
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
   background: url(../img/arrow_btm.png) no-repeat center;
   background-size: cover;
+  margin-top: -9px;
 }
