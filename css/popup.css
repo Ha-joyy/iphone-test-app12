@@ -121,7 +121,7 @@
   justify-content: space-between;
   padding: 32px;
   background-color: #fff;
-  background: url(../_img/bg_btn_group.png) repeat-x left top / auto 100%;
+  background: url(../img/bg_btn_group.png) repeat-x left top / auto 100%;
   z-index: 50;
 }
 
@@ -172,7 +172,7 @@
   top: 14px;
   width: 22px;
   height: 22px;
-  background: url(../_img/home.svg) no-repeat center / 100% auto;
+  background: url(../img/home.svg) no-repeat center / 100% auto;
   z-index: 60;
 }
 
@@ -350,17 +350,14 @@
 }
 
 .sheet-close-button {
+  width: 32px;
+  height: 32px;
   position: absolute;
   right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #4b5563;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
+  background: url(../img/ico_layer_close.png) no-repeat center;
+  background-size: cover;
 }
 
 /* 불필요한 레이어 닫기 버튼 숨김 처리 (X 버튼 사용) */
