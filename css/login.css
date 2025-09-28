@@ -165,3 +165,14 @@
   background: url(../img/location-pin.png) no-repeat center;
   background-size: cover;
 }
+.select-btn::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(../img/arrow_btm.png) no-repeat center;
+  background-size: cover;
+}
