@@ -349,8 +349,8 @@
 }
 
 .sheet-close-button {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   position: absolute;
   right: 1.5rem;
   top: 50%;
@@ -396,8 +396,8 @@
   gap: 0.25rem;
 }
 .combo_list button[aria-pressed="true"] {
+  background-color: #f4f4f4;
   color: #da3131;
-  font-weight: bold;
 }
 .combo_list button .nick {
   font-weight: 700;
