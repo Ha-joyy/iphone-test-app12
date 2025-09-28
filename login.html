@@ -119,12 +119,9 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const loginButton = document.getElementById('login-button');
-            const idInput = document.getElementById('id-input');
-            const passwordInput = document.getElementById('password-input');
             
             // 바텀 시트 관련 DOM 요소
-            const signupLink = document.getElementById('signup-link');
+            const signupLink = document.getElementById('btm-link');
             const overlay = document.getElementById('bottomSheetOverlay');
             const closeButton = document.getElementById('closeSheetButton');
             
@@ -168,38 +165,6 @@
                 }
             });
             // --- 바텀 시트 로직 종료 ---
-
-            // --- 자동 완성 대응 로직 (기존 유지) ---
-            const checkAndAdjustLabel = (input) => {
-                const inputGroup = input.parentElement;
-                setTimeout(() => {
-                    if (input.value) {
-                        inputGroup.classList.add('has-value');
-                    } else {
-                        inputGroup.classList.remove('has-value');
-                    }
-                }, 0);
-            };
-            
-            const inputs = document.querySelectorAll('.input-group input');
-            inputs.forEach(input => {
-                checkAndAdjustLabel(input);
-                input.addEventListener('input', () => checkAndAdjustLabel(input));
-            });
-            // --- 자동 완성 대응 로직 종료 ---
-
-
-            // 로그인 버튼 로직 (기존 유지)
-            loginButton.addEventListener('click', () => {
-                const id = idInput.value;
-                const password = passwordInput.value;
-
-                if (!id || !password) {
-                    console.error('아이디와 비밀번호를 모두 입력해주세요.');
-                } else {
-                    console.log('로그인 로직을 구현해주세요.');
-                }
-            });
         });
     </script>
 </body>
