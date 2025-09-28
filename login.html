@@ -17,7 +17,7 @@
       <!-- 상단 헤더 영역 -->
       <header class="header">
         <!-- 로고 -->
-        <img src="img/logo_edms.png" alt="edms Logo" class="logo">
+        <img src="_img/logo_edms.png" alt="edms Logo" class="logo">
 
         <!-- 환영 및 안내 문구 -->
         <div class="welcome-text">
@@ -30,6 +30,7 @@
       <main class="main-content">
         <!-- 로그인 폼 -->
         <form class="login-form">
+            <button type="button" class="select-btn" id="btm-link">이용하실 매장을 선택해주세요.</button>
             <div class="input-group">
                 <input type="text" id="id-input"  placeholder=" " autocomplete="off">
                 <label for="id-input">아이디</label>
@@ -63,5 +64,143 @@
         </button>
       </footer>
     </div>
+    <div id="bottomSheetOverlay">
+        <div id="bottomSheet">
+            <div class="layer_box active" tabindex="0">
+            <div class="btn_layer_expanded">
+              <button type="button" aria-expanded="false" aria-label="박스 확장"></button>
+            </div>
+            <div class="layer_header">
+              <h1 class="layer_title">타이틀 영역</h1>
+              <button class="sheet-close-button" id="closeSheetButton">&times;</button>
+            </div>
+            <div class="layer_container">
+              <div class="layer_contents">
+                <div class="combo_list_wrap">
+                  <ul class="combo_list">
+                    <li>
+                      <button type="button" aria-pressed="true">
+                        <span class="nick">계좌별칭</span>
+                        <span class="code">***-****-****-**</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" aria-pressed="false">
+                        <span>select option</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" aria-pressed="false">
+                        <span class="nick">계좌별칭</span>
+                        <span class="code">***-****-****-**</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" aria-pressed="false">
+                        <span>select option</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" aria-pressed="false">
+                        <span class="nick">계좌별칭</span>
+                        <span class="code">***-****-****-**</span>
+                      </button>
+                    </li>
+                    
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <button type="button" class="layer_close"><em class="blind">닫기</em></button>
+          </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginButton = document.getElementById('login-button');
+            const idInput = document.getElementById('id-input');
+            const passwordInput = document.getElementById('password-input');
+            
+            // 바텀 시트 관련 DOM 요소
+            const signupLink = document.getElementById('signup-link');
+            const overlay = document.getElementById('bottomSheetOverlay');
+            const closeButton = document.getElementById('closeSheetButton');
+            
+            // 트랜지션 시간 (CSS와 일치해야 함)
+            const TRANSITION_DURATION_MS = 300; 
+
+            // --- 바텀 시트 로직 시작 ---
+            const openBottomSheet = (e) => {
+                if (e) e.preventDefault(); // 링크 이동 방지
+                
+                // 1. visibility를 바로 visible로 변경하여 팝업이 나타날 준비
+                overlay.style.visibility = 'visible'; 
+                
+                // 2. active 클래스 추가로 애니메이션 시작 (슬라이드 업, 오버레이 투명도 1)
+                overlay.classList.add('active');
+                
+                // 3. 배경 스크롤 방지
+                document.body.style.overflow = 'hidden'; 
+            };
+
+            const closeBottomSheet = () => {
+                // 1. active 클래스 제거로 애니메이션 시작 (슬라이드 다운, 오버레이 투명도 0)
+                // CSS transition: opacity 0.3s ease, visibility 0s 0.3s; 에 의해 닫기 애니메이션이 부드럽게 실행됨
+                overlay.classList.remove('active');
+                
+                // 2. 애니메이션이 끝날 때까지 기다린 후 body 스크롤 복구
+                setTimeout(() => {
+                    document.body.style.overflow = '';
+                }, TRANSITION_DURATION_MS);
+            };
+
+            // 이벤트 리스너 연결
+            signupLink.addEventListener('click', openBottomSheet);
+            closeButton.addEventListener('click', closeBottomSheet);
+            
+            // 오버레이(배경) 클릭 시 팝업 닫기
+            overlay.addEventListener('click', (e) => {
+                // e.target이 bottomSheet 내부 요소가 아닐 때만 닫기
+                if (e.target === overlay) {
+                    closeBottomSheet();
+                }
+            });
+            // --- 바텀 시트 로직 종료 ---
+
+            // --- 자동 완성 대응 로직 (기존 유지) ---
+            const checkAndAdjustLabel = (input) => {
+                const inputGroup = input.parentElement;
+                setTimeout(() => {
+                    if (input.value) {
+                        inputGroup.classList.add('has-value');
+                    } else {
+                        inputGroup.classList.remove('has-value');
+                    }
+                }, 0);
+            };
+            
+            const inputs = document.querySelectorAll('.input-group input');
+            inputs.forEach(input => {
+                checkAndAdjustLabel(input);
+                input.addEventListener('input', () => checkAndAdjustLabel(input));
+            });
+            // --- 자동 완성 대응 로직 종료 ---
+
+
+            // 로그인 버튼 로직 (기존 유지)
+            loginButton.addEventListener('click', () => {
+                const id = idInput.value;
+                const password = passwordInput.value;
+
+                if (!id || !password) {
+                    console.error('아이디와 비밀번호를 모두 입력해주세요.');
+                } else {
+                    console.log('로그인 로직을 구현해주세요.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

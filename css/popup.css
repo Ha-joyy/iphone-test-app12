@@ -278,3 +278,93 @@
   .layer_container {
   padding: 0 24px;
 }
+
+/* --- 바텀 시트(Bottom Sheet) 스타일 시작 --- */
+#bottomSheetOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  /* 팝업 닫힐 때: opacity(0.3s)가 먼저 끝난 후 visibility: hidden이 적용되어 부드러운 애니메이션 완성 */
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+#bottomSheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 80vh; /* 최대 높이 설정 */
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 1001;
+  transform: translateY(100%); /* 초기 상태: 화면 아래로 숨김 */
+  /* 부산은행 예시와 유사한 부드러운 애니메이션 효과 */
+  transition: transform 0.3s cubic-bezier(0.3, 0.7, 0.4, 1);
+  display: flex;
+  flex-direction: column;
+  /* iOS 안전 영역 하단 처리를 위해 시트 자체에 패딩 추가 */
+  padding-bottom: var(--safe-area-bottom);
+}
+
+/* 활성화 상태: 오버레이 투명도 변경 및 시트 슬라이드 업 */
+#bottomSheetOverlay.active {
+  opacity: 1;
+  visibility: visible;
+  /* 팝업 열릴 때: visibility 지연 없이 바로 적용 */
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+#bottomSheetOverlay.active #bottomSheet {
+  transform: translateY(0);
+}
+
+.sheet-header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.sheet-header h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.sheet-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #4b5563;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.sheet-content {
+  padding: 1.5rem;
+  overflow-y: auto; /* 내용이 길어지면 스크롤 가능 */
+}
+
+.sheet-content ul {
+  list-style: none;
+  padding: 0;
+}
+.sheet-content li {
+  padding: 15px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+.sheet-content li:last-child {
+  border-bottom: none;
+}
+/* --- 바텀 시트(Bottom Sheet) 스타일 종료 --- */
