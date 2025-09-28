@@ -119,7 +119,7 @@
 [class^="layer_wrap"] [class^="layer_box"] [class^="btn_layer_wrap"] {
   display: flex;
   justify-content: space-between;
-  padding: 32px;
+  padding: 1rem;
   background-color: #fff;
   background: url(../img/bg_btn_group.png) repeat-x left top / auto 100%;
   z-index: 50;
@@ -373,8 +373,7 @@
 
 /* 콤보 리스트 스타일 */
 .combo_list {
-  list-style: none;
-  padding: 0;
+  padding-bottom: 219px;
 }
 .combo_list li {
   border-bottom: 1px solid #f3f4f6;
