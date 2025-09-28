@@ -157,6 +157,10 @@
   text-align: left;
   color: #a6a6a6;
 }
+.select-btn.active {
+  color: #1f2937;
+}
+
 .select-btn::before {
   content: "";
   display: block;
