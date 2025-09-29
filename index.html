@@ -52,7 +52,9 @@
             <input type="checkbox" id="check-terms">
             <label for="check-terms">이용약관 동의<span class="required-text">(필수)</span></label>
           </div>
-          <button type="button" class="terms-item-end view-terms-btn" data-terms-id="terms-of-service" data-terms-title="이용약관 안내" aria-label="이용약관 상세 보기"></button>
+          <button type="button" class="terms-item-end view-terms-btn" data-terms-id="terms-of-service" data-terms-title="이용약관 안내">
+            <span class="hidden">이용약관 상세보기</span>
+          </button>
         </div>
 
         <div class="terms-item">
@@ -333,11 +335,10 @@
 
       // 상세 약관 보기 버튼 클릭 시 팝업 열기
       viewTermsButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // 이제 어떤 버튼을 눌러도 openPopup()만 호출합니다.
-          openPopup();
+        btn.addEventListener('click', (e) => {
+          openPopup(e.currentTarget.dataset.termsId, e.currentTarget.dataset.termsTitle);
         });
-    });
+      });
 
     });
   </script>
