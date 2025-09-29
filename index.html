@@ -72,14 +72,27 @@
     </div>
     </main>
 
-    <!-- 팝업 -->
-    <div class="layer_wrap full" style="display: none;">
-      <div class="layer_mask active"></div>
-      <div class="layer_box active" tabindex="0">
+    <!-- 하단 '다음' 버튼 영역 -->
+    <footer class="footer">
+      <button class="next-button" id="next-button" disabled>
+          다음
+      </button>
+    </footer>
+  </div>
+  <div id="fullPopupOverlay">
+    <div id="fullPopup">
+        <div class="layer_box active" tabindex="0">
         <div class="layer_header">
           <h1 class="layer_title">개인정보 수집 및 이용에 대한 안내</h1>
+          <button class="sheet-close-button" id="closeSheetButton" aria-label="닫기"><span class="hidden">닫기</span></button>
         </div>
-
+        
+        <div class="layer_header">
+          <h2 class="layer_title">이용하실 매장/계좌 선택</h2> 
+          <button class="sheet-close-button" id="closeSheetButton" aria-label="닫기">
+            &times; 
+          </button>
+        </div>
         <div class="layer_container">
           <div class="layer_contents">
             <div class="layer_search_wrap">
@@ -252,22 +265,17 @@
             </div>
           </div>
         </div>
+
         <div class="btn_layer_wrap">
           <div class="btn_col">
             <button type="button" class="btn_primary"><span>동의하기</span></button>
           </div>
         </div>
 
-        <button type="button" class="layer_close"><em class="blind">닫기</em></button>
+        <!-- 이 버튼도 닫기 기능에 연결합니다. -->
+        <button type="button" class="layer_close" id="extraCloseButton"><em class="blind">닫기</em></button> 
       </div>
     </div>
-
-    <!-- 하단 '다음' 버튼 영역 -->
-    <footer class="footer">
-      <button class="next-button" id="next-button" disabled>
-          다음
-      </button>
-    </footer>
   </div>
 </body>
 </html>
