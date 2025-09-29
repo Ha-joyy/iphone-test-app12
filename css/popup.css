@@ -203,6 +203,7 @@
   background: #fff;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
   /* flex-shrink: 0; // 🛠️ [제거] fixed로 변경되어 더 이상 필요 없습니다. */
+  box-sizing: border-box;
 }
 #fullPopup .btn_layer_wrap .btn_primary {
   width: 100%;
