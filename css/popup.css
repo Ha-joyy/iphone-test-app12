@@ -45,13 +45,6 @@
   transform: translateY(0);
 }
 
-.layer_box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
 .layer_header {
   padding: 1rem 1.5rem;
   display: flex;
@@ -119,10 +112,13 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 /* FULL POPUP CONTAINER */
@@ -157,12 +153,6 @@
 }
 
 /* LAYER BOX (FLEX CONTAINER FOR HEADER/CONTENT) */
-#fullPopup .layer_box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
 
 /* HEADER - 상단 노치/안전 영역에 대응하도록 패딩 추가 */
 #fullPopup .layer_header {
@@ -209,19 +199,19 @@
 }
 #fullPopup .btn_layer_wrap .btn_primary {
   width: 100%;
-  padding: 0.75rem;
-  background-color: var(--main-blue);
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: bold;
   cursor: pointer;
 }
 
 /* ---  FULL RIGHT POP-UP 스타일 종료 --- */
 
 /* ---  공통 스타일 --- */
+
+.layer_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 
 /* CLOSE BUTTON (X 아이콘) */
 .sheet-close-button {
