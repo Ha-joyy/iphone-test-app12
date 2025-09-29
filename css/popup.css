@@ -181,7 +181,7 @@
   flex-grow: 1;
   min-height: 0;
   /* 하단 버튼 영역과 안전 영역을 고려한 패딩 */
-  padding-bottom: 4.5rem;
+  padding-bottom: calc(4.5rem + var(--safe-area-bottom));
 }
 #fullPopup .layer_contents {
   padding: 1rem 0;
@@ -189,21 +189,12 @@
 
 /* 하단 고정 동의 버튼 */
 #fullPopup .btn_layer_wrap {
-  /* 🛠️ [수정] position: fixed를 사용하여 Safari 주소창(동적 툴바) 위에 항상 표시되도록 합니다. */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100; /* 다른 콘텐츠 위에 표시되도록 Z-Index 설정 */
-  /* 참고: 만약 팝업 자체가 max-width가 있다면, 해당 팝업의 너비에 맞춰 left/right/margin을 조정해야 할 수 있습니다. */
-
   width: 100%;
-  /* 좌우 패딩 1.5rem 고정 */
   padding: 1rem 1.5rem calc(1rem + var(--safe-area-bottom));
   background: #fff;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-  /* flex-shrink: 0; // 🛠️ [제거] fixed로 변경되어 더 이상 필요 없습니다. */
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 #fullPopup .btn_layer_wrap .btn_primary {
   width: 100%;
