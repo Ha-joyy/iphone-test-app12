@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 아이폰 노치 영역 처리를 위한 뷰포트 메타 태그 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <title>edms 회원가입</title>
+    <!-- Google Fonts에서 Noto Sans KR 폰트 불러오기 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS 환경 변수를 사용하여 iOS 안전 영역 값을 가져옵니다. */
+        :root {
+            --safe-area-top: env(safe-area-inset-top);
+            --safe-area-bottom: env(safe-area-inset-bottom);
+            --main-blue: #015bab;
+            --main-red: #ef4444;
+            --main-gray: #4b5563;
+        }
+
+        /* 1. RESET & BASE STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fff;
+            color: #1f2937;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-text-size-adjust: none; 
+            -ms-text-size-adjust: none;
+        }
+        .container {
+            flex-grow: 1;
+            padding: 0 1.5rem;
+            max-width: 480px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .blind {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            margin: -1px;
+        }
+        a {
+            text-decoration: none;
+            color: var(--main-blue);
+        }
+
+        /* 2. LAYOUT & AGREEMENT STYLES */
+        .header {
+            padding-top: var(--safe-area-top);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .top-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            height: 2.5rem; 
+        }
+        .back-btn button {
+            position: absolute;
+            top: calc(0.5rem + var(--safe-area-top));
+            left: 0.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%231f2937' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 18l-6-6 6-6'/%3E%3C/svg%3E") no-repeat center center / 60%;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .logo {
+            display: block;
+            width: 3rem; 
+            height: auto;
+            margin: 0 auto 1.5rem auto;
+        }
+        .welcome-text h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* 약관 목록 */
+        .main-content {
+            flex-grow: 1;
+            padding-bottom: 2rem;
+        }
+        .terms-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .terms-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25rem 0;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #f3f4f6;
+            margin: 0.5rem 0;
+        }
+
+        /* 커스텀 체크박스 */
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .custom-checkbox input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 0.25rem;
+            margin-right: 0.75rem;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .custom-checkbox input[type="checkbox"]:checked {
+            background-color: var(--main-blue);
+            border-color: var(--main-blue);
+        }
+        .custom-checkbox input[type="checkbox"]:checked::before {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 0.8rem;
+            line-height: 1;
+        }
+        .custom-checkbox label {
+            font-size: 1rem;
+            color: #374151;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .custom-checkbox .bold-label {
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .required-text {
+            color: var(--main-blue);
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+        .optional-text {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+
+        /* 상세 약관 보기 버튼 */
+        .terms-item-end {
+            background: none;
+            border: none;
+            color: #9ca3af;
+            font-size: 1.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* 푸터 (다음 버튼) */
+        .footer {
+            padding: 1rem 1.5rem calc(1.5rem + var(--safe-area-bottom));
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            flex-shrink: 0;
+        }
+        .next-button {
+            width: 100%;
+            padding: 1rem;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.125rem;
+            background-color: var(--main-blue);
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.2s;
+        }
+        .next-button:disabled {
+            background-color: #d1d5db;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* 3. FULL RIGHT POP-UP STYLES */
+        
+        /* OVERLAY (Background) */
+        #fullPopupOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s 0.3s;
+        }
+
+        /* FULL POPUP CONTAINER */
+        #fullPopup {
+            position: fixed;
+            top: 0;               
+            right: 0;             
+            width: 100%;
+            height: 100vh;        
+            max-height: 100vh;    
+            background-color: #fff;
+            border-radius: 0;     
+            z-index: 1001;
+            /* 오른쪽 화면 밖에서 시작 (오른쪽에서 왼쪽으로 슬라이드) */
+            transform: translateX(100%); 
+            transition: transform 0.3s cubic-bezier(0.3, 0.7, 0.4, 1);
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 0;
+            overflow: hidden; 
+        }
+
+        /* ACTIVATION */
+        #fullPopupOverlay.active {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease, visibility 0s 0s;
+        }
+
+        #fullPopupOverlay.active #fullPopup {
+            transform: translateX(0);
+        }
+
+        /* LAYER BOX (FLEX CONTAINER FOR HEADER/CONTENT) */
+        .layer_box {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%; 
+        }
+        
+        /* HEADER - 상단 노치/안전 영역에 대응하도록 패딩 추가 */
+        .layer_header {
+            padding: calc(1rem + var(--safe-area-top)) 1.5rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .layer_title {
+            font-size: 1.125rem;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        /* CLOSE BUTTON (X 아이콘) */
+        .sheet-close-button {
+            position: absolute;
+            right: 1.5rem;
+            top: calc(1rem + var(--safe-area-top) / 2); 
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #4b5563;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+            transform: translateY(-50%);
+        }
+        .sheet-close-button .hidden {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        /* SCROLLABLE CONTAINER */
+        .layer_container {
+            padding: 0 1.5rem; 
+            overflow-y: auto; 
+            flex-grow: 1; 
+            min-height: 0; 
+            /* 하단 버튼 영역과 안전 영역을 고려한 패딩 */
+            padding-bottom: calc(4.5rem + var(--safe-area-bottom)); 
+        }
+        .layer_contents {
+            padding: 1rem 0; 
+        }
+        
+        /* 약관 상세 내용 스타일 */
+        .terms_box {
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.5;
+        }
+        .article {
+            margin-bottom: 1.5rem;
+        }
+        .article_title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 1.5rem 0 0.75rem;
+            color: #1f2937;
+        }
+        .clause_title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0.75rem 0 0.5rem;
+            color: #1f2937;
+        }
+        .sections {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.5rem;
+        }
+        .sections_section {
+            margin-bottom: 0.75rem;
+            padding-left: 0.75rem;
+            position: relative;
+        }
+        .sections_section::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .article_text {
+            margin-top: 0.5rem;
+        }
+
+        /* 하단 고정 동의 버튼 */
+        .btn_layer_wrap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 1.5rem calc(1rem + var(--safe-area-bottom));
+            background: #fff;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+        .btn_layer_wrap .btn_primary {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--main-blue);
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* 불필요한 요소 숨김 처리 */
+        .layer_close,
+        .btn_layer_expanded {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="agreement-page">
+  <div class="container">
+    <!-- 상단 헤더 영역: 닫기 버튼 -->
+    <header class="header">
+      <!-- 상단 네비게이션 -->
+      <ul class="top-nav">
+        <li class="back-btn">
+          <!-- 단순한 뒤로가기 동작 (로그인 화면 등으로 이동) -->
+          <button type="button" id="back-button" onclick="window.history.back()"><span class="blind">닫기</span></button>
+        </li>
+      </ul>
+
+      <!-- edms 로고 (임시 플레이스홀더) -->
+      <img src="https://placehold.co/48x48/015bab/ffffff?text=E" alt="edms Logo" class="logo">
+
+      <!-- 환영 문구 -->
+      <div class="welcome-text">
+        <h1>회원가입을 위해<br/>약관에 동의해주세요</h1>
+      </div>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="main-content">
+
+      <!-- 약관 동의 목록 (체크박스 로직은 JS에서 제거되었음) -->
+      <div class="terms-list">
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-all">
+            <label for="check-all" class="bold-label">약관 전체동의</label>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-terms">
+            <label for="check-terms">이용약관 동의<span class="required-text">(필수)</span></label>
+          </div>
+          <!-- 약관 상세 보기 버튼 (Full Pop-up Trigger) -->
+          <button type="button" class="terms-item-end view-terms-btn" data-terms-id="terms-of-service" data-terms-title="이용약관 안내" aria-label="이용약관 상세 보기">></button>
+        </div>
+
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-privacy">
+            <label for="check-privacy">개인정보 수집 및 이용동의<span class="required-text">(필수)</span></label>
+          </div>
+          <!-- 약관 상세 보기 버튼 (Full Pop-up Trigger) -->
+          <button type="button" class="terms-item-end view-terms-btn" data-terms-id="privacy-policy" data-terms-title="개인정보 수집 및 이용에 대한 안내" aria-label="개인정보 수집 및 이용 동의 상세 보기">></button>
+        </div>
+
+        <div class="terms-item">
+          <div class="terms-item-start custom-checkbox">
+            <input type="checkbox" id="check-add">
+            <label for="check-add">광고성 정보 수신동의<span class="optional-text">(선택)</span></label>
+          </div>
+          <!-- 선택 약관이므로 상세 보기 버튼은 생략하거나 필요에 따라 추가 -->
+        </div>
+    </div>
+    </main>
+
+    <!-- 하단 '다음' 버튼 영역 -->
+    <footer class="footer">
+      <button class="next-button" id="next-button" disabled>
+          다음
+      </button>
+    </footer>
+  </div>
+  
+  <!-- Full Right-Side Pop-up Template -->
+  <div id="fullPopupOverlay">
+    <div id="fullPopup">
+        <div class="layer_box" tabindex="0">
+        
+        <div class="layer_header">
+          <!-- JS에서 data-terms-title을 사용하여 이 제목이 업데이트됩니다. -->
+          <h1 class="layer_title" id="popupTitle"></h1>
+          <button class="sheet-close-button" id="closeSheetButton" aria-label="닫기">&times;</button>
+        </div>
+        
+        <div class="layer_container">
+          <div class="layer_contents">
+            <!-- 약관 내용 Wrapper: 이 안에 모든 약관 내용이 존재하며, JS가 하나씩 보여줍니다. -->
+            <div class="terms_box" tabindex="0" id="termsContentWrapper">
+              
+              <!-- ===== 1. 이용약관 상세 내용 (terms-of-service) ===== -->
+              <div id="terms-of-service-content" class="terms-content-section" style="display: none;">
+                <div class="article">
+                    <h3 class="article_title">제 1조 (목적)</h3>
+                    <p class="article_text">
+                        본 약관은 EDMS(이하 '회사')가 제공하는 모든 서비스의 이용 조건 및 절차에 관한 사항과 기타 필요한 사항을 규정함을 목적으로 합니다.
+                    </p>
+                </div>
+                <div class="article">
+                    <h3 class="article_title">제 2조 (약관의 효력 및 변경)</h3>
+                    <p class="article_text">
+                        회사는 이 약관의 내용을 회원이 쉽게 알 수 있도록 서비스 화면에 게시합니다. 회사는 필요한 경우 관련 법령을 위배하지 않는 범위 내에서 이 약관을 개정할 수 있습니다.
+                    </p>
+                </div>
+                <div class="article">
+                    <h3 class="article_title">제 3조 (회원가입)</h3>
+                    <p class="article_text">
+                        회원가입은 회원이 약관에 동의하고 회사가 정한 가입 양식에 따라 회원 정보를 기입한 후, 본인 확인 절차를 거쳐 신청하는 것으로 성립됩니다.
+                    </p>
+                </div>
+              </div>
+
+              <!-- ===== 2. 개인정보 수집 및 이용 동의 상세 내용 (privacy-policy) ===== -->
+              <div id="privacy-policy-content" class="terms-content-section" style="display: none;">
+                <div class="article">
+                  <p class="article_text">
+                    개인정보보호법에 따라 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및
+                    이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니
+                    자세히 읽은 후 동의하여 주시기 바랍니다.
+                  </p>
+                </div>
+                <div class="article">
+                  <h3 class="article_title">1. 수집하는 개인정보</h3>
+                  <p class="article_text">
+                    이용자는 회원가입을 하지 않아도 대부분의 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더 등과 같이 개인화 혹은 회원제 서비스를 이용하기 위해
+                    회원가입을 할 경우, 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.
+                  </p>
+                  <div class="clause">
+                    <h4 class="clause_title">회원가입 시점에 이용자로부터 수집하는 개인정보는 아래와 같습니다.</h4>
+                    <ul class="sections">
+                      <li class="sections_section">
+                          - 회원 가입 시 필수항목으로 아이디, 비밀번호, 이름, 휴대전화번호를 수집합니다.
+                      </li>
+                    </ul>
+                    <h4 class="clause_title">서비스 이용 과정에서 이용자로부터 수집하는 개인정보는 아래와 같습니다.</h4>
+                    <p class="clause_text">
+                      - 서비스 이용 과정에서 IP 주소, 쿠키, 서비스 이용 기록, 기기정보가 생성되어 수집될 수 있습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="article">
+                  <h3 class="article_title">2. 수집한 개인정보의 이용</h3>
+                  <p class="article_text">
+                    회원관리, 서비스 개발・제공 및 향상, 안전한 인터넷 이용환경 구축 등 아래의 목적으로만 개인정보를 이용합니다.
+                  </p>
+                  <ul class="sections">
+                    <li class="sections_section">
+                      - 회원 가입 의사의 확인, 이용자 식별, 회원탈퇴 의사의 확인 등 회원관리를 위하여 개인정보를 이용합니다.
+                    </li>
+                    <li class="sections_section">
+                      - 콘텐츠 등 기존 서비스 제공에 더하여, 통계 분석, 서비스 방문 및 이용기록의 분석 등을 위하여 개인정보를 이용합니다.
+                    </li>
+                    <li class="sections_section">
+                      - <strong>이벤트 정보 및 참여기회 제공, 광고성 정보 제공 등 마케팅 및 프로모션 목적으로 개인정보를 이용합니다.</strong>
+                    </li>
+                  </ul>
+                </div>
+                <div class="article">
+                  <h3 class="article_title">3. 개인정보의 보관기간</h3>
+                  <div class="clause large">
+                    <h4 class="clause_title">
+                      회사는 원칙적으로 이용자의 개인정보를 회원 탈퇴 시 지체없이 파기하고 있습니다.<br>
+                      단, 법령에서 일정 기간 정보보관 의무를 부과하는 경우에는 해당 기간 동안 개인정보를 안전하게 보관합니다.
+                    </h4>
+                  </div>
+                </div>
+                <div class="article">
+                  <h3 class="article_title">4. 개인정보 수집 및 이용 동의를 거부할 권리</h3>
+                  <p class="clause_text">
+                    이용자는 개인정보의 수집 및 이용 동의를 거부할 권리가 있습니다. 필수 항목에 대한 수집 및 이용 동의를 거부하실 경우, 회원가입이 어려울 수 있습니다.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="btn_layer_wrap">
+          <div class="btn_col">
+            <!-- 팝업을 닫는 기능만 수행합니다. -->
+            <button type="button" class="btn_primary" id="agreeAndCloseButton"><span>확인하고 닫기</span></button>
+          </div>
+        </div>
+
+        <!-- 팝업 닫기 기능에 연결된 요소입니다. -->
+        <button type="button" class="layer_close" id="extraCloseButton"><em class="blind">닫기</em></button> 
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- 팝업 관련 DOM 요소 ---
+      const viewTermsButtons = document.querySelectorAll('.view-terms-btn');
+      const overlay = document.getElementById('fullPopupOverlay');
+      const closeButtonX = document.getElementById('closeSheetButton');
+      const agreeAndCloseButton = document.getElementById('agreeAndCloseButton');
+      const popupTitle = document.getElementById('popupTitle');
+      const termsContentWrapper = document.getElementById('termsContentWrapper');
+      const allTermsSections = document.querySelectorAll('.terms-content-section'); // 모든 약관 내용 섹션
+
+      let currentTermsId = null; 
+      const TRANSITION_DURATION_MS = 300; 
+      
+      
+      // --- 팝업 로직 (Full Pop-up: 오른쪽 슬라이드) ---
+
+      /** 팝업을 열고 내용을 설정하는 함수 */
+      const openPopup = (termsId, termsTitle) => {
+          const contentElement = document.getElementById(termsId + '-content');
+          if (!contentElement) return console.error('Terms content not found for ID:', termsId);
+
+          // 1. 내용 및 제목 업데이트
+          popupTitle.textContent = termsTitle;
+          currentTermsId = termsId;
+
+          // 2. 모든 약관 내용을 숨기고 현재 약관 내용만 표시
+          allTermsSections.forEach(el => {
+              el.style.display = 'none';
+          });
+          contentElement.style.display = 'block';
+
+          // 3. 팝업 표시
+          overlay.style.visibility = 'visible'; 
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden'; 
+          
+          // 스크롤 위치 초기화
+          const layerContainer = document.querySelector('.layer_container');
+          if (layerContainer) layerContainer.scrollTop = 0;
+      };
+
+      /** 팝업을 닫는 함수 */
+      const closePopup = () => {
+          overlay.classList.remove('active');
+          currentTermsId = null;
+          
+          setTimeout(() => {
+              document.body.style.overflow = '';
+              overlay.style.visibility = 'hidden'; 
+          }, TRANSITION_DURATION_MS);
+      };
+
+      // 닫기 버튼 및 동의하고 닫기 버튼 이벤트 연결
+      closeButtonX.addEventListener('click', closePopup);
+      agreeAndCloseButton.addEventListener('click', closePopup);
+      
+      // 오버레이(배경) 클릭 시 팝업 닫기
+      overlay.addEventListener('click', (e) => {
+          // #fullPopup 내부를 클릭하지 않았을 때만 닫기
+          if (e.target === overlay) {
+              closePopup();
+          }
+      });
+
+      // 상세 약관 보기 버튼 클릭 시 팝업 열기
+      viewTermsButtons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+              const termsId = e.currentTarget.dataset.termsId;
+              const termsTitle = e.currentTarget.dataset.termsTitle;
+              openPopup(termsId, termsTitle);
+          });
+      });
+
+    });
+  </script>
+</body>
+</html>
