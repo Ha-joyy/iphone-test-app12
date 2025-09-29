@@ -188,9 +188,6 @@
 
 /* 하단 고정 동의 버튼 */
 #fullPopup .btn_layer_wrap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   padding: 1rem 1.5rem calc(1rem + var(--safe-area-bottom));
   background: #fff;
