@@ -1,25 +1,23 @@
-[class^="regist_bundle_box"] [class^="regist_flex_item"] {
+.regist_bundle_box {
+  width: 100%;
+}
+[class^="regist_flex_item"] {
   display: flex;
 }
-[class^="regist_bundle_box"] [class^="regist_flex_item"] .regist_flex_col {
+[class^="regist_flex_item"] .regist_flex_col {
   display: block;
   width: 100%;
   margin: 0 0 0 9px;
 }
-[class^="regist_bundle_box"]
-  [class^="regist_flex_item"]
-  .regist_flex_col:first-child {
+[class^="regist_flex_item"] .regist_flex_col:first-child {
   margin: 0;
 }
 
-[class^="regist_bundle_box"]
-  [class^="regist_flex_item"]
-  .regist_flex_col:last-child {
+[class^="regist_flex_item"] .regist_flex_col:last-child {
   width: 140px;
 }
 
-[class^="regist_bundle_box"]
-  [class^="regist_flex_item"]
+[class^="regist_flex_item"]
   .regist_flex_col:last-child
   .combo_bundle
   [class^="selected"] {
@@ -277,7 +275,7 @@ select:focus {
 /* input text */
 input:not([type="checkbox"]):not([type="radio"]) {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.4rem;
   width: 100%;
   position: relative;
   box-sizing: border-box;
@@ -287,8 +285,8 @@ input:not([type="checkbox"]):not([type="radio"]) {
   background-color: #fff;
 }
 
-[class^="regist_bundle_box"] .regist_bundle_row [class^="regist_bundle_case"] {
-  margin: 16px 0 0;
+.regist_bundle_row [class^="regist_bundle_case"] {
+  margin: 1.4rem 0 0;
 }
 
 /* button */
@@ -404,7 +402,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
 /* 인증번호 입력 */
 .inp_bundle_certifi {
   position: relative;
-  margin-top: 1rem;
+  margin-top: 1.4rem;
 }
 
 .inp_bundle_certifi .inp_util {

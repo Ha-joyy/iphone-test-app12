@@ -317,8 +317,33 @@ noscript p {
 }
 
 :root {
-  --safe-area-top: env(safe-area-inset-top);
-  --safe-area-bottom: env(safe-area-inset-bottom);
+  --safe-area-top: env(safe-area-inset-top, 20px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+  --color-bg: #fff;
+  --color-text: #333;
+  --color-border: #eee;
+  --color-primary: #015bab; /* next-button 색상 */
+  --color-secondary-text: #4b5563; /* welcome-text p 색상 */
+
+  /* Footer 높이 계산을 위한 변수 */
+  --footer-padding-v: 24px;
+  --button-height: 55px; /* .next-button의 실제 높이 */
+  /* 콘텐츠 스크롤 영역이 확보해야 할 총 공간 */
+  --reserved-footer-space: calc(
+    var(--footer-padding-v) * 2 + var(--button-height) + var(--safe-area-bottom)
+  );
+}
+
+/* 다크 모드 색상 오버라이드 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1e1e1e;
+    --color-text: #e0e0e0;
+    --color-border: #333;
+    --color-primary: #3d9be5;
+    --color-secondary-text: #a0a0a0;
+  }
 }
 
 body {
