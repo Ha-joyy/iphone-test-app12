@@ -535,7 +535,7 @@ body {
   top: 0;
   width: 48px;
   height: 44px;
-  background: url(../img/btn_header_prev.png) no-repeat center / 24px auto;
+  background: url(../img/ico_prev.png) no-repeat center / 24px auto;
 }
 
 #header .header_inner > .btn_header_home {
