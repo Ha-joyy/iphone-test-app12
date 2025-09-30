@@ -1,5 +1,6 @@
 .regist_bundle_box {
   width: 100%;
+  padding-bottom: 80px;
 }
 [class^="regist_flex_item"] {
   display: flex;
@@ -387,7 +388,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
   top: 2px;
   width: 16px;
   height: 16px;
-  background: url(../_img/ico_error.png) no-repeat center / 100% auto;
+  background: url(../img/ico_error.png) no-repeat center / 100% auto;
 }
 
 [class^="mssg_error"].active {
@@ -606,4 +607,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
 
 .inp_bundle_textarea .inp_textarea .txt_length em.active {
   color: #111;
+}
+.form_case [class^="regist_flex_item"] {
+  align-items: end;
 }

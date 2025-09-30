@@ -499,3 +499,88 @@ body {
 [class^="btn_tertiary"]:disabled span {
   opacity: 0.3;
 }
+
+/* header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 100;
+}
+
+#header .header_inner {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 75px;
+}
+
+#header .header_tit {
+  overflow: hidden;
+  padding: 9px 0;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#header .btn_header_prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 44px;
+  background: url(../_img/btn_header_prev.png) no-repeat center / 24px auto;
+}
+
+#header .header_inner > .btn_header_home {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 44px;
+  background: url(../_img/header_logo.png) no-repeat 14px center / auto 22px;
+}
+
+#header .header_util {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+#header .header_util [class^="btn_header_"] {
+  width: 32px;
+  height: 44px;
+}
+
+#header .header_util .btn_header_home {
+  background: url(../_img/ico_header_home.png) no-repeat center / 24px auto;
+}
+
+#header .header_util .btn_header_gnb {
+  background: url(../_img/ico_header_gnb.png) no-repeat center / 24px auto;
+}
+
+#header .header_util .btn_header_close {
+  background: url(../_img/btn_layer_close.png) no-repeat center / 24px auto;
+}
+#header .header_util .btn_header_cart {
+  position: relative;
+  background: url(../_img/bag.svg) no-repeat center / 18px auto;
+}
+
+#header .header_util .btn_header_cart.active:before {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  background: url(../_img/ico_on.png) no-repeat center / 12px auto;
+}
