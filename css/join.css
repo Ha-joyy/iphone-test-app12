@@ -15,19 +15,7 @@ body {
 }
 
 .welcome-text {
-  margin-bottom: 6rem;
-}
-
-.header-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #1f2937;
-  margin-left: 0.5rem;
-}
-
-.logo {
-  height: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .welcome-text h1 {
@@ -42,6 +30,18 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: #4b5563;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-left: 0.5rem;
+}
+
+.logo {
+  height: 3rem;
+  margin-bottom: 2rem;
 }
 .footer {
   position: fixed;
