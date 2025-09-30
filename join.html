@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- 아이폰 노치 영역 처리를 위한 뷰포트 메타 태그 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <title>edms 회원가입</title>
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/join.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- Google Fonts에서 Noto Sans KR 폰트 불러오기 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="agreement-page">
+  <div class="container">
+    <!-- 상단 헤더 영역: 닫기 버튼 -->
+    <header class="header">
+      <!-- 상단 네비게이션 -->
+      <ul class="top-nav">
+        <li class="back-btn">
+          <button type="button"><span class="blind">뒤로가기</span></button>
+        </li>
+      </ul>
+
+      <!-- 환영 문구 -->
+      <div class="welcome-text">
+        <h1>본인인증을 위해<br/>전화번호를 입력해주세요</h1>
+      </div>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="main-content">
+
+      <!-- form 영역 -->
+			<div class="regist_bundle_box">
+				<div class="regist_bundle_row">
+					
+					<div class="regist_bundle_case">
+						<div class="inp_bundle">
+							<strong class="inp_tit">이름 입력</strong>
+							<span class="inp_txt">
+								<input type="text" title="이름을 입력해주세요" placeholder="이름을 입력해주세요">
+							</span>
+						</div>
+					</div>
+					<div class="inp_bundle_certifi">
+						<div class="inp_bundle">
+							<strong class="inp_tit">휴대폰번호</strong>
+							<span class="inp_txt">
+								<input type="tel" title="휴대폰번호를 입력해주세요" placeholder="휴대폰번호를 입력해주세요">
+							</span>
+						</div>
+						<div class="btn_conts_box">
+							<div class="btn_col">
+								<button type="button" class="btn_func02"><span>인증요청</span></button>
+							</div>
+						</div>
+					</div>
+					<div class="inp_bundle_certifi">
+						<strong class="inp_tit">인증번호입력</strong>
+						<div class="inp_txt">
+							<input type="text" title="인증번호를 입력하세요." placeholder="인증번호를 입력하세요." value="123" disabled>
+						</div>
+						<div class="inp_util">
+							<span class="timer">3:00</span>
+						</div>
+
+						<div class="btn_conts_box">
+							<div class="btn_col">
+								<button type="button" class="btn_func02" disabled><span>인증확인</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    </main>
+
+    <!-- 하단 '다음' 버튼 영역 -->
+    <footer class="footer">
+      <button class="next-button" id="next-button" disabled>
+          다음
+      </button>
+    </footer>
+  </div>
+</body>
+</html>

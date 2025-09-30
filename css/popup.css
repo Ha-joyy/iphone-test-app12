@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* --- 바텀 시트(Bottom Sheet) 스타일 시작 --- */
 #bottomSheetOverlay {
   position: fixed;
