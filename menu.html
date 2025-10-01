@@ -5,8 +5,8 @@
   <!-- 핵심 설정: viewport-fit=cover로 iPhone 노치 및 하단 안전 영역 확보 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
   <title>메뉴</title>
-  <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/menu.css">
 
   <!-- Noto Sans KR 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,23 +33,21 @@
     <!-- 탭 네비게이션 영역 -->
     <nav class="tabs-nav">
       <button type="button" class="active">전체</button>
-      <button type="button">음료</button>
-      <button type="button">푸드</button>
-      <button type="button">상품</button>
-      <!-- 스크롤 테스트용 더미 탭 -->
-      <button type="button">이벤트</button>
+      <button type="button">커피</button>
+      <button type="button">탄산음료</button>
+      <button type="button">스무디</button>
+      <button type="button">베스트</button>
       <button type="button">신제품</button>
     </nav>
 
 
-    <!-- 메인 컨텐츠 영역 (스크롤이 필요한 메뉴 리스트) -->
+    <!-- 메인 컨텐츠 영역 -->
     <main class="main-content">
       <ul class="menu-list">
         
-        <!-- 메뉴 아이템 1: 카페 아메리카노 -->
         <li class="menu-item">
-            <!-- 이미지 (원형으로 표시) -->
-            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="카페 아메리카노 이미지" class="item-image">
+          <a href="#none">
+            <!-- <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="카페 아메리카노 이미지" class="item-image"> -->
             <div class="item-details">
                 <div class="item-name">
                     <span>카페 아메리카노</span>
@@ -58,11 +56,12 @@
                 <div class="item-name-en">Caffe Americano</div>
                 <div class="item-price">4,100원</div>
             </div>
+          </a>
         </li>
 
-        <!-- 메뉴 아이템 2: 아이스 카페 아메리카노 -->
         <li class="menu-item">
-            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 카페 아메리카노 이미지" class="item-image">
+          <a href="#none">
+            <!-- <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 카페 아메리카노 이미지" class="item-image"> -->
             <div class="item-details">
                 <div class="item-name">
                     <span>아이스 카페 아메리카노</span>
@@ -71,11 +70,12 @@
                 <div class="item-name-en">Iced Caffe Americano</div>
                 <div class="item-price">4,100원</div>
             </div>
+          </a>
         </li>
 
-        <!-- 메뉴 아이템 3: 디카페인 카페 아메리카노 -->
         <li class="menu-item">
-            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="디카페인 카페 아메리카노 이미지" class="item-image">
+          <a href="#none">
+            <!-- <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="디카페인 카페 아메리카노 이미지" class="item-image"> -->
             <div class="item-details">
                 <div class="item-name">
                     <span>디카페인 카페 아메리카노</span>
@@ -84,11 +84,12 @@
                 <div class="item-name-en">DECAF Caffe Americano</div>
                 <div class="item-price">4,400원</div>
             </div>
+          </a>
         </li>
 
-        <!-- 메뉴 아이템 4: 아이스 디카페인 카페 아메리카노 -->
         <li class="menu-item">
-            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 디카페인 카페 아메리카노 이미지" class="item-image">
+          <a href="#none">
+            <!-- <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 디카페인 카페 아메리카노 이미지" class="item-image"> -->
             <div class="item-details">
                 <div class="item-name">
                     <span>아이스 디카페인 카페 아메리카노</span>
@@ -96,11 +97,12 @@
                 <div class="item-name-en">Iced DECAF Caffe Americano</div>
                 <div class="item-price">4,400원</div>
             </div>
+          </a>
         </li>
 
-        <!-- 메뉴 아이템 5: 1/2 디카페인 카페 아메리카노 -->
         <li class="menu-item">
-            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="1/2 디카페인 카페 아메리카노 이미지" class="item-image">
+          <a href="#none">
+            <!-- <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="1/2 디카페인 카페 아메리카노 이미지" class="item-image"> -->
             <div class="item-details">
                 <div class="item-name">
                     <span>1/2 디카페인 카페 아메리카노</span>
@@ -108,11 +110,12 @@
                 <div class="item-name-en">Half DECAF Caffe Americano</div>
                 <div class="item-price">4,400원</div>
             </div>
+          </a>
         </li>
 
-        <!-- 메뉴 아이템 6: 아이스 1/2 디카페인 카페 아메리카노 -->
         <li class="menu-item">
-            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 1/2 디카페인 카페 아메리카노 이미지" class="item-image">
+          <a href="#none">
+            <!-- <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 1/2 디카페인 카페 아메리카노 이미지" class="item-image"> -->
             <div class="item-details">
                 <div class="item-name">
                     <span>아이스 1/2 디카페인 카페 아메리카노</span>
@@ -120,29 +123,7 @@
                 <div class="item-name-en">Iced Half DECAF Caffe Americano</div>
                 <div class="item-price">4,400원</div>
             </div>
-        </li>
-
-        <!-- 추가 스크롤 테스트용 아이템 -->
-        <li class="menu-item">
-            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="메뉴 이미지" class="item-image">
-            <div class="item-details">
-                <div class="item-name">
-                    <span>콜드 브루</span>
-                </div>
-                <div class="item-name-en">Cold Brew</div>
-                <div class="item-price">4,700원</div>
-            </div>
-        </li>
-        <li class="menu-item">
-            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="메뉴 이미지" class="item-image">
-            <div class="item-details">
-                <div class="item-name">
-                    <span>아이스 콜드 브루</span>
-                    <span class="best-tag">New</span>
-                </div>
-                <div class="item-name-en">Iced Cold Brew</div>
-                <div class="item-price">4,700원</div>
-            </div>
+          </a>
         </li>
       </ul>
     </main>

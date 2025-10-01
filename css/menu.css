@@ -10,7 +10,7 @@ body {
   padding: 0;
   font-family: "Noto Sans KR", sans-serif;
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: #333;
   display: flex;
   flex-direction: column;
 }
@@ -22,6 +22,7 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  padding: 0;
   box-sizing: border-box;
   min-height: 100vh;
 }
@@ -53,7 +54,7 @@ body {
 
 .location-info {
   font-size: 0.9rem;
-  color: var(--color-sub-text);
+  color: #666;
   margin-left: 10px;
   font-weight: 500;
 }
@@ -67,16 +68,14 @@ body {
 /* 4. Tabs 영역 */
 /* ------------------------------------------------ */
 .tabs-nav {
+  display: flex;
   flex-shrink: 0;
-  height: var(--tabs-height);
+  height: 48px;
   display: flex;
   align-items: center;
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-  padding: 0 var(--horizontal-padding);
-  overflow-x: auto; /* 탭이 많아지면 스크롤 가능하도록 */
-
-  /* [핵심] 탭 네비게이션 스크롤바 숨김 */
+  background-color: #fff;
+  border-bottom: #ddd;
+  overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -86,22 +85,20 @@ body {
 
 .tabs-nav button {
   flex-shrink: 0;
-  border: none;
-  background: none;
-  color: var(--color-sub-text);
+  width: 5rem;
+  color: #666;
   font-weight: 500;
   font-size: 1.05rem;
   padding: 0 8px;
-  height: var(--tabs-height);
-  line-height: var(--tabs-height);
+  height: 48px;
+  line-height: 48px;
   cursor: pointer;
   position: relative;
-  margin-right: 20px;
   transition: color 0.2s;
 }
 
 .tabs-nav button.active {
-  color: var(--color-text);
+  color: #333;
   font-weight: 700;
 }
 
@@ -112,7 +109,7 @@ body {
   left: 8px;
   right: 8px;
   height: 2px;
-  background-color: var(--color-text);
+  background-color: #333;
   border-radius: 1px;
 }
 
@@ -146,8 +143,8 @@ body {
 .menu-item {
   display: flex;
   align-items: center;
-  padding: var(--vertical-padding) var(--horizontal-padding);
-  border-bottom: 1px solid var(--color-border);
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
   gap: 20px;
   cursor: pointer;
 }
@@ -162,12 +159,6 @@ body {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  border: 1px solid #e0e0e0;
-}
-@media (prefers-color-scheme: dark) {
-  .item-image {
-    border-color: #444;
-  }
 }
 
 .item-details {
@@ -181,12 +172,11 @@ body {
   align-items: center;
   font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 4px;
   line-height: 1.4;
 }
 .item-name-en {
   font-size: 0.9rem;
-  color: var(--color-sub-text);
+  color: #aaa;
   margin-bottom: 8px;
 }
 .item-price {
@@ -197,9 +187,9 @@ body {
 .best-tag {
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--color-accent);
+  color: #d8736c;
   background-color: transparent;
-  border: 1px solid var(--color-accent);
+  border: 1px solid #d8736c;
   padding: 2px 6px;
   border-radius: 4px;
   margin-left: 8px;
