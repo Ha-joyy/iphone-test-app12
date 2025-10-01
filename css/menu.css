@@ -32,7 +32,7 @@ body {
 /* ------------------------------------------------ */
 .tabs-nav {
   position: sticky;
-  top: 45px;
+  top: 44px;
   z-index: 9;
   display: flex;
   flex-shrink: 0;
@@ -88,7 +88,7 @@ body {
   overflow-y: auto;
   min-height: 0;
   box-sizing: border-box;
-  margin-top: 45px;
+  margin-top: 44px;
   /* 하단 Safe Area 만큼 여백 예약 */
   padding-bottom: calc(var(--safe-area-bottom) + 20px);
 
