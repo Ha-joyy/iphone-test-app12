@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+.container {
+  height: 100%;
+}
+
 .product-image-section {
   height: 16rem;
   background-color: #fefce8;
@@ -16,10 +20,10 @@
 
 /* 5. 텍스트 및 옵션 섹션 */
 .info-section {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-bottom: 60px;
 }
 
 .product-title {
@@ -68,7 +72,7 @@
   background-color: #f3f4f6;
 }
 .temp-selected {
-  background-color: #f97316;
+  background-color: #015bab;
   color: white;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
@@ -91,7 +95,7 @@
   white-space: nowrap;
 }
 .select-btn.selected {
-  border-color: #f97316;
+  border-color: #015bab;
   background-color: #fff7ed;
   color: #ea580c;
 }
@@ -160,5 +164,4 @@
   transition: background-color 200ms ease-in-out;
   cursor: default;
   border: none;
-  border-radius: 0 0.75rem 0.75rem 0;
 }
