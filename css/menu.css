@@ -90,7 +90,7 @@ body {
   box-sizing: border-box;
   margin-top: 44px;
   /* 하단 Safe Area 만큼 여백 예약 */
-  padding-bottom: calc(var(--safe-area-bottom) + 20px);
+  padding-bottom: calc(34px + 20px);
 
   /* [핵심] 스크롤바 숨김 설정 */
   -ms-overflow-style: none;
@@ -109,7 +109,7 @@ body {
 .menu-item {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 24px;
   border-bottom: 1px solid #ddd;
   gap: 20px;
   cursor: pointer;

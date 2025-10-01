@@ -330,9 +330,7 @@ noscript p {
   --footer-padding-v: 24px;
   --button-height: 55px; /* .next-button의 실제 높이 */
   /* 콘텐츠 스크롤 영역이 확보해야 할 총 공간 */
-  --reserved-footer-space: calc(
-    var(--footer-padding-v) * 2 + var(--button-height) + var(--safe-area-bottom)
-  );
+  --reserved-footer-space: 122px;
 }
 
 /* 다크 모드 색상 오버라이드 */
@@ -351,16 +349,16 @@ body {
   background-color: #fff;
   margin: 0;
   padding: 0;
-  padding-top: var(--safe-area-top);
-  padding-bottom: var(--safe-area-bottom);
+  padding-top: 44px;
+  padding-bottom: 34px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - var(--safe-area-top) - var(--safe-area-bottom));
-  padding: 2rem;
+  height: calc(100vh - 44px - 34px);
+  padding: 1rem 24px;
   box-sizing: border-box;
 }
 
