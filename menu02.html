@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <!-- 핵심 설정: viewport-fit=cover로 iPhone 노치 및 하단 안전 영역 확보 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <title>메뉴</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/menu02.css">
+
+    <!-- Noto Sans KR 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <!-- 상단 헤더 영역 -->
+      <header id="header">
+        <div class="header_inner">
+          <button type="button" class="btn_header_prev">
+            <em class="blind">이전</em>
+          </button>
+          <h1 class="header_tit">메뉴</h1>
+          <div class="header_util">
+            <button type="button" class="btn_header_gnb">
+              <em class="blind">전체메뉴</em>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- 제품 이미지 섹션 -->
+        <div class="product-image-section">
+            <!-- 이미지 URL은 정적으로 유지 -->
+            <img src="https://placehold.co/400x400/F7F5EE/D0A878?text=Caramel+Macchiato" 
+                  alt="카라멜 마끼아또 이미지" 
+                  class="product-image"
+                  onerror="this.onerror=null; this.src='https://placehold.co/400x400/F7F5EE/D0A878?text=COFFEE';"
+            >
+        </div>
+
+        <!-- 제품 상세 정보 및 옵션 영역 -->
+        <div class="info-section">
+
+            <!-- 제품 텍스트 정보 -->
+            <div class="space-y-1">
+                <p class="product-category">COFFEE</p>
+                <h1 class="product-title">카라멜마끼아또</h1>
+                <p class="text-base text-gray-500 font-medium">Caramelmacchiato</p>
+                <p class="product-description">
+                    에스프레소에 거품을 낸 낸 우유를 붓고<br>카라멜시럽을 얹은 달콤한 커피
+                </p>
+            </div>
+
+            <!-- 온도 선택 (ICE 기본 선택 상태) -->
+            <div class="pt-2">
+                <div class="temp-grid">
+                    <button class="temp-btn temp-selected">ICE</button>
+                    <button class="temp-btn temp-hot">HOT</button>
+                </div>
+            </div>
+
+            <!-- 사이즈 선택 (레귤러 기본 선택 상태) -->
+            <div class="option-group">
+                <h2 class="option-title">Size</h2>
+                <div class="size-cup-syrup-grid">
+                    <button class="select-btn selected">레귤러</button>
+                    <button class="select-btn">라지 (+500원)</button>
+                    <button class="select-btn">코끼리 (+1,000원)</button>
+                </div>
+            </div>
+            
+            <!-- 컵 선택 (매장컵 기본 선택 상태) -->
+            <div class="option-group">
+                <h2 class="option-title">Cup</h2>
+                <div class="size-cup-syrup-grid">
+                    <button class="select-btn selected">매장컵</button>
+                    <button class="select-btn">일회용컵</button>
+                    <button class="select-btn">개인컵 (할인)</button>
+                </div>
+            </div>
+
+            <!-- 시럽 옵션 (기본 선택 상태) -->
+            <div class="option-group">
+                <h2 class="option-title">Syrup (시럽 양)</h2>
+                <div class="temp-grid">
+                    <button class="select-btn selected">기본</button>
+                    <button class="select-btn">많이</button>
+                </div>
+            </div>
+
+        </div>
+      </main>
+
+      <!-- 고정 푸터/주문 바 영역 -->
+      <footer class="footer">
+          <div class="footer-content">
+              
+              <!-- 좋아요/장바구니 아이콘 -->
+              <div class="footer-icons">
+                  <button class="icon-btn">
+                      <!-- 좋아요 아이콘 (Heart) -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                  </button>
+                  <button class="icon-btn cart">
+                      <!-- 장바구니 아이콘 (Shopping Bag) -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  </button>
+              </div>
+
+              <!-- 가격 및 주문 버튼 -->
+              <div class="order-bar">
+                  <div class="current-price">
+                      5,100원
+                  </div>
+                  <button class="order-button">
+                      주문하기
+                  </button>
+              </div>
+          </div>
+      </footer>
+        
+    </div>
+
+  </body>
+</html>

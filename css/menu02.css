@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+.product-image-section {
+  height: 16rem;
+  background-color: #fefce8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 5. 텍스트 및 옵션 섹션 */
+.info-section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+.product-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #dc2626;
+  letter-spacing: 0.05em;
+}
+.product-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+  padding-top: 8px;
+  line-height: 1.6;
+}
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.option-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+/* 6. 온도 선택 버튼 */
+.temp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.temp-btn {
+  padding: 1rem 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 0.75rem;
+  transition: all 200ms ease-in-out;
+  border: none;
+}
+.temp-hot {
+  color: #4b5563;
+  background-color: #f3f4f6;
+}
+.temp-selected {
+  background-color: #f97316;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* 7. 일반 선택 버튼 (사이즈, 컵, 시럽) */
+.size-cup-syrup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem; /* gap-3 */
+}
+.select-btn {
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 200ms ease-in-out;
+  background-color: white;
+  color: #1f2937;
+  white-space: nowrap;
+}
+.select-btn.selected {
+  border-color: #f97316;
+  background-color: #fff7ed;
+  color: #ea580c;
+}
+
+/* 8. 고정 푸터/주문 바 */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  /* 배경 시뮬레이션: max-w-md를 벗어나 전체 폭을 차지하도록 설정 */
+  background-color: white;
+  box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
+  height: 64px;
+  /* Safe Area Bottom 적용 */
+  padding-bottom: env(safe-area-inset-bottom, 34px);
+}
+
+.footer-content {
+  max-width: 448px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+/* 좋아요/장바구니 섹션 */
+.footer-icons {
+  display: flex;
+}
+.icon-btn {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: color 200ms ease-in-out;
+}
+
+/* 가격 및 주문 버튼 섹션 */
+.order-bar {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: black;
+  color: white;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+.current-price {
+  padding: 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.order-button {
+  flex-grow: 1;
+  height: 100%;
+  background-color: #ea580c;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 800;
+  transition: background-color 200ms ease-in-out;
+  cursor: default;
+  border: none;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
