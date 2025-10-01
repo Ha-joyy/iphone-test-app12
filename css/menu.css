@@ -35,6 +35,7 @@ body {
   flex-shrink: 0;
   height: 48px;
   display: flex;
+  margin-top: 45px;
   align-items: center;
   background-color: #fff;
   border-bottom: #ddd;
@@ -58,6 +59,7 @@ body {
   cursor: pointer;
   position: relative;
   transition: color 0.2s;
+  border-bottom: 1px solid #ddd;
 }
 
 .tabs-nav button.active {
@@ -68,7 +70,7 @@ body {
 .tabs-nav button.active::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 8px;
   right: 8px;
   height: 2px;
