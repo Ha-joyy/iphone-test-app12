@@ -1,6 +1,5 @@
 .regist_bundle_box {
   width: 100%;
-  padding-bottom: 80px;
 }
 [class^="regist_flex_item"] {
   display: flex;
@@ -363,6 +362,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
 }
 
 .btn_right_box {
+  width: 100%;
   margin-top: 18px;
   text-align: right;
 }
