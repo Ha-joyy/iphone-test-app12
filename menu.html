@@ -2,41 +2,150 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <!-- 아이폰 노치 영역 처리를 위한 뷰포트 메타 태그 -->
+  <!-- 핵심 설정: viewport-fit=cover로 iPhone 노치 및 하단 안전 영역 확보 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
-  <title>edms 회원가입</title>
+  <title>메뉴</title>
   <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" href="css/popup.css">
   <link rel="stylesheet" href="css/reset.css">
-  <!-- Google Fonts에서 Noto Sans KR 폰트 불러오기 -->
+
+  <!-- Noto Sans KR 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="agreement-page">
+<body>
   <div class="container">
-    <!-- 상단 헤더 영역: 닫기 버튼 -->
+    <!-- 상단 헤더 영역 -->
     <header class="header">
-      <!-- 상단 네비게이션 -->
-      <ul class="top-nav">
-        <li class="back-btn">
-          <button type="button"><span class="blind">뒤로가기</span></button>
-        </li>
-      </ul>
+      <div class="top-bar">
+        <div class="left-section">
+            <div class="back-btn">
+                <button type="button"><span class="blind">뒤로가기</span></button>
+            </div>
+            <div class="location-info">starbucks_menu_04</div>
+        </div>
+        <div class="right-section">
+            <h1 class="page-title">아메리카노</h1>
+        </div>
+      </div>
     </header>
 
-    <!-- 메인 컨텐츠 영역 -->
+    <!-- 탭 네비게이션 영역 -->
+    <nav class="tabs-nav">
+      <button type="button" class="active">전체</button>
+      <button type="button">음료</button>
+      <button type="button">푸드</button>
+      <button type="button">상품</button>
+      <!-- 스크롤 테스트용 더미 탭 -->
+      <button type="button">이벤트</button>
+      <button type="button">신제품</button>
+    </nav>
+
+
+    <!-- 메인 컨텐츠 영역 (스크롤이 필요한 메뉴 리스트) -->
     <main class="main-content">
+      <ul class="menu-list">
+        
+        <!-- 메뉴 아이템 1: 카페 아메리카노 -->
+        <li class="menu-item">
+            <!-- 이미지 (원형으로 표시) -->
+            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="카페 아메리카노 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>카페 아메리카노</span>
+                    <span class="best-tag">Best</span>
+                </div>
+                <div class="item-name-en">Caffe Americano</div>
+                <div class="item-price">4,100원</div>
+            </div>
+        </li>
 
-      <!-- 메뉴 목록 -->
+        <!-- 메뉴 아이템 2: 아이스 카페 아메리카노 -->
+        <li class="menu-item">
+            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 카페 아메리카노 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>아이스 카페 아메리카노</span>
+                    <span class="best-tag">Best</span>
+                </div>
+                <div class="item-name-en">Iced Caffe Americano</div>
+                <div class="item-price">4,100원</div>
+            </div>
+        </li>
+
+        <!-- 메뉴 아이템 3: 디카페인 카페 아메리카노 -->
+        <li class="menu-item">
+            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="디카페인 카페 아메리카노 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>디카페인 카페 아메리카노</span>
+                    <span class="best-tag">Best</span>
+                </div>
+                <div class="item-name-en">DECAF Caffe Americano</div>
+                <div class="item-price">4,400원</div>
+            </div>
+        </li>
+
+        <!-- 메뉴 아이템 4: 아이스 디카페인 카페 아메리카노 -->
+        <li class="menu-item">
+            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 디카페인 카페 아메리카노 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>아이스 디카페인 카페 아메리카노</span>
+                </div>
+                <div class="item-name-en">Iced DECAF Caffe Americano</div>
+                <div class="item-price">4,400원</div>
+            </div>
+        </li>
+
+        <!-- 메뉴 아이템 5: 1/2 디카페인 카페 아메리카노 -->
+        <li class="menu-item">
+            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="1/2 디카페인 카페 아메리카노 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>1/2 디카페인 카페 아메리카노</span>
+                </div>
+                <div class="item-name-en">Half DECAF Caffe Americano</div>
+                <div class="item-price">4,400원</div>
+            </div>
+        </li>
+
+        <!-- 메뉴 아이템 6: 아이스 1/2 디카페인 카페 아메리카노 -->
+        <li class="menu-item">
+            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="아이스 1/2 디카페인 카페 아메리카노 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>아이스 1/2 디카페인 카페 아메리카노</span>
+                </div>
+                <div class="item-name-en">Iced Half DECAF Caffe Americano</div>
+                <div class="item-price">4,400원</div>
+            </div>
+        </li>
+
+        <!-- 추가 스크롤 테스트용 아이템 -->
+        <li class="menu-item">
+            <img src="https://placehold.co/80x80/e7e5e4/333?text=Hot" alt="메뉴 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>콜드 브루</span>
+                </div>
+                <div class="item-name-en">Cold Brew</div>
+                <div class="item-price">4,700원</div>
+            </div>
+        </li>
+        <li class="menu-item">
+            <img src="https://placehold.co/80x80/a5f3fc/333?text=Iced" alt="메뉴 이미지" class="item-image">
+            <div class="item-details">
+                <div class="item-name">
+                    <span>아이스 콜드 브루</span>
+                    <span class="best-tag">New</span>
+                </div>
+                <div class="item-name-en">Iced Cold Brew</div>
+                <div class="item-price">4,700원</div>
+            </div>
+        </li>
+      </ul>
     </main>
-
-    <!-- 하단 '다음' 버튼 영역 -->
-    <footer class="footer">
-      <button class="next-button" id="next-button" disabled>
-          다음
-      </button>
-    </footer>
   </div>
 </body>
 </html>

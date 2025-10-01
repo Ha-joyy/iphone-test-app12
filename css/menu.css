@@ -1,1 +1,238 @@
 @charset "utf-8";
+
+/* ------------------------------------------------ */
+/* 2. 전체 레이아웃 (Flexbox를 통한 Header/Tabs/Main 분리) */
+/* ------------------------------------------------ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+/* ------------------------------------------------ */
+/* 3. Header 영역 */
+/* ------------------------------------------------ */
+.header {
+  flex-shrink: 0;
+  background-color: var(--color-bg);
+  padding-top: var(--safe-area-top);
+  box-sizing: border-box;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 var(--horizontal-padding);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.location-info {
+  font-size: 0.9rem;
+  color: var(--color-sub-text);
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.page-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------ */
+/* 4. Tabs 영역 */
+/* ------------------------------------------------ */
+.tabs-nav {
+  flex-shrink: 0;
+  height: var(--tabs-height);
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--horizontal-padding);
+  overflow-x: auto; /* 탭이 많아지면 스크롤 가능하도록 */
+
+  /* [핵심] 탭 네비게이션 스크롤바 숨김 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-nav button {
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  color: var(--color-sub-text);
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 0 8px;
+  height: var(--tabs-height);
+  line-height: var(--tabs-height);
+  cursor: pointer;
+  position: relative;
+  margin-right: 20px;
+  transition: color 0.2s;
+}
+
+.tabs-nav button.active {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.tabs-nav button.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 1px;
+}
+
+/* ------------------------------------------------ */
+/* 5. Main Content 영역 (스크롤 영역) */
+/* ------------------------------------------------ */
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 0;
+  box-sizing: border-box;
+
+  /* 하단 Safe Area 만큼 여백 예약 */
+  padding-bottom: calc(var(--safe-area-bottom) + 20px);
+
+  /* [핵심] 스크롤바 숨김 설정 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* [핵심] 리스트 아이템 스타일 (상하 24px, 좌우 32px 패딩 유지) */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  border-bottom: 1px solid var(--color-border);
+  gap: 20px;
+  cursor: pointer;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #e0e0e0;
+}
+@media (prefers-color-scheme: dark) {
+  .item-image {
+    border-color: #444;
+  }
+}
+
+.item-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.item-name-en {
+  font-size: 0.9rem;
+  color: var(--color-sub-text);
+  margin-bottom: 8px;
+}
+.item-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.best-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  background-color: transparent;
+  border: 1px solid var(--color-accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+/* ------------------------------------------------ */
+/* 6. 유틸리티 (블라인드, 백 버튼 등) */
+/* ------------------------------------------------ */
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.back-btn button {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  /* SVG 아이콘은 폰트 색상에 맞춰 동적으로 변경되도록 조정 */
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23333" d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12z"/></svg>')
+    no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+@media (prefers-color-scheme: dark) {
+  .back-btn button {
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23e0e0e0" d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12z"/></svg>')
+      no-repeat center;
+  }
+}
