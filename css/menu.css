@@ -31,6 +31,9 @@ body {
 /* Tabs 영역 */
 /* ------------------------------------------------ */
 .tabs-nav {
+  position: sticky;
+  top: 65px;
+  z-index: 9;
   display: flex;
   flex-shrink: 0;
   height: 48px;
