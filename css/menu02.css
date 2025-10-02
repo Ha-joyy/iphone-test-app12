@@ -107,20 +107,21 @@
   left: 0;
   right: 0;
   z-index: 30;
-  /* 배경 시뮬레이션: max-w-md를 벗어나 전체 폭을 차지하도록 설정 */
   background-color: white;
   box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
-  height: 64px;
-  /* Safe Area Bottom 적용 */
-  padding-bottom: env(safe-area-inset-bottom, 34px);
+  height: auto;
+  padding: 12px 0 env(safe-area-inset-bottom, 34px);
 }
 
 .footer-content {
   max-width: 448px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  height: 64px;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0 20px;
+  height: auto;
 }
 
 /* 5-1. 상단 줄: 수량 및 단가 */
