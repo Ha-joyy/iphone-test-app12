@@ -21,7 +21,7 @@
           <button type="button" class="btn_header_prev">
             <em class="blind">이전</em>
           </button>
-          <h1 class="header_tit">메뉴</h1>
+          <h1 class="header_tit">커피</h1>
           <div class="header_util">
             <button type="button" class="btn_header_gnb">
               <em class="blind">전체메뉴</em>
@@ -56,9 +56,8 @@
             <div class="option-group">
                 <h2 class="option-title">Size</h2>
                 <div class="size-cup-syrup-grid">
-                    <button class="select-btn selected">레귤러</button>
-                    <button class="select-btn">라지 (+500원)</button>
-                    <button class="select-btn">코끼리 (+1,000원)</button>
+                  <button class="select-btn selected">레귤러</button>
+                  <button class="select-btn">라지</button>
                 </div>
             </div>
             
@@ -66,9 +65,18 @@
             <div class="option-group">
                 <h2 class="option-title">Cup</h2>
                 <div class="size-cup-syrup-grid">
-                    <button class="select-btn selected">매장컵</button>
-                    <button class="select-btn">일회용컵</button>
-                    <button class="select-btn">개인컵 (할인)</button>
+                  <button class="select-btn selected">매장컵</button>
+                  <button class="select-btn">일회용컵</button>
+                  <button class="select-btn">개인컵 (할인)</button>
+                </div>
+            </div>
+
+            <!-- 시럽 옵션 (기본 선택 상태) -->
+            <div class="option-group">
+                <h2 class="option-title">샷추가</h2>
+                <div class="temp-grid">
+                  <button class="select-btn selected">1샷</button>
+                  <button class="select-btn">2샷</button>
                 </div>
             </div>
 
@@ -76,8 +84,8 @@
             <div class="option-group">
                 <h2 class="option-title">Syrup (시럽 양)</h2>
                 <div class="temp-grid">
-                    <button class="select-btn selected">기본</button>
-                    <button class="select-btn">많이</button>
+                  <button class="select-btn selected">기본</button>
+                  <button class="select-btn">많이</button>
                 </div>
             </div>
 
@@ -87,23 +95,34 @@
       <!-- 고정 푸터/주문 바 영역 -->
       <footer class="footer">
           <div class="footer-content">
-              
-              <!-- 좋아요/장바구니 아이콘 -->
-              <div class="footer-icons">
-                  <button class="icon-btn cart">
-                      <!-- 장바구니 아이콘 (Shopping Bag) -->
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                  </button>
-              </div>
-
-              <!-- 가격 및 주문 버튼 -->
-              <div class="order-bar">
-                  <div class="current-price">
-                      5,100원
+              <!-- 상단 줄: 수량 조절 및 단가 -->
+              <div class="quantity-row">
+                <div class="quantity-control">
+                  <div class="number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                    <input class="quantity" min="0" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                   </div>
+                </div>
+                <div class="item-price">
+                    4,400원
+                </div>
+              </div>
+              <div class="action-row">
+                <!-- 장바구니 아이콘 -->
+                <div class="footer-icons">
+                    <button class="icon-btn cart">
+                        <!-- 장바구니 아이콘 (Shopping Bag) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    </button>
+                </div>
+
+                <!-- 가격 및 주문 버튼 -->
+                <div class="order-bar">
                   <button class="order-button">
                       주문하기
                   </button>
+                </div>
               </div>
           </div>
       </footer>
