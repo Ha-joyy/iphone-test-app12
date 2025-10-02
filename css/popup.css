@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* --- 바텀 시트(Bottom Sheet) 스타일 시작 --- */
-#bottomSheetOverlay {
+.bottomSheetOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
   transition: opacity 0.3s ease, visibility 0s 0.3s;
 }
 
-#bottomSheet {
+.bottomSheet {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -36,14 +36,14 @@
 }
 
 /* 활성화 상태: 오버레이 투명도 변경 및 시트 슬라이드 업 */
-#bottomSheetOverlay.active {
+.bottomSheetOverlay.active {
   opacity: 1;
   visibility: visible;
   /* 팝업 열릴 때: visibility 지연 없이 바로 적용 */
   transition: opacity 0.3s ease, visibility 0s 0s;
 }
 
-#bottomSheetOverlay.active #bottomSheet {
+.bottomSheetOverlay.active .bottomSheet {
   transform: translateY(0);
 }
 
@@ -107,7 +107,7 @@
 /* ---  FULL RIGHT POP-UP 스타일 --- */
 
 /* OVERLAY (Background) */
-#fullPopupOverlay {
+.fullPopupOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -124,7 +124,7 @@
 }
 
 /* FULL POPUP CONTAINER */
-#fullPopup {
+.fullPopup {
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -145,20 +145,20 @@
 }
 
 /* ACTIVATION */
-#fullPopupOverlay.active {
+.fullPopupOverlay.active {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0s 0s;
 }
 
-#fullPopupOverlay.active #fullPopup {
+.fullPopupOverlay.active .fullPopup {
   transform: translateX(0);
 }
 
 /* LAYER BOX (FLEX CONTAINER FOR HEADER/CONTENT) */
 
 /* HEADER - 상단 노치/안전 영역에 대응하도록 패딩 추가 */
-#fullPopup .layer_header {
+.fullPopup .layer_header {
   padding: calc(1rem + var(--safe-area-top)) 1.5rem 1rem;
   display: flex;
   justify-content: center;
@@ -168,7 +168,7 @@
   flex-shrink: 0;
 }
 
-#fullPopup .layer_title {
+.fullPopup .layer_title {
   font-size: 1.125rem;
   font-weight: bold;
   text-align: center;
@@ -177,7 +177,7 @@
 }
 
 /* SCROLLABLE CONTAINER */
-#fullPopup .layer_container {
+.fullPopup .layer_container {
   padding: 0 1.5rem;
   overflow-y: auto;
   flex-grow: 1;
@@ -185,12 +185,12 @@
   /* 하단 버튼 영역과 안전 영역을 고려한 패딩 */
   padding-bottom: calc(4.5rem + 34px);
 }
-#fullPopup .layer_contents {
+.fullPopup .layer_contents {
   padding: 1rem 0;
 }
 
 /* 하단 고정 동의 버튼 */
-#fullPopup .btn_layer_wrap {
+.fullPopup .btn_layer_wrap {
   width: 100%;
   padding: 1rem 1.5rem calc(1rem + 34px);
   background: #fff;
@@ -198,7 +198,7 @@
   box-sizing: border-box;
   flex-shrink: 0;
 }
-#fullPopup .btn_layer_wrap .btn_primary {
+.fullPopup .btn_layer_wrap .btn_primary {
   width: 100%;
   cursor: pointer;
 }

@@ -3,6 +3,11 @@
 /*****************************
 	Base(reset) style
 *****************************/
+* {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 html {
   font-size: 14px;
 }
