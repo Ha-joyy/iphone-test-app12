@@ -160,10 +160,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .number-input button {
-  outline: none;
   -webkit-appearance: none;
   background-color: transparent;
-  border: none;
   align-items: center;
   justify-content: center;
   width: 3rem;
@@ -171,6 +169,8 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: pointer;
   margin: 0;
   position: relative;
+  border: 1px solid #c9c9c9;
+  border-radius: 50%;
 }
 
 .number-input button:before,
@@ -189,7 +189,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .number-input input[type="number"] {
   font-family: sans-serif;
-  max-width: 5rem;
+  max-width: 4rem;
   padding: 0.5rem;
   font-size: 1.2rem;
   height: 3rem;

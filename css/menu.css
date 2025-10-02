@@ -106,18 +106,21 @@ body {
   margin: 0;
 }
 
+.menu-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
 .menu-item a {
   display: flex;
   align-items: center;
   width: 100%;
   padding: 1rem 24px;
-  border-bottom: 1px solid #ddd;
   gap: 20px;
   cursor: pointer;
-}
-
-.menu-item a:last-child {
-  border-bottom: none;
 }
 
 .item-image {
