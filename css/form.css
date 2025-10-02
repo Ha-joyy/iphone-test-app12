@@ -289,6 +289,10 @@ input:not([type="checkbox"]):not([type="radio"]) {
   margin: 1.4rem 0 0;
 }
 
+.regist_bundle_row [class^="regist_bundle_case"]:first-child {
+  margin-top: 0;
+}
+
 /* button */
 [class^="btn_conts_box"] {
   margin: 8px 0 0;
