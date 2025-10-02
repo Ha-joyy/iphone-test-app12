@@ -123,6 +123,22 @@
   height: 64px;
 }
 
+/* 5-1. 상단 줄: 수량 및 단가 */
+.quantity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  gap: 16px;
+}
+
 /* 갯수 카운트/가격 */
 input[type="number"] {
   -webkit-appearance: textfield;
@@ -185,9 +201,24 @@ input[type="number"]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-/* 장바구니 섹션 */
+.item-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* 5-2. 하단 줄: 장바구니/가격/주문 버튼 */
+.action-row {
+  display: flex;
+  width: 100%;
+}
+
 .footer-icons {
   display: flex;
+  border: 1px solid #d1d5db;
+  border-right: none;
+  border-radius: 0.75rem 0 0 0.75rem;
+  overflow: hidden;
 }
 .icon-btn {
   width: 64px;
@@ -196,26 +227,24 @@ input[type="number"]::-webkit-outer-spin-button {
   align-items: center;
   justify-content: center;
   color: #6b7280;
-  transition: color 200ms ease-in-out;
+  cursor: default;
+  padding: 0;
+  background-color: white;
+  border: none;
 }
 
-/* 주문버튼 섹션 */
+/* .order-bar CSS 수정: 가격 영역 제거로 배경색 제거 및 정렬 조정 */
 .order-bar {
   flex-grow: 1;
   display: flex;
-  align-items: center;
-  height: 100%;
-  background-color: black;
+  align-items: stretch; /* 버튼이 컨테이너 높이를 채우도록 stretch로 변경 */
+  height: 64px;
+  background-color: transparent; /* 검은색 배경 제거 */
   color: white;
   border-top-right-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
 }
-.current-price {
-  padding: 0 1rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
+
 .order-button {
   flex-grow: 1;
   height: 100%;
@@ -223,7 +252,7 @@ input[type="number"]::-webkit-outer-spin-button {
   color: white;
   font-size: 1.125rem;
   font-weight: 800;
-  transition: background-color 200ms ease-in-out;
   cursor: default;
   border: none;
+  border-radius: 0 0.75rem 0.75rem 0;
 }
