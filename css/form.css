@@ -623,6 +623,8 @@ group + group {
 .inline-radio {
   display: flex;
   gap: 1rem;
+  background-color: #ddd;
+  border-radius: 3rem;
 }
 .inline-radio div {
   flex: 1;

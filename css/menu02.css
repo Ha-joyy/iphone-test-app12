@@ -255,6 +255,11 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: default;
 }
 
+.option-group .inline-radio {
+  background-color: transparent;
+  border-radius: 0;
+}
+
 .option-group .inline-radio input {
   height: 48px;
 }
