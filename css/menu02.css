@@ -254,3 +254,16 @@ input[type="number"]::-webkit-outer-spin-button {
   font-weight: 800;
   cursor: default;
 }
+
+.option-group .inline-radio label {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3rem;
+}
+
+.option-group .inline-radio input:checked + label {
+  background: #e6f3ff;
+  font-weight: 500;
+  color: #0a3b99;
+  border: 1px solid #0a3b99;
+}
