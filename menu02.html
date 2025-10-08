@@ -52,6 +52,13 @@
                     <button class="temp-btn temp-hot">HOT</button>
                 </div>
             </div>
+            <group class="inline-radio">
+              <div><input type="radio" name="title"><label>Mr</label></div>
+              <div><input type="radio" name="title" checked><label>Miss</label></div>
+              <div><input type="radio" name="title"><label>Mrs</label></div>
+              <div><input type="radio" name="title"><label>Ms</label></div>
+              <div><input type="radio" name="title"><label>Dr</label></div>
+            </group>
 
             <!-- 사이즈 선택 (레귤러 기본 선택 상태) -->
             <div class="option-group">
@@ -67,24 +74,21 @@
                 <h2 class="option-title">Cup</h2>
                 <div class="size-cup-syrup-grid">
                   <div class="chip_case">
-                    <div class="chip_row">
+                    <div class="chip_col">
                       <label class="choice_label">
-                        <span>네</span>
+                        <span>일회용컵</span>
                         <input type="radio" name="radio_group" checked="">
                         <span class="radio_circle"></span>
                       </label>
                     </div>
-                    <div class="chip_row">
+                    <div class="chip_col">
                       <label class="choice_label">
-                        <span>네</span>
+                        <span>개인컵</span>
                         <input type="radio" name="radio_group" checked="">
                         <span class="radio_circle"></span>
                       </label>
                     </div>
                   </div>
-                  <button class="select-btn selected">매장컵</button>
-                  <button class="select-btn">일회용컵</button>
-                  <button class="select-btn">개인컵 (할인)</button>
                 </div>
             </div>
 

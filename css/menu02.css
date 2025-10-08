@@ -101,8 +101,7 @@
 }
 .select-btn.selected {
   border-color: #015bab;
-  background-color: #f1edff;
-  color: #0c28ea;
+  color: #333;
 }
 
 /* 8. 고정 푸터/주문 바 */
@@ -196,9 +195,11 @@ input[type="number"]::-webkit-outer-spin-button {
 .number-input input[type="number"] {
   font-family: sans-serif;
   max-width: 4rem;
+  margin-top: 0;
   padding: 0.5rem;
-  font-size: 1.2rem;
   height: 3rem;
+  border: none;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
 }
