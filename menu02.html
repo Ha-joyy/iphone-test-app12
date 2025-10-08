@@ -46,68 +46,45 @@
             </div>
 
             <!-- 온도 선택 (ICE 기본 선택 상태) -->
-            <div class="pt-2">
-                <div class="temp-grid">
-                    <button class="temp-btn temp-selected">ICE</button>
-                    <button class="temp-btn temp-hot">HOT</button>
-                </div>
-            </div>
             <group class="inline-radio">
-              <div><input type="radio" name="title"><label>Mr</label></div>
-              <div><input type="radio" name="title" checked><label>Miss</label></div>
-              <div><input type="radio" name="title"><label>Mrs</label></div>
-              <div><input type="radio" name="title"><label>Ms</label></div>
-              <div><input type="radio" name="title"><label>Dr</label></div>
+              <div><input type="radio" name="name01"><label>ICE</label></div>
+              <div><input type="radio" name="name01" checked><label>HOT</label></div>
             </group>
 
             <!-- 사이즈 선택 (레귤러 기본 선택 상태) -->
             <div class="option-group">
-                <h2 class="option-title">Size</h2>
-                <div class="size-cup-syrup-grid">
-                  <button class="select-btn selected">레귤러</button>
-                  <button class="select-btn">라지</button>
-                </div>
+                <h2 class="option-title">사이즈</h2>
+                <group class="inline-radio">
+                  <div><input type="radio" name="name02"><label>레귤러</label></div>
+                  <div><input type="radio" name="name02" checked><label>라지</label></div>
+                </group>
             </div>
             
             <!-- 컵 선택 (매장컵 기본 선택 상태) -->
             <div class="option-group">
-                <h2 class="option-title">Cup</h2>
-                <div class="size-cup-syrup-grid">
-                  <div class="chip_case">
-                    <div class="chip_col">
-                      <label class="choice_label">
-                        <span>일회용컵</span>
-                        <input type="radio" name="radio_group" checked="">
-                        <span class="radio_circle"></span>
-                      </label>
-                    </div>
-                    <div class="chip_col">
-                      <label class="choice_label">
-                        <span>개인컵</span>
-                        <input type="radio" name="radio_group" checked="">
-                        <span class="radio_circle"></span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
+                <h2 class="option-title">컵</h2>
+                <group class="inline-radio">
+                  <div><input type="radio" name="name03"><label>일회용컵</label></div>
+                  <div><input type="radio" name="name03" checked><label>텀블러</label></div>
+                </group>
             </div>
 
             <!-- 시럽 옵션 (기본 선택 상태) -->
             <div class="option-group">
                 <h2 class="option-title">샷추가</h2>
-                <div class="temp-grid">
-                  <button class="select-btn selected">1샷</button>
-                  <button class="select-btn">2샷</button>
-                </div>
+                <group class="inline-radio">
+                  <div><input type="radio" name="name04"><label>1샷</label></div>
+                  <div><input type="radio" name="name04" checked><label>2샷</label></div>
+                </group>
             </div>
 
             <!-- 시럽 옵션 (기본 선택 상태) -->
             <div class="option-group">
-                <h2 class="option-title">Syrup (시럽 양)</h2>
-                <div class="temp-grid">
-                  <button class="select-btn selected">기본</button>
-                  <button class="select-btn">많이</button>
-                </div>
+                <h2 class="option-title">시럽</h2>
+                <group class="inline-radio">
+                  <div><input type="radio" name="name04"><label>기본</label></div>
+                  <div><input type="radio" name="name04" checked><label>많이</label></div>
+                </group>
             </div>
 
         </div>
