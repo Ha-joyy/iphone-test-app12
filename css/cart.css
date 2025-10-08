@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* 모바일 컨테이너 */
+.app-container {
+  max-width: 448px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  min-height: 100vh;
+  padding-bottom: 110px; /* 푸터 높이 + safe area */
+}
+
+/* 메뉴 목록 구분선 */
+.menu-divider {
+  height: 8px;
+  background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+/* 수량 조절 버튼 스타일 */
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #4b5563;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  cursor: default;
+  padding: 0;
+}
+.qty-input {
+  width: 40px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  border: none;
+  outline: none;
+  -moz-appearance: textfield;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* select 박스의 기본 화살표를 숨기고 커스텀 화살표를 사용하기 위한 스타일 */
+.custom-select select {
+  /* 브라우저 기본 드롭다운 화살표 숨기기 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 고정 하단 푸터 */
+.footer-cart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background-color: white;
+  box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
+  padding: 16px 0 env(safe-area-inset-bottom, 34px);
+}
+.footer-content-cart {
+  max-width: 448px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
