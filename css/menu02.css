@@ -267,7 +267,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .option-group .inline-radio label {
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 3rem;
   font-size: 0.9rem;
 }
 
