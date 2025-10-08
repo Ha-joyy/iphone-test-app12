@@ -267,10 +267,11 @@ input[type="number"]::-webkit-outer-spin-button {
 .option-group .inline-radio label {
   background-color: #efefef;
   font-size: 0.9rem;
+  color: #a3a3a3;
 }
 
 .option-group .inline-radio input:checked + label {
-  background: #e6f3ff;
+  background: #635aef;
   font-weight: 500;
-  color: #635aef;
+  color: #fff;
 }
