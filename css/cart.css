@@ -7,10 +7,10 @@
 .menu-item-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* gap-4 */
+  gap: 16px;
   padding-top: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #f3f4f6; /* border-gray-100 */
+  border-bottom: 1px solid #f3f4f6; /* 메뉴 간 구분선 */
 }
 .menu-item-wrapper:last-child {
   border-bottom: none;
@@ -30,8 +30,8 @@
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 12px; /* rounded-xl */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 .delete-btn {
   position: absolute;
@@ -39,15 +39,12 @@
   right: -8px;
   background-color: white;
   border-radius: 50%;
-  padding: 4px; /* p-1 */
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* shadow-lg */
-  border: 1px solid #e5e7eb; /* border-gray-200 */
-  color: #6b7280; /* text-gray-500 */
+  padding: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
   cursor: pointer;
   transition: color 0.15s;
-}
-.delete-btn:hover {
-  color: #ef4444; /* hover:text-red-500 */
 }
 
 /* 메뉴 텍스트 정보 */
@@ -55,13 +52,13 @@
   flex-grow: 1;
 }
 .menu-title {
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 700; /* font-bold */
+  font-size: 1.125rem;
+  font-weight: 700;
   color: #1f2937;
 }
 .menu-options {
-  font-size: 0.875rem; /* text-sm */
-  color: #6b7280; /* text-gray-500 */
+  font-size: 0.875rem;
+  color: #6b7280;
   margin-top: 4px;
 }
 
@@ -80,7 +77,7 @@
 .qty-btn {
   width: 32px;
   height: 32px;
-  border-radius: 9999px; /* rounded-full */
+  border-radius: 9999px;
   border: 1px solid #d1d5db;
   background-color: white;
   color: #4b5563;
@@ -89,7 +86,7 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: 300;
-  cursor: default;
+  cursor: pointer; /* 버튼이므로 커서 변경 */
   padding: 0;
   line-height: 1;
 }
@@ -108,25 +105,25 @@
   background-color: transparent;
 }
 .menu-price {
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 800; /* font-extrabold */
-  color: #ea580c; /* text-orange-600 */
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #ea580c;
 }
 
-/* 5. 쿠폰 선택 스타일 */
+/* 4. 쿠폰 선택 스타일 */
 .custom-select {
   position: relative;
-  margin-top: 8px; /* mt-2 */
+  margin-top: 8px;
   width: 100%;
 }
 .custom-select select {
   width: 100%;
-  padding: 12px; /* p-3 */
-  border: 1px solid #d1d5db; /* border-gray-300 */
-  border-radius: 8px; /* rounded-lg */
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
   background-color: white;
-  color: #4b5563; /* text-gray-700 */
-  font-size: 0.875rem; /* text-sm */
+  color: #4b5563;
+  font-size: 0.875rem;
   outline: none;
   /* 기본 화살표 숨기기 */
   -webkit-appearance: none;
@@ -136,7 +133,7 @@
   cursor: pointer;
 }
 .custom-select select:focus {
-  border-color: #f97316; /* focus:border-orange-500 */
+  border-color: #f97316;
   box-shadow: 0 0 0 1px #f97316;
 }
 .select-arrow {
@@ -147,18 +144,19 @@
   right: 12px;
   display: flex;
   align-items: center;
-  color: #6b7280; /* text-gray-500 */
+  color: #6b7280;
 }
 
-/* 6. 금액 상세 정보 스타일 */
+/* 5. 금액 상세 정보 스타일 */
 .total-details {
   padding-top: 16px;
   padding-bottom: 8px;
-  border-top: 8px solid #f3f4f6; /* menu-divider 대체 */
+  margin-top: 8px; /* 메뉴 구분선 역할 */
+  border-top: 8px solid #f3f4f6;
 }
 .details-title {
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 700; /* font-bold */
+  font-size: 1.125rem;
+  font-weight: 700;
   color: #1f2937;
   padding-bottom: 8px;
   border-bottom: 1px solid #e5e7eb;
@@ -167,18 +165,18 @@
 .detail-row {
   display: flex;
   justify-content: space-between;
-  color: #4b5563; /* text-gray-700 */
+  color: #4b5563;
   margin-bottom: 8px;
 }
 .detail-value {
-  font-weight: 500; /* font-medium */
+  font-weight: 500;
 }
 .discount-value {
   font-weight: 500;
-  color: #ef4444; /* text-red-500 */
+  color: #ef4444;
 }
 
-/* 7. 고정 하단 푸터 스타일 */
+/* 6. 고정 하단 푸터 스타일 (제공된 템플릿 기반) */
 .footer {
   position: fixed;
   bottom: 0;
@@ -207,30 +205,41 @@
   align-items: center;
 }
 .final-price-text {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.125rem;
   font-weight: 700;
   color: #1f2937;
 }
 .final-price-value {
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.5rem;
   font-weight: 800;
-  color: #ea580c; /* text-orange-600 */
+  color: #ea580c;
 }
 
-/* 주문 버튼 */
-.order-btn {
+/* 주문 버튼 (제공된 템플릿에는 없는 구조이므로, 장바구니에 맞게 새롭게 정의) */
+.order-button {
   width: 100%;
-  padding: 16px; /* py-4 */
-  background-color: #ea580c; /* bg-orange-600 */
+  padding: 16px;
+  background-color: #ea580c;
   color: white;
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
   font-weight: 800;
-  border-radius: 12px; /* rounded-xl */
-  box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.4); /* Custom shadow based on orange-600 */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.4);
   border: none;
   cursor: pointer;
   transition: background-color 0.15s;
 }
-.order-btn:hover {
-  background-color: #c0420d; /* hover:bg-orange-700 */
+.order-button:hover {
+  background-color: #c0420d;
+}
+
+/* 템플릿의 .quantity-row와 .action-row는 장바구니에 불필요하므로 숨김 처리하거나 제거. 여기서는 장바구니에 맞는 최종 주문 정보만 남겼습니다. */
+.quantity-row,
+.action-row,
+.footer-icons,
+.order-bar {
+  display: none;
+}
+.footer-content > div:not(.final-price-row):not(.action-row-override) {
+  display: none; /* 최종 금액과 버튼만 보이도록 나머지 템플릿 요소 숨김 */
 }
