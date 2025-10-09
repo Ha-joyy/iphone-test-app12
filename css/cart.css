@@ -55,6 +55,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 24px 0;
+  position: relative;
   border-bottom: 1px solid #f3f4f6; /* 메뉴 간 구분선 */
 }
 .menu-item-wrapper:last-child {
