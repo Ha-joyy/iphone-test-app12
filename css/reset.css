@@ -586,3 +586,11 @@ body {
   height: 12px;
   background: url(../img/ico_on.png) no-repeat center / 12px auto;
 }
+
+.item-name-en {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8rem;
+}

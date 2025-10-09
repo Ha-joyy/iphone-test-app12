@@ -188,9 +188,13 @@ input[type="number"]::-webkit-outer-spin-button {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
+.number-input button:disabled {
+  border-color: #e7e7e7;
+}
+
 .number-input button:disabled:before,
 .number-input button:disabled:after {
-  background-color: #cbcbcb;
+  background-color: #e7e7e7;
 }
 
 .number-input input[type="number"] {
