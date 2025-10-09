@@ -63,51 +63,71 @@
 }
 
 /* 수량 및 가격 */
-.qty-price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 12px;
-}
-.qty-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.qty-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 9999px;
-  border: 1px solid #d1d5db;
-  background-color: white;
-  color: #4b5563;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: 300;
-  cursor: pointer; /* 버튼이므로 커서 변경 */
-  padding: 0;
-  line-height: 1;
-}
-.qty-input {
-  width: 40px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1f2937;
-  border: none;
-  outline: none;
+input[type="number"] {
+  -webkit-appearance: textfield;
   -moz-appearance: textfield;
-  appearance: none;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
+  appearance: textfield;
 }
-.menu-price {
-  font-size: 1.125rem;
-  font-weight: 800;
-  color: #ea580c;
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  display: inline-flex;
+  align-items: center;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  border: 1px solid #c9c9c9;
+  border-radius: 50%;
+}
+
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 0.7rem;
+  height: 2px;
+  background-color: #848383;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type="number"] {
+  font-family: sans-serif;
+  max-width: 4rem;
+  margin-top: 0;
+  padding: 0.5rem;
+  height: 3rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.item-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
 }
 
 /* 4. 쿠폰 선택 스타일 */
