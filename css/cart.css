@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+.main-content {
+  padding-bottom: 130px;
+}
+
 .order-info-section {
   padding: 24px;
   margin: 0 -24px;
@@ -101,8 +105,22 @@
 }
 .menu-options {
   margin-top: 4px;
+}
+
+.menu-options span {
+  margin-right: 8px;
+  padding-right: 8px;
   font-size: 0.875rem;
   color: #6b7280;
+}
+
+.menu-options span::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background-color: #ddd;
+  vertical-align: middle;
 }
 
 /* 수량 및 가격 */
