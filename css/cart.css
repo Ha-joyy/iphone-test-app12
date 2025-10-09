@@ -1,11 +1,10 @@
 @charset "utf-8";
 
 .order-info-section {
-  padding: 16px;
-  margin: -16px; /* main-content의 padding을 상쇄하여 전체 너비 사용 */
-  background-color: white;
+  padding: 24px;
+  margin: 0 -24px;
+  background-color: #fff;
   border-bottom: 8px solid #f3f4f6; /* 구분선 */
-  margin-bottom: 16px;
 }
 
 .info-row {
@@ -51,8 +50,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 24px 0;
   border-bottom: 1px solid #f3f4f6; /* 메뉴 간 구분선 */
 }
 .menu-item-wrapper:last-child {
@@ -80,10 +78,12 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: white;
-  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   padding: 4px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 50%;
   border: 1px solid #e5e7eb;
   color: #6b7280;
   cursor: pointer;
@@ -100,9 +100,9 @@
   color: #1f2937;
 }
 .menu-options {
+  margin-top: 4px;
   font-size: 0.875rem;
   color: #6b7280;
-  margin-top: 4px;
 }
 
 /* 수량 및 가격 */
@@ -161,7 +161,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .number-input input[type="number"] {
-  font-family: sans-serif;
   max-width: 4rem;
   margin-top: 0;
   padding: 0.5rem;
@@ -186,10 +185,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .custom-select select {
   width: 100%;
-  padding: 12px;
+  padding: 12px 40px 12px 12px;
+  background-color: #fff;
   border: 1px solid #d1d5db;
   border-radius: 8px;
-  background-color: white;
   color: #4b5563;
   font-size: 0.875rem;
   outline: none;
@@ -197,7 +196,6 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding-right: 40px;
   cursor: pointer;
 }
 .custom-select select:focus {
@@ -207,24 +205,23 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* 5. 금액 상세 정보 스타일 */
 .total-details {
-  padding-top: 16px;
-  padding-bottom: 8px;
-  margin-top: 8px; /* 메뉴 구분선 역할 */
+  margin: 8px -24px 0;
+  padding: 16px 24px 8px;
   border-top: 8px solid #f3f4f6;
 }
 .details-title {
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
   font-size: 1.125rem;
   font-weight: 700;
   color: #1f2937;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 12px;
 }
 .detail-row {
   display: flex;
   justify-content: space-between;
-  color: #4b5563;
   margin-bottom: 8px;
+  color: #4b5563;
 }
 .detail-value {
   font-weight: 500;
@@ -241,17 +238,17 @@ input[type="number"]::-webkit-outer-spin-button {
   left: 0;
   right: 0;
   z-index: 30;
-  background-color: white;
-  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 16px 0;
   /* 모바일 Safe Area 대응 */
   padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  background-color: #fff;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 .footer-content {
+  display: flex;
   max-width: 448px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
   flex-direction: column;
   gap: 16px;
 }
@@ -278,14 +275,14 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100%;
   padding: 16px;
   background-color: #ea580c;
-  color: white;
-  font-size: 1.125rem;
-  font-weight: 800;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.4);
   border: none;
   cursor: pointer;
   transition: background-color 0.15s;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #fff;
 }
 .order-button:hover {
   background-color: #c0420d;
