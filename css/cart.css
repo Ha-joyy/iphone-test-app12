@@ -179,7 +179,7 @@
 }
 
 /* 7. 고정 하단 푸터 스타일 */
-.footer-cart {
+.footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -191,7 +191,7 @@
   /* 모바일 Safe Area 대응 */
   padding-bottom: calc(16px + env(safe-area-inset-bottom));
 }
-.footer-content-cart {
+.footer-content {
   max-width: 448px;
   margin: 0 auto;
   padding: 0 20px;
