@@ -109,7 +109,6 @@
 
 .menu-options span {
   margin-right: 8px;
-  padding-right: 8px;
   font-size: 0.875rem;
   color: #6b7280;
 }
@@ -118,9 +117,14 @@
   content: "";
   display: inline-block;
   width: 1px;
-  height: 18px;
+  height: 12px;
+  margin-left: 8px;
   background-color: #ddd;
   vertical-align: middle;
+}
+
+.menu-options span:last-child::after {
+  display: none;
 }
 
 /* 수량 및 가격 */
@@ -128,6 +132,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 input[type="number"] {
   -webkit-appearance: textfield;
