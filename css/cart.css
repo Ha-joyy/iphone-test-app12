@@ -256,7 +256,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .discount-value {
   font-weight: 500;
-  color: #ff9800;
+  color: #ef4444;
 }
 
 /* 6. 고정 하단 푸터 스타일 (제공된 템플릿 기반) */
@@ -295,7 +295,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .final-price-value {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #ff9800;
+  color: #ef4444;
 }
 
 /* 주문 버튼 (제공된 템플릿에는 없는 구조이므로, 장바구니에 맞게 새롭게 정의) */
