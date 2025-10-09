@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-.main-content {
-  padding: 16px;
-}
-
 .menu-item-wrapper {
   display: flex;
   flex-direction: column;
@@ -156,16 +152,6 @@ input[type="number"]::-webkit-outer-spin-button {
   border-color: #f97316;
   box-shadow: 0 0 0 1px #f97316;
 }
-.select-arrow {
-  pointer-events: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 12px;
-  display: flex;
-  align-items: center;
-  color: #6b7280;
-}
 
 /* 5. 금액 상세 정보 스타일 */
 .total-details {
@@ -251,15 +237,4 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .order-button:hover {
   background-color: #c0420d;
-}
-
-/* 템플릿의 .quantity-row와 .action-row는 장바구니에 불필요하므로 숨김 처리하거나 제거. 여기서는 장바구니에 맞는 최종 주문 정보만 남겼습니다. */
-.quantity-row,
-.action-row,
-.footer-icons,
-.order-bar {
-  display: none;
-}
-.footer-content > div:not(.final-price-row):not(.action-row-override) {
-  display: none; /* 최종 금액과 버튼만 보이도록 나머지 템플릿 요소 숨김 */
 }

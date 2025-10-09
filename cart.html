@@ -73,12 +73,6 @@
               <option>500원 할인 쿠폰</option>
               <option>10% 할인 쿠폰 (최대 1,000원)</option>
             </select>
-            <!-- Custom Arrow Icon for Select Box -->
-            <div class="select-arrow">
-              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
           </div>
         </div>
         
@@ -102,17 +96,17 @@
               </p>
               
               <!-- 수량 및 가격 -->
-              <div class="qty-price-row">
-                <!-- 수량 조절 -->
-                <div class="qty-controls">
-                  <button class="qty-btn">-</button>
-                  <input type="number" class="qty-input" value="2" readonly>
-                  <button class="qty-btn">+</button>
+              <div class="quantity-row">
+                <div class="quantity-control">
+                  <div class="number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                    <input class="quantity" min="0" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                  </div>
                 </div>
-                <!-- 가격 (2잔 기준 가격) -->
-                <p class="menu-price">
-                    8,200원
-                </p>
+                <div class="item-price">
+                    4,400원
+                </div>
               </div>
             </div>
           </div>
@@ -124,12 +118,6 @@
               <option>500원 할인 쿠폰</option>
               <option>10% 할인 쿠폰 (최대 1,000원)</option>
             </select>
-            <!-- Custom Arrow Icon for Select Box -->
-            <div class="select-arrow">
-              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
           </div>
         </div>
         
