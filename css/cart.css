@@ -81,15 +81,11 @@
 }
 .delete-btn {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 18px;
+  right: 0;
   width: 30px;
   height: 30px;
   padding: 4px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  border-radius: 50%;
-  border: 1px solid #e5e7eb;
   color: #6b7280;
   cursor: pointer;
   transition: color 0.15s;
@@ -113,6 +109,11 @@
   margin-right: 8px;
   font-size: 0.875rem;
   color: #6b7280;
+}
+
+.menu-options span b {
+  display: inline-block;
+  margin-left: 8px;
 }
 
 /* 수량 및 가격 */
