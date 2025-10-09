@@ -101,6 +101,8 @@
   color: #1f2937;
 }
 .menu-options {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 4px;
 }
 
@@ -109,6 +111,18 @@
   margin-right: 8px;
   font-size: 0.875rem;
   color: #6b7280;
+}
+
+.menu-options span::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin-left: 8px;
+}
+
+.menu-options span:last-child::after {
+  display: none;
 }
 
 .menu-options span b {
@@ -298,4 +312,23 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .order-button:hover {
   background-color: #c0420d;
+}
+
+/* 옵션변경 버튼 */
+
+.btn-group {
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+.btn-group [class^="btn_tertiary"] {
+  display: inline-block;
+  width: 80px;
+  border-radius: 8px;
+}
+
+.btn-group [class^="btn_tertiary"] span {
+  padding: 0;
+  font-size: 0.8rem;
+  line-height: 36px;
 }
