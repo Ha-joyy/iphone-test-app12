@@ -109,23 +109,10 @@
 }
 
 .menu-options span {
+  display: block;
   margin-right: 8px;
   font-size: 0.875rem;
   color: #6b7280;
-}
-
-.menu-options span::after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 12px;
-  margin-left: 8px;
-  background-color: #ddd;
-  vertical-align: middle;
-}
-
-.menu-options span:last-child::after {
-  display: none;
 }
 
 /* 수량 및 가격 */
