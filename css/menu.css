@@ -111,6 +111,7 @@ body {
 }
 
 .menu-item {
+  padding: 0.8rem 0;
   border-bottom: 1px solid #ddd;
 }
 
@@ -157,6 +158,10 @@ body {
 .item-price {
   font-size: 1.1rem;
   font-weight: 700;
+}
+
+.item-price.soldout {
+  color: #ef4444;
 }
 
 .best-tag {

@@ -55,116 +55,118 @@
 
         <!-- 1. 주문 메뉴 목록 -->
 
-        <!-- 메뉴 항목 1: 카라멜마끼아또 -->
-        <div class="menu-item-wrapper">
-          <div class="menu-detail">
-            <!-- 이미지 및 삭제 버튼 -->
-            <div class="image-container">
-              <img src="https://m.tlj.co.kr:8008/data/product/2025-9-29_event(14).jpg" alt="카라멜마끼아또 이미지" class="menu-image">
-            </div>
-            
-            <!-- 메뉴 정보 -->
-            <div class="menu-info">
-              <h2 class="menu-title">카라멜마끼아또</h2>
-              <p class="menu-options">
-                <span>HOT</span>
-                <span>라지 <b>300원</b></span>
-                <span>일회용 <b>100원</b></span>
-                <span>2샷 추가 <b>500원</b></span>
-              </p>
+        <div class="list-content">
+          <!-- 메뉴 항목 1: 카라멜마끼아또 -->
+          <div class="menu-item-wrapper">
+            <div class="menu-detail">
+              <!-- 이미지 및 삭제 버튼 -->
+              <div class="image-container">
+                <img src="https://m.tlj.co.kr:8008/data/product/2025-9-29_event(14).jpg" alt="카라멜마끼아또 이미지" class="menu-image">
+              </div>
               
-              <!-- 수량 및 가격 -->
-              <div class="quantity-row">
-                <div class="quantity-control">
-                  <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
-                    <input class="quantity" min="0" name="quantity" value="1" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+              <!-- 메뉴 정보 -->
+              <div class="menu-info">
+                <h2 class="menu-title">카라멜마끼아또</h2>
+                <p class="menu-options">
+                  <span>HOT</span>
+                  <span>라지 <b>300원</b></span>
+                  <span>일회용 <b>100원</b></span>
+                  <span>2샷 추가 <b>500원</b></span>
+                </p>
+                
+                <!-- 수량 및 가격 -->
+                <div class="quantity-row">
+                  <div class="quantity-control">
+                    <div class="number-input">
+                      <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" disabled></button>
+                      <input class="quantity" min="0" name="quantity" value="1" type="number">
+                      <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    </div>
+                  </div>
+                  <div class="item-price">
+                      4,400원
                   </div>
                 </div>
-                <div class="item-price">
-                    4,400원
+
+                <div class="btn-group">
+                  <button type="button" class="btn_tertiary">
+                    <span>옵션변경</span>
+                  </button>
                 </div>
               </div>
+            </div>
 
-              <div class="btn-group">
-                <button type="button" class="btn_tertiary">
-                  <span>옵션변경</span>
-                </button>
+            <!-- 쿠폰 선택 드롭다운 -->
+            <div class="custom-select">
+              <select>
+                <option>쿠폰을 선택해 주세요.</option>
+                <option>500원 할인 쿠폰</option>
+                <option>10% 할인 쿠폰 (최대 1,000원)</option>
+              </select>
+            </div>
+
+
+            <!-- X 아이콘 (삭제) -->
+            <button class="delete-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+          </div>
+          
+          <!-- 메뉴 항목 2: 아메리카노 -->
+          <div class="menu-item-wrapper">
+            <div class="menu-detail">
+              <!-- 이미지 및 삭제 버튼 -->
+              <div class="image-container">
+                <img src="https://m.tlj.co.kr:8008/data/product/2025-9-29_event(14).jpg" alt="카라멜마끼아또 이미지" class="menu-image">
               </div>
-            </div>
-          </div>
-
-          <!-- 쿠폰 선택 드롭다운 -->
-          <div class="custom-select">
-            <select>
-              <option>쿠폰을 선택해 주세요.</option>
-              <option>500원 할인 쿠폰</option>
-              <option>10% 할인 쿠폰 (최대 1,000원)</option>
-            </select>
-          </div>
-
-
-          <!-- X 아이콘 (삭제) -->
-          <button class="delete-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-          </button>
-        </div>
-        
-        <!-- 메뉴 항목 2: 아메리카노 -->
-        <div class="menu-item-wrapper">
-          <div class="menu-detail">
-            <!-- 이미지 및 삭제 버튼 -->
-            <div class="image-container">
-              <img src="https://m.tlj.co.kr:8008/data/product/2025-9-29_event(14).jpg" alt="카라멜마끼아또 이미지" class="menu-image">
-            </div>
-              
-            <!-- 메뉴 정보 -->
-            <div class="menu-info">
-              <h2 class="menu-title">아메리카노</h2>
-              <p class="menu-options">
-                <span>ICE</span>
-                <span>레귤러 <b>100원</b></span>
-                <span>매장용</span>
-                <span>2샷 <b>300원</b></span>
-              </p>
-              
-              <!-- 수량 및 가격 -->
-              <div class="quantity-row">
-                <div class="quantity-control">
-                  <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" disabled></button>
-                    <input class="quantity" min="0" name="quantity" value="1" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                
+              <!-- 메뉴 정보 -->
+              <div class="menu-info">
+                <h2 class="menu-title">아메리카노</h2>
+                <p class="menu-options">
+                  <span>ICE</span>
+                  <span>레귤러 <b>100원</b></span>
+                  <span>매장용</span>
+                  <span>2샷 <b>300원</b></span>
+                </p>
+                
+                <!-- 수량 및 가격 -->
+                <div class="quantity-row">
+                  <div class="quantity-control">
+                    <div class="number-input">
+                      <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" disabled></button>
+                      <input class="quantity" min="0" name="quantity" value="1" type="number">
+                      <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    </div>
+                  </div>
+                  <div class="item-price">
+                      4,400원
                   </div>
                 </div>
-                <div class="item-price">
-                    4,400원
+
+                <div class="btn-group">
+                  <button type="button" class="btn_tertiary">
+                    <span>옵션변경</span>
+                  </button>
                 </div>
               </div>
-
-              <div class="btn-group">
-                <button type="button" class="btn_tertiary">
-                  <span>옵션변경</span>
-                </button>
-              </div>
             </div>
+
+            <!-- 쿠폰 선택 드롭다운 -->
+            <div class="custom-select">
+              <select>
+                <option>쿠폰을 선택해 주세요.</option>
+                <option>500원 할인 쿠폰</option>
+                <option>10% 할인 쿠폰 (최대 1,000원)</option>
+              </select>
+            </div>
+
+
+            <!-- X 아이콘 (삭제) -->
+            <button class="delete-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
           </div>
-
-          <!-- 쿠폰 선택 드롭다운 -->
-          <div class="custom-select">
-            <select>
-              <option>쿠폰을 선택해 주세요.</option>
-              <option>500원 할인 쿠폰</option>
-              <option>10% 할인 쿠폰 (최대 1,000원)</option>
-            </select>
-          </div>
-
-
-          <!-- X 아이콘 (삭제) -->
-          <button class="delete-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-          </button>
         </div>
         
         <!-- 2. 총 주문 금액 상세 정보 -->

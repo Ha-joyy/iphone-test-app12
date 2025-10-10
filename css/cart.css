@@ -73,11 +73,10 @@
   flex-shrink: 0;
 }
 .menu-image {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 .delete-btn {
   position: absolute;
@@ -234,10 +233,6 @@ input[type="number"]::-webkit-outer-spin-button {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-}
-.custom-select select:focus {
-  border-color: #f97316;
-  box-shadow: 0 0 0 1px #f97316;
 }
 
 /* 5. 금액 상세 정보 스타일 */
