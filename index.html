@@ -272,19 +272,10 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => { 
-      // --- 1. DOM 요소 선택 (querySelector는 단일 요소, querySelectorAll은 복수 요소) ---
-      const viewTermsButtons = document.querySelectorAll('.view-terms-btn'); // 복수
-      const fullPopupOverlay = document.querySelector('.fullPopupOverlay');   // 단일
-      const layerTitle = document.querySelector('.layer_title');             // 단일
-      const closeButtons = document.querySelectorAll('.closeSheetButton, .agreeAndCloseButton, .extraCloseButton'); // 복수
-      
-      // 약관 동의 관련 요소
-      const checkAll = document.querySelector('.check-all');
-      const checkTerms = document.querySelector('.check-terms');
-      const checkPrivacy = document.querySelector('.check-privacy');
-      const checkAdd = document.querySelector('.check-add');
-      const termsInputs = [checkTerms, checkPrivacy, checkAdd]; // 필수/선택 약관
-      const nextButton = document.querySelector('.next-button');
+      const viewTermsButtons = document.querySelectorAll('.view-terms-btn');
+      const fullPopupOverlay = document.querySelector('.fullPopupOverlay');
+      const layerTitle = document.querySelector('.layer_title');
+      const closeButtons = document.querySelectorAll('.closeSheetButton, .agreeAndCloseButton, .extraCloseButton');
 
       const TRANSITION_DURATION_MS = 300; // CSS 트랜지션 시간
 
