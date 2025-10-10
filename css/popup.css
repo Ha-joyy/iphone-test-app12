@@ -104,12 +104,12 @@
 }
 
 /* 메인 공지사항 팝업 */
-.evt a {
+.evt {
   display: block;
 }
 
-.evt a img {
-  height: 100%;
+.evt img {
+  width: 100%;
 }
 
 .btn_layer_wrap04 {
@@ -117,6 +117,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
+  right: 0;
 }
 
 .btn_layer_wrap04 [class^="inp_check"] {
