@@ -130,33 +130,34 @@
       </ul>
     </main>
 
-    <div class="alertPopupOverlay">
-      <div class="alertPopup">
-        <!-- 알림 팝업은 헤더가 필요 없습니다. -->
-        <div class="layer_box" tabindex="0">
+    <div class="bottomSheetOverlay">
+      <div class="bottomSheet">
+        <div class="layer_box active" tabindex="0">          
+          <div class="layer_header">
+            <h2 class="layer_title">공지사항</h2> 
+            <button class="sheet-close-button closeSheetButton" aria-label="닫기"><span class="hidden">닫기</span></button>
+          </div>
           <div class="layer_container">
             <div class="layer_contents">
-              <!-- 알림 메시지 영역 -->
-              <p class="title">[공지사항]</p>
-              <p>페이지 로드 시 자동으로 열리는 팝업입니다.</p>
+              <div class="evt_pop_box">
+								<a href="#" class="evt"><img src="/resource/img/mbe/temp/temp_main_evt02.png" alt=""></a>
+							</div>
             </div>
           </div>
+          <div class="btn_layer_wrap04">
+						<span class="inp_check">
+							<input type="checkbox" id="evt_pop1">
+							<label for="evt_pop1" class="label_txt"><em>7일간 보지 않기</em></label>
+						</span>
+					</div>
 
-          <!-- 버튼 래퍼 (알림 팝업 전용 스타일) -->
-          <div class="btn_layer_wrap">
-            <div class="btn_col">
-              <!-- 확인 버튼 -->
-              <button type="button" class="confirmButton" onclick="closeAlert()">
-                <span>확인</span>
-              </button>
-            </div>
-          </div>
+          <!-- 이 버튼도 닫기 기능에 연결합니다. -->
+          <button type="button" class="layer_close extraCloseButton"><em class="blind">닫기</em></button> 
         </div>
       </div>
     </div>
-  </div>
   <script>
-    const alertPopup = document.querySelector('.alertPopupOverlay');
+    const alertPopup = document.querySelector('.bottomSheetOverlay');
     alertPopup.classList.add('show'); 
     document.body.style.overflow = 'hidden';
 
