@@ -289,111 +289,44 @@
       const TRANSITION_DURATION_MS = 300; // CSS 트랜지션 시간
 
       
-      // --- 2. 팝업 제어 함수 ---
-
-      /** 팝업을 표시하고 제목을 업데이트합니다. */
-      const openPopup = (title) => {
-          // 팝업 제목 업데이트
-          if (layerTitle) {
-              layerTitle.textContent = title || '약관 상세 안내'; 
-          }
-
-          // 팝업 표시
-          if (fullPopupOverlay) {
-              fullPopupOverlay.style.visibility = 'visible'; 
-              fullPopupOverlay.classList.add('active');
-          }
-          
-          // body 스크롤 방지
-          document.body.style.overflow = 'hidden'; 
-          
-          // 팝업 내부 스크롤 위치 초기화
-          const layerContainer = document.querySelector('.layer_container');
-          if (layerContainer) layerContainer.scrollTop = 0;
+      const openPopup = () => {
+        if (fullPopupOverlay) {
+          fullPopupOverlay.style.visibility = 'visible'; 
+          fullPopupOverlay.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden'; 
+        const layerContainer = document.querySelector('.layer_container');
+        if (layerContainer) layerContainer.scrollTop = 0;
       };
 
-      /** 팝업을 닫고 body 스크롤을 복원합니다. */
       const closePopup = () => {
-          if (fullPopupOverlay) {
-              fullPopupOverlay.classList.remove('active');
-              
-              // 애니메이션이 끝난 후 (300ms) body 스크롤 허용 및 오버레이 숨기기
-              setTimeout(() => {
-                  document.body.style.overflow = '';
-                  fullPopupOverlay.style.visibility = 'hidden'; 
-              }, TRANSITION_DURATION_MS);
-          }
+        if (fullPopupOverlay) {
+          fullPopupOverlay.classList.remove('active');
+          setTimeout(() => {
+            document.body.style.overflow = '';
+            fullPopupOverlay.style.visibility = 'hidden'; 
+          }, TRANSITION_DURATION_MS);
+        }
       };
 
-      // --- 3. 약관 동의 및 버튼 활성화 로직 ---
-
-      /** 필수 약관 동의 여부에 따라 '다음' 버튼 상태를 업데이트합니다. */
-      const updateNextButtonState = () => {
-          // 필수 약관 (이용약관, 개인정보 수집 및 이용 동의)이 모두 체크되었는지 확인
-          const isRequiredChecked = checkTerms.checked && checkPrivacy.checked;
-          
-          if (isRequiredChecked) {
-              nextButton.classList.add('active');
-              nextButton.disabled = false;
-          } else {
-              nextButton.classList.remove('active');
-              nextButton.disabled = true;
-          }
-      };
-
-      /** 전체 동의 체크박스 상태를 업데이트합니다. */
-      const updateCheckAllState = () => {
-          const allChecked = termsInputs.every(input => input.checked);
-          checkAll.checked = allChecked;
-      };
-
-      // 전체 동의 체크박스 클릭 이벤트
-      if (checkAll) {
-          checkAll.addEventListener('change', () => {
-              const checked = checkAll.checked;
-              termsInputs.forEach(input => {
-                  input.checked = checked;
-              });
-              updateNextButtonState();
-          });
-      }
-
-      // 개별 약관 체크박스 클릭 이벤트
-      termsInputs.forEach(input => {
-          input.addEventListener('change', () => {
-              updateCheckAllState();
-              updateNextButtonState();
-          });
-      });
-      
-      // 초기 상태 업데이트 실행
-      updateNextButtonState();
-
-
-      // --- 4. 이벤트 리스너 연결 ---
-
-      // 상세 약관 보기 버튼 클릭 시 팝업 열기 (data-terms-title 활용)
       viewTermsButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          // e.currentTarget.dataset.termsTitle을 사용하여 제목 전달
-          openPopup(e.currentTarget.dataset.termsTitle);
+        btn.addEventListener('click', () => {
+          openPopup();
         });
       });
-      
-      // 팝업 닫기 버튼 이벤트 연결
+
       closeButtons.forEach(btn => {
-          btn.addEventListener('click', closePopup);
+        btn.addEventListener('click', closePopup);
       });
-      
-      // 오버레이(배경) 클릭 시 팝업 닫기
+
       if (fullPopupOverlay) {
-          fullPopupOverlay.addEventListener('click', (e) => {
-              // 클릭된 요소가 오버레이 자체일 때만 닫기 (팝업 내부 클릭 방지)
-              if (e.target === fullPopupOverlay) {
-                  closePopup();
-              }
-          });
+        fullPopupOverlay.addEventListener('click', (e) => {
+          if (e.target === fullPopupOverlay) {
+            closePopup();
+          }
+        });
       }
+
     });
   </script>
 </body>
