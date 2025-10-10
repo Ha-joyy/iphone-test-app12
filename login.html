@@ -147,10 +147,10 @@
       document.addEventListener('DOMContentLoaded', () => {
             
         // 바텀 시트 관련 DOM 요소
-        const openButton = document.getElementById('btm-link'); 
-        const overlay = document.getElementById('bottomSheetOverlay');
-        const closeButtonX = document.getElementById('closeSheetButton');
-        const closeButtonExtra = document.getElementById('extraCloseButton');
+        const openButton = document.querySelectorAll('.btm-link'); 
+        const overlay = document.querySelectorAll('.bottomSheetOverlay');
+        const closeButtonX = document.querySelectorAll('.closeSheetButton');
+        const closeButtonExtra = document.querySelectorAll('.extraCloseButton');
         
         // 트랜지션 시간 (CSS와 일치해야 함)
         const TRANSITION_DURATION_MS = 300; 
@@ -159,24 +159,15 @@
         const openBottomSheet = (e) => {
             if (e) e.preventDefault(); 
             
-            // 1. visibility를 바로 visible로 변경
-            overlay.style.visibility = 'visible'; 
-            
-            // 2. active 클래스 추가로 애니메이션 시작 (슬라이드 업)
+            overlay.style.visibility = 'visible';
             overlay.classList.add('active');
-            
-            // 3. 배경 스크롤 방지
             document.body.style.overflow = 'hidden'; 
         };
 
         const closeBottomSheet = () => {
-            // 1. active 클래스 제거로 애니메이션 시작 (슬라이드 다운)
             overlay.classList.remove('active');
-            
-            // 2. 애니메이션이 끝날 때까지 기다린 후 body 스크롤 복구
             setTimeout(() => {
                 document.body.style.overflow = '';
-                // 3. visibility를 hidden으로 변경하여 터치 이벤트 방지
                 overlay.style.visibility = 'hidden'; 
             }, TRANSITION_DURATION_MS);
         };
