@@ -330,13 +330,13 @@
         
         // --- 1. DOM 요소 선택 ---
         // '검색' 버튼 (매장 선택 옆)
-        const openButton = document.getElementById('storeSearchButton'); 
+        const openButton = document.querySelector('.storeSearchButton'); 
         // 풀팝업 오버레이
         const overlay = document.querySelector('.fullPopupOverlay');
         // X 닫기 버튼
         const closeButtonX = document.querySelector('.closeSheetButton');
         // 하단 숨겨진 닫기 버튼 (사용자 HTML에서 id="extraCloseButton" 유지)
-        const closeButtonExtra = document.getElementById('extraCloseButton');
+        const closeButtonExtra = document.querySelector('.extraCloseButton');
         // 팝업 컨테이너 (스크롤 초기화를 위해)
         const layerContainer = document.querySelector('.layer_container');
 
@@ -384,19 +384,6 @@
         if (closeButtonExtra) {
             closeButtonExtra.addEventListener('click', closeFullPopup); 
         }
-        
-        // 오버레이(배경) 클릭 시 팝업 닫기 (Full Popup의 경우 배경은 흰색 전체 화면이므로, 보통은 이 이벤트를 사용하지 않으나, 혹시 몰라 주석 처리 없이 남겨둡니다.)
-        // Full Popup은 배경 전체가 레이어이므로, 오버레이 클릭 이벤트를 추가하지 않는 것이 일반적입니다.
-        /*
-        if (overlay) {
-            overlay.addEventListener('click', (e) => {
-                // 클릭된 요소가 오버레이(배경) 자체일 때만 닫기
-                if (e.target === overlay) {
-                    closeFullPopup();
-                }
-            });
-        }
-        */
         // --- 풀팝업 로직 종료 ---
       });
 	</script>
