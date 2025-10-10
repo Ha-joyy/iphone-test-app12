@@ -67,6 +67,7 @@
   overflow-y: auto;
   flex-grow: 1;
   max-height: 50rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* 콤보 리스트 스타일 */
@@ -181,6 +182,10 @@
 .btn_layer_wrap04 .sheet-close-button {
   position: relative;
   right: 0;
+}
+
+.evt_pop_box p {
+  padding: 24px;
 }
 
 /* --- 바텀 시트(Bottom Sheet) 스타일 종료 --- */
