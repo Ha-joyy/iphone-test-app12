@@ -1,6 +1,11 @@
 @charset "utf-8";
+html,
 body {
   overflow: hidden;
+}
+
+.header {
+  margin-top: 6rem;
 }
 
 .main-content {
