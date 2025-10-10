@@ -137,7 +137,8 @@
           <div class="layer_container">
             <div class="layer_contents">
               <!-- 알림 메시지 영역 -->
-              
+              <p class="title">[공지사항]</p>
+              <p>페이지 로드 시 자동으로 열리는 팝업입니다.</p>
             </div>
           </div>
 
@@ -156,12 +157,19 @@
   </div>
   <script>
     const alertPopup = document.querySelector('.alertPopupOverlay');
+    alertPopup.classList.add('show'); 
     document.body.style.overflow = 'hidden';
 
     function closeAlert() {
       alertPopup.classList.remove('show');
       document.body.style.overflow = '';
     }
+
+    alertPopup.addEventListener('click', (e) => {
+        if (e.target === alertPopup) {
+            console.log("Alert 팝업은 오버레이 클릭으로는 닫히지 않습니다.");
+        }
+    });
   </script>
 </body>
 </html>
