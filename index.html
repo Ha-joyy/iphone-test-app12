@@ -274,9 +274,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       // --- 팝업 관련 DOM 요소 선택 ---
       const viewTermsButtons = document.querySelectorAll('.view-terms-btn');
-      const overlay = document.getElementById('fullPopupOverlay');
-      const closeButtonX = document.getElementById('closeSheetButton');
-      const agreeAndCloseButton = document.getElementById('agreeAndCloseButton');
+      const overlay = document.querySelectorAll('fullPopupOverlay');
+      const closeButtonX = document.querySelectorAll('closeSheetButton');
+      const agreeAndCloseButton = document.querySelectorAll('agreeAndCloseButton');
 
       const TRANSITION_DURATION_MS = 300; // CSS 트랜지션 시간과 일치해야 합니다.
       
