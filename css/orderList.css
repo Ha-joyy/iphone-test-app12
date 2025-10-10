@@ -112,6 +112,10 @@
 .receipt-amount {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #1f2937;
+  color: #ef4445;
   margin-top: 0.25rem;
+}
+
+.totalNum {
+  color: #ef4445;
 }
