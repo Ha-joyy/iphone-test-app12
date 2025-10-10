@@ -31,167 +31,169 @@
         </div>
       </header>
 
-      <!-- Duration Selection Bar (기간 설정 및 총 건수 정보) -->
-      <div class="summary-bar container">
-          
-          <!-- 기간 선택 버튼 영역 -->
-          <div id="durationButtons" class="duration-buttons">
-              <button data-duration="1m" class="duration-btn active">1개월</button>
-              <button data-duration="3m" class="duration-btn">3개월</button>
-              <button data-duration="1y" class="duration-btn">1년</button>
-          </div>
+      <main class="main-content">
+        <!-- Duration Selection Bar (기간 설정 및 총 건수 정보) -->
+        <div class="summary-bar container">
+            
+            <!-- 기간 선택 버튼 영역 -->
+            <div id="durationButtons" class="duration-buttons">
+                <button data-duration="1m" class="duration-btn active">1개월</button>
+                <button data-duration="3m" class="duration-btn">3개월</button>
+                <button data-duration="1y" class="duration-btn">1년</button>
+            </div>
 
-          <!-- 기간 표시 및 총 건수 -->
-          <div class="summary-info">
-              <!-- 선택된 기간을 표시하는 영역 -->
-              <span id="dateRangeDisplay" class="summary-range">최근 1개월</span> 
-              
-              <div style="display: flex; align-items: center;">
-                  <span>총 8건</span>
-                  <!-- 드롭다운 아이콘 -->
-                  <button class="summary-dropdown-btn">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="summary-dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                  </button>
-              </div>
-          </div>
-      </div>
+            <!-- 기간 표시 및 총 건수 -->
+            <div class="summary-info">
+                <!-- 선택된 기간을 표시하는 영역 -->
+                <span id="dateRangeDisplay" class="summary-range">최근 1개월</span> 
+                
+                <div style="display: flex; align-items: center;">
+                    <span>총 8건</span>
+                    <!-- 드롭다운 아이콘 -->
+                    <button class="summary-dropdown-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="summary-dropdown-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-      <!-- Receipt List (영수증 목록) -->
-      <div class="container receipt-list">
+        <!-- Receipt List (영수증 목록) -->
+        <div class="container receipt-list">
 
-          <!-- List Item 1 -->
-          <div class="receipt-item">
-              <div class="receipt-info">
-                  <p class="receipt-store">연제이마트</p>
-                  <div class="receipt-meta">
-                      <span>2025.06.05 18:57</span>
-                      <span class="receipt-meta-divider">|</span>
-                      <span>결제</span>
-                  </div>
-                  <p class="receipt-amount">7,100 원</p>
-              </div>
-              <div class="receipt-icon-container">
-                  <!-- 영수증 아이콘 SVG -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
-                  </svg>
-              </div>
-          </div>
-          
-          <!-- List Item 2 (사일렌 오더 - 강조) -->
-          <div class="receipt-item">
-              <div class="receipt-info">
-                  <p class="receipt-store">부산역라마따 (사일렌 오더)</p>
-                  <div class="receipt-meta">
-                      <span>2025.03.06 08:41</span>
-                      <span class="receipt-meta-divider">|</span>
-                      <span>결제</span>
-                  </div>
-                  <p class="receipt-amount">5,300 원</p>
-              </div>
-              <div class="receipt-icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
-                  </svg>
-              </div>
-          </div>
+            <!-- List Item 1 -->
+            <div class="receipt-item">
+                <div class="receipt-info">
+                    <p class="receipt-store">연제이마트</p>
+                    <div class="receipt-meta">
+                        <span>2025.06.05 18:57</span>
+                        <span class="receipt-meta-divider">|</span>
+                        <span>결제</span>
+                    </div>
+                    <p class="receipt-amount">7,100 원</p>
+                </div>
+                <div class="receipt-icon-container">
+                    <!-- 영수증 아이콘 SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- List Item 2 (사일렌 오더 - 강조) -->
+            <div class="receipt-item">
+                <div class="receipt-info">
+                    <p class="receipt-store">부산역라마따 (사일렌 오더)</p>
+                    <div class="receipt-meta">
+                        <span>2025.03.06 08:41</span>
+                        <span class="receipt-meta-divider">|</span>
+                        <span>결제</span>
+                    </div>
+                    <p class="receipt-amount">5,300 원</p>
+                </div>
+                <div class="receipt-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
+                    </svg>
+                </div>
+            </div>
 
-          <!-- List Item 3 -->
-          <div class="receipt-item">
-              <div class="receipt-info">
-                  <p class="receipt-store">서면중앙</p>
-                  <div class="receipt-meta">
-                      <span>2025.01.19 16:33</span>
-                      <span class="receipt-meta-divider">|</span>
-                      <span>결제</span>
-                  </div>
-                  <p class="receipt-amount">11,900 원</p>
-              </div>
-              <div class="receipt-icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
-                  </svg>
-              </div>
-          </div>
-          
-          <!-- List Item 4 (사일렌 오더) -->
-          <div class="receipt-item">
-              <div class="receipt-info">
-                  <p class="receipt-store">부산역라마따 (사일렌 오더)</p>
-                  <div class="receipt-meta">
-                      <span>2025.01.02 08:03</span>
-                      <span class="receipt-meta-divider">|</span>
-                      <span>결제</span>
-                  </div>
-                  <p class="receipt-amount">5,000 원</p>
-              </div>
-              <div class="receipt-icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
-                  </svg>
-              </div>
-          </div>
+            <!-- List Item 3 -->
+            <div class="receipt-item">
+                <div class="receipt-info">
+                    <p class="receipt-store">서면중앙</p>
+                    <div class="receipt-meta">
+                        <span>2025.01.19 16:33</span>
+                        <span class="receipt-meta-divider">|</span>
+                        <span>결제</span>
+                    </div>
+                    <p class="receipt-amount">11,900 원</p>
+                </div>
+                <div class="receipt-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- List Item 4 (사일렌 오더) -->
+            <div class="receipt-item">
+                <div class="receipt-info">
+                    <p class="receipt-store">부산역라마따 (사일렌 오더)</p>
+                    <div class="receipt-meta">
+                        <span>2025.01.02 08:03</span>
+                        <span class="receipt-meta-divider">|</span>
+                        <span>결제</span>
+                    </div>
+                    <p class="receipt-amount">5,000 원</p>
+                </div>
+                <div class="receipt-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
+                    </svg>
+                </div>
+            </div>
 
-          <!-- List Item 5 (사일렌 오더) -->
-          <div class="receipt-item">
-              <div class="receipt-info">
-                  <p class="receipt-store">부산역라마따 (사일렌 오더)</p>
-                  <div class="receipt-meta">
-                      <span>2024.12.30 07:10</span>
-                      <span class="receipt-meta-divider">|</span>
-                      <span>결제</span>
-                  </div>
-                  <p class="receipt-amount">7,700 원</p>
-              </div>
-              <div class="receipt-icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
-                  </svg>
-              </div>
-          </div>
+            <!-- List Item 5 (사일렌 오더) -->
+            <div class="receipt-item">
+                <div class="receipt-info">
+                    <p class="receipt-store">부산역라마따 (사일렌 오더)</p>
+                    <div class="receipt-meta">
+                        <span>2024.12.30 07:10</span>
+                        <span class="receipt-meta-divider">|</span>
+                        <span>결제</span>
+                    </div>
+                    <p class="receipt-amount">7,700 원</p>
+                </div>
+                <div class="receipt-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
+                    </svg>
+                </div>
+            </div>
 
-          <!-- List Item 6 -->
-          <div class="receipt-item">
-              <div class="receipt-info">
-                  <p class="receipt-store">서면중앙대로R (사일렌 오더)</p>
-                  <div class="receipt-meta">
-                      <span>2024.12.25 20:53</span>
-                      <span class="receipt-meta-divider">|</span>
-                      <span>결제</span>
-                  </div>
-                  <p class="receipt-amount">7,500 원</p>
-              </div>
-              <div class="receipt-icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
-                  </svg>
-              </div>
-          </div>
+            <!-- List Item 6 -->
+            <div class="receipt-item">
+                <div class="receipt-info">
+                    <p class="receipt-store">서면중앙대로R (사일렌 오더)</p>
+                    <div class="receipt-meta">
+                        <span>2024.12.25 20:53</span>
+                        <span class="receipt-meta-divider">|</span>
+                        <span>결제</span>
+                    </div>
+                    <p class="receipt-amount">7,500 원</p>
+                </div>
+                <div class="receipt-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
+                    </svg>
+                </div>
+            </div>
 
-          <!-- List Item 7 (더미 데이터) -->
-          <div class="receipt-item">
-              <div class="receipt-info">
-                  <p class="receipt-store">이천교차로2호점</p>
-                  <div class="receipt-meta">
-                      <span>2024.12.15 12:45</span>
-                      <span class="receipt-meta-divider">|</span>
-                      <span>결제</span>
-                  </div>
-                  <p class="receipt-amount">10,200 원</p>
-              </div>
-              <div class="receipt-icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
-                  </svg>
-              </div>
-          </div>
-          
-      </div>
+            <!-- List Item 7 (더미 데이터) -->
+            <div class="receipt-item">
+                <div class="receipt-info">
+                    <p class="receipt-store">이천교차로2호점</p>
+                    <div class="receipt-meta">
+                        <span>2024.12.15 12:45</span>
+                        <span class="receipt-meta-divider">|</span>
+                        <span>결제</span>
+                    </div>
+                    <p class="receipt-amount">10,200 원</p>
+                </div>
+                <div class="receipt-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="receipt-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m0-8a2 2 0 012-2h1m-3 0h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m3-4h-1a2 2 0 00-2 2v2a2 2 0 002 2h1m-1-4h1a2 2 0 012 2v2a2 2 0 01-2 2h-1" />
+                    </svg>
+                </div>
+            </div>
+            
+        </div>
     
-      <!-- Padding for scrollability -->
-      <div style="height: 2.5rem;"></div>
+        <!-- Padding for scrollability -->
+        <div style="height: 2.5rem;"></div>
+      </main>
     </div>
     <script>
       // DOMContentLoaded가 발생한 후에 스크립트 실행
