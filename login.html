@@ -145,13 +145,15 @@
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-            
-        // 바텀 시트 관련 DOM 요소
-        const openButton = document.querySelectorAll('.btm-link'); 
-        const overlay = document.querySelectorAll('.bottomSheetOverlay');
-        const closeButtonX = document.querySelectorAll('.closeSheetButton');
-        const closeButtonExtra = document.querySelectorAll('.extraCloseButton');
         
+        // --- 1. DOM 요소 선택 수정 (querySelectorAll -> querySelector) ---
+        // querySelector를 사용해 해당 클래스를 가진 첫 번째 요소만 선택합니다.
+        const openButton = document.querySelector('.btm-link'); 
+        const overlay = document.querySelector('.bottomSheetOverlay');
+        const closeButtonX = document.querySelector('.closeSheetButton');
+        const closeButtonExtra = document.querySelector('.extraCloseButton');
+        const layerContainer = document.querySelector('.layer_container');
+
         // 트랜지션 시간 (CSS와 일치해야 함)
         const TRANSITION_DURATION_MS = 300; 
 
@@ -159,30 +161,51 @@
         const openBottomSheet = (e) => {
             if (e) e.preventDefault(); 
             
-            overlay.style.visibility = 'visible';
-            overlay.classList.add('active');
+            if (overlay) {
+                overlay.style.visibility = 'visible';
+                overlay.classList.add('active');
+                // 팝업이 열릴 때 스크롤 초기화
+                if (layerContainer) layerContainer.scrollTop = 0; 
+            }
             document.body.style.overflow = 'hidden'; 
         };
 
         const closeBottomSheet = () => {
-            overlay.classList.remove('active');
-            setTimeout(() => {
-                document.body.style.overflow = '';
-                overlay.style.visibility = 'hidden'; 
-            }, TRANSITION_DURATION_MS);
+            if (overlay) {
+                overlay.classList.remove('active');
+                setTimeout(() => {
+                    document.body.style.overflow = '';
+                    overlay.style.visibility = 'hidden'; 
+                }, TRANSITION_DURATION_MS);
+            }
         };
 
-        // 이벤트 리스너 연결
-        openButton.addEventListener('click', openBottomSheet); // "이용하실 매장을 선택해주세요." 연결
-        closeButtonX.addEventListener('click', closeBottomSheet); // X 닫기 버튼 연결
-        closeButtonExtra.addEventListener('click', closeBottomSheet); // 추가 닫기 버튼 연결
+        // --- 2. 이벤트 리스너 연결 (요소 존재 여부 체크 후 연결) ---
+        
+        // "이용 매장 선택" 버튼 연결
+        if (openButton) {
+            openButton.addEventListener('click', openBottomSheet); 
+        }
+        
+        // 닫기 버튼 연결 (X 닫기 버튼)
+        if (closeButtonX) {
+            closeButtonX.addEventListener('click', closeBottomSheet); 
+        }
+        
+        // 추가 닫기 버튼 연결
+        if (closeButtonExtra) {
+            closeButtonExtra.addEventListener('click', closeBottomSheet); 
+        }
         
         // 오버레이(배경) 클릭 시 팝업 닫기
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) {
-                closeBottomSheet();
-            }
-        });
+        if (overlay) {
+            overlay.addEventListener('click', (e) => {
+                // 클릭된 요소가 오버레이(배경) 자체일 때만 닫기
+                if (e.target === overlay) {
+                    closeBottomSheet();
+                }
+            });
+        }
         // --- 바텀 시트 로직 종료 ---
       });
     </script>
