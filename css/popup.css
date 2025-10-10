@@ -288,16 +288,19 @@
 .alertPopup .btn_col {
   justify-content: center;
 }
-.alertPopup .btn_primary {
+.alertPopup .confirmButton {
   width: 100%;
   background-color: transparent;
-  color: #4f46e5;
-  font-weight: 700;
   border-radius: 0 0 12px 12px;
   padding: 12px;
   box-shadow: none;
 }
-.alertPopup .btn_primary:hover {
+
+.alertPopup .confirmButton span {
+  color: #4f46e5;
+  font-weight: 700;
+}
+.alertPopup .confirmButton:hover {
   background-color: #f0f0f0;
 }
 /* 알림 팝업 컨텐츠 패딩 조정 */
