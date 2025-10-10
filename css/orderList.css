@@ -78,7 +78,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 24px;
-  background: url(../img/arrow_link.png) no-repeat right center;
   border-bottom: 1px solid #f3f4f6;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
@@ -91,6 +90,8 @@
 .receipt-info {
   display: block;
   width: 100%;
+  background: url(../img/arrow_link.png) no-repeat right center;
+  background-size: 24px;
 }
 
 .receipt-info p {
