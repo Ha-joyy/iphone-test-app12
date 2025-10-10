@@ -104,11 +104,11 @@
 }
 
 /* 메인 공지사항 팝업 */
-.evt .btn_layer_wrap04 {
+.btn_layer_wrap04 {
   padding: 16px 56px 16px 24px;
 }
 
-.evt .btn_layer_wrap04 [class^="inp_check"] {
+.btn_layer_wrap04 [class^="inp_check"] {
   display: inline-block;
   position: relative;
   box-sizing: border-box;
@@ -116,7 +116,7 @@
   padding: 0 0 0 24px;
 }
 
-.evt .btn_layer_wrap04 [class^="inp_check"] > input[type="checkbox"] {
+.btn_layer_wrap04 [class^="inp_check"] > input[type="checkbox"] {
   position: absolute;
   left: 0;
   top: 0;
@@ -126,13 +126,13 @@
   z-index: 1;
 }
 
-.evt .btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"] {
+.btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"] {
   display: inline-block;
   box-sizing: border-box;
   vertical-align: top;
 }
 
-.evt .btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"]:before {
+.btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"]:before {
   display: block;
   content: "";
   position: absolute;
@@ -147,13 +147,13 @@
   transition: border 0.3s ease, background 0.2s ease;
 }
 
-.evt .btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"] > em {
+.btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"] > em {
   display: block;
   padding: 0 0 0 8px;
   color: #111;
 }
 
-.evt .btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"]:after {
+.btn_layer_wrap04 [class^="inp_check"] [class^="label_txt"]:after {
   display: block;
   content: "";
   position: absolute;
@@ -167,7 +167,7 @@
   transition: width 0.3s ease;
   transition-delay: 0.1s;
 }
-.evt .btn_layer_wrap04 .layer_close {
+.btn_layer_wrap04 .layer_close {
   position: relative;
 }
 
