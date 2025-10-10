@@ -154,5 +154,32 @@
       </div>
     </div>
   </div>
+  <script>
+    const alertPopup = document.getElementById('alertPopupOverlay');
+    const alertMessage = document.getElementById('alertMessage');
+    const menuList = document.querySelector('.menu-list');
+
+    function openAlert(message) {
+      alertMessage.textContent = message;
+      alertPopup.classList.add('show');
+      document.body.style.overflow = 'hidden'; // 본문 스크롤 막기
+    }
+
+    function closeAlert() {
+      alertPopup.classList.remove('show');
+      document.body.style.overflow = ''; // 본문 스크롤 복구
+    }
+    
+    window.onload = function() {
+      openAlert();
+    };
+
+    alertPopup.addEventListener('click', (e) => {
+        if (e.target === alertPopup) {
+            // 외부 클릭으로 닫히는 것을 방지
+            console.log("Alert 팝업은 오버레이 클릭으로는 닫히지 않습니다.");
+        }
+    });
+  </script>
 </body>
 </html>
