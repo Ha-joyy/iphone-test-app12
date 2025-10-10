@@ -40,7 +40,7 @@
       <div class="terms-list">
         <div class="terms-item">
           <div class="terms-item-start custom-checkbox">
-            <input type="checkbox" id="check-all">
+            <input type="checkbox" class="check-all">
             <label for="check-all" class="bold-label">약관 전체동의</label>
           </div>
         </div>
@@ -49,7 +49,7 @@
 
         <div class="terms-item">
           <div class="terms-item-start custom-checkbox">
-            <input type="checkbox" id="check-terms">
+            <input type="checkbox" class="check-terms">
             <label for="check-terms">이용약관 동의<span class="required-text">(필수)</span></label>
           </div>
           <button type="button" class="terms-item-end view-terms-btn" data-terms-id="terms-of-service" data-terms-title="이용약관 안내">
@@ -59,7 +59,7 @@
 
         <div class="terms-item">
           <div class="terms-item-start custom-checkbox">
-            <input type="checkbox" id="check-privacy">
+            <input type="checkbox" class="check-privacy">
             <label for="check-privacy">개인정보 수집 및 이용동의<span class="required-text">(필수)</span></label>
           </div>
           <span class="terms-item-end"></span>
@@ -67,7 +67,7 @@
 
         <div class="terms-item">
           <div class="terms-item-start custom-checkbox">
-            <input type="checkbox" id="check-add">
+            <input type="checkbox" class="check-add">
             <label for="check-add">광고성 정보 수신동의<span class="optional-text">(선택)</span></label>
           </div>
         </div>
@@ -76,7 +76,7 @@
 
     <!-- 하단 '다음' 버튼 영역 -->
     <footer class="footer">
-      <button class="next-button" id="next-button" disabled>
+      <button class="next-button next-button" disabled>
           다음
       </button>
     </footer>
@@ -86,7 +86,7 @@
         <div class="layer_box active" tabindex="0">
         <div class="layer_header">
           <h1 class="layer_title">개인정보 수집 및 이용에 대한 안내</h1>
-          <button class="sheet-close-button" id="closeSheetButton" aria-label="닫기"><span class="hidden">닫기</span></button>
+          <button class="sheet-close-button closeSheetButton" aria-label="닫기"><span class="hidden">닫기</span></button>
         </div>
         <div class="layer_container">
           <div class="layer_contents">
@@ -261,34 +261,49 @@
 
         <div class="btn_layer_wrap">
           <div class="btn_col">
-            <button type="button" class="btn_primary" id="agreeAndCloseButton"><span>동의하기</span></button>
+            <button type="button" class="btn_primary agreeAndCloseButton"><span>동의하기</span></button>
           </div>
         </div>
 
         <!-- 이 버튼도 닫기 기능에 연결합니다. -->
-        <button type="button" class="layer_close" id="extraCloseButton"><em class="blind">닫기</em></button> 
+        <button type="button" class="layer_close extraCloseButton"><em class="blind">닫기</em></button> 
       </div>
     </div>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => { 
-      // --- 팝업 관련 DOM 요소 선택 ---
-      const viewTermsButtons = document.querySelectorAll('.view-terms-btn');
-      const overlay = document.querySelectorAll('.fullPopupOverlay');
-      const closeButtonX = document.querySelectorAll('.closeSheetButton');
-      const agreeAndCloseButton = document.querySelectorAll('.agreeAndCloseButton');
-
-      const TRANSITION_DURATION_MS = 300; // CSS 트랜지션 시간과 일치해야 합니다.
+      // --- 1. DOM 요소 선택 (querySelector는 단일 요소, querySelectorAll은 복수 요소) ---
+      const viewTermsButtons = document.querySelectorAll('.view-terms-btn'); // 복수
+      const fullPopupOverlay = document.querySelector('.fullPopupOverlay');   // 단일
+      const layerTitle = document.querySelector('.layer_title');             // 단일
+      const closeButtons = document.querySelectorAll('.closeSheetButton, .agreeAndCloseButton, .extraCloseButton'); // 복수
       
+      // 약관 동의 관련 요소
+      const checkAll = document.querySelector('.check-all');
+      const checkTerms = document.querySelector('.check-terms');
+      const checkPrivacy = document.querySelector('.check-privacy');
+      const checkAdd = document.querySelector('.check-add');
+      const termsInputs = [checkTerms, checkPrivacy, checkAdd]; // 필수/선택 약관
+      const nextButton = document.querySelector('.next-button');
+
+      const TRANSITION_DURATION_MS = 300; // CSS 트랜지션 시간
+
       
-      // --- 팝업 열기 함수 ---
+      // --- 2. 팝업 제어 함수 ---
 
-      /** 팝업을 표시하고 body 스크롤을 막습니다. */
-      const openPopup = () => {
+      /** 팝업을 표시하고 제목을 업데이트합니다. */
+      const openPopup = (title) => {
+          // 팝업 제목 업데이트
+          if (layerTitle) {
+              layerTitle.textContent = title || '약관 상세 안내'; 
+          }
 
-          // 3. 팝업 표시
-          overlay.style.visibility = 'visible'; 
-          overlay.classList.add('active');
+          // 팝업 표시
+          if (fullPopupOverlay) {
+              fullPopupOverlay.style.visibility = 'visible'; 
+              fullPopupOverlay.classList.add('active');
+          }
+          
           // body 스크롤 방지
           document.body.style.overflow = 'hidden'; 
           
@@ -297,40 +312,88 @@
           if (layerContainer) layerContainer.scrollTop = 0;
       };
 
-      // --- 팝업 닫기 함수 ---
-
       /** 팝업을 닫고 body 스크롤을 복원합니다. */
       const closePopup = () => {
-          overlay.classList.remove('active');
-          
-          // 애니메이션이 끝난 후 (300ms) body 스크롤 허용 및 오버레이 숨기기
-          setTimeout(() => {
-              document.body.style.overflow = '';
-              overlay.style.visibility = 'hidden'; 
-          }, TRANSITION_DURATION_MS);
+          if (fullPopupOverlay) {
+              fullPopupOverlay.classList.remove('active');
+              
+              // 애니메이션이 끝난 후 (300ms) body 스크롤 허용 및 오버레이 숨기기
+              setTimeout(() => {
+                  document.body.style.overflow = '';
+                  fullPopupOverlay.style.visibility = 'hidden'; 
+              }, TRANSITION_DURATION_MS);
+          }
       };
 
-      // --- 이벤트 리스너 연결 ---
+      // --- 3. 약관 동의 및 버튼 활성화 로직 ---
 
-      // 팝업 닫기 버튼 및 하단 버튼 이벤트 연결
-      closeButtonX.addEventListener('click', closePopup);
-      agreeAndCloseButton.addEventListener('click', closePopup);
-      
-      // 오버레이(배경) 클릭 시 팝업 닫기
-      overlay.addEventListener('click', (e) => {
-          // 클릭된 요소가 오버레이 자체일 때만 닫기 (팝업 내부 클릭 방지)
-          if (e.target === overlay) {
-              closePopup();
+      /** 필수 약관 동의 여부에 따라 '다음' 버튼 상태를 업데이트합니다. */
+      const updateNextButtonState = () => {
+          // 필수 약관 (이용약관, 개인정보 수집 및 이용 동의)이 모두 체크되었는지 확인
+          const isRequiredChecked = checkTerms.checked && checkPrivacy.checked;
+          
+          if (isRequiredChecked) {
+              nextButton.classList.add('active');
+              nextButton.disabled = false;
+          } else {
+              nextButton.classList.remove('active');
+              nextButton.disabled = true;
           }
-      });
+      };
 
-      // 상세 약관 보기 버튼 클릭 시 팝업 열기
+      /** 전체 동의 체크박스 상태를 업데이트합니다. */
+      const updateCheckAllState = () => {
+          const allChecked = termsInputs.every(input => input.checked);
+          checkAll.checked = allChecked;
+      };
+
+      // 전체 동의 체크박스 클릭 이벤트
+      if (checkAll) {
+          checkAll.addEventListener('change', () => {
+              const checked = checkAll.checked;
+              termsInputs.forEach(input => {
+                  input.checked = checked;
+              });
+              updateNextButtonState();
+          });
+      }
+
+      // 개별 약관 체크박스 클릭 이벤트
+      termsInputs.forEach(input => {
+          input.addEventListener('change', () => {
+              updateCheckAllState();
+              updateNextButtonState();
+          });
+      });
+      
+      // 초기 상태 업데이트 실행
+      updateNextButtonState();
+
+
+      // --- 4. 이벤트 리스너 연결 ---
+
+      // 상세 약관 보기 버튼 클릭 시 팝업 열기 (data-terms-title 활용)
       viewTermsButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-          openPopup(e.currentTarget.dataset.termsId, e.currentTarget.dataset.termsTitle);
+          // e.currentTarget.dataset.termsTitle을 사용하여 제목 전달
+          openPopup(e.currentTarget.dataset.termsTitle);
         });
       });
-
+      
+      // 팝업 닫기 버튼 이벤트 연결
+      closeButtons.forEach(btn => {
+          btn.addEventListener('click', closePopup);
+      });
+      
+      // 오버레이(배경) 클릭 시 팝업 닫기
+      if (fullPopupOverlay) {
+          fullPopupOverlay.addEventListener('click', (e) => {
+              // 클릭된 요소가 오버레이 자체일 때만 닫기 (팝업 내부 클릭 방지)
+              if (e.target === fullPopupOverlay) {
+                  closePopup();
+              }
+          });
+      }
     });
   </script>
 </body>
