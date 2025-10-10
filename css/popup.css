@@ -104,8 +104,19 @@
 }
 
 /* 메인 공지사항 팝업 */
+.evt a {
+  display: block;
+}
+
+.evt a img {
+  height: 100%;
+}
+
 .btn_layer_wrap04 {
-  padding: 16px 56px 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
 }
 
 .btn_layer_wrap04 [class^="inp_check"] {
