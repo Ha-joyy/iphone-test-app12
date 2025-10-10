@@ -87,6 +87,11 @@
   background-color: #f9fafb;
 }
 
+.receipt-info {
+  display: block;
+  width: 100%;
+}
+
 .receipt-info p {
   margin: 0;
 }
