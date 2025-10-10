@@ -114,7 +114,7 @@
 								</div>
 							</div>
 							<div class="regist_flex_col">
-								<button type="button" class="btn_func02"><span>검색</span></button>
+								<button type="button" class="btn_func02 StoreBtn"><span>검색</span></button>
 							</div>
 						</div>
 					</div>
@@ -320,7 +320,7 @@
 					</div> -->
 
 					<!-- 이 버튼도 닫기 기능에 연결합니다. -->
-					<button type="button" class="layer_close" id="extraCloseButton"><em class="blind">닫기</em></button> 
+					<button type="button" class="layer_close extraCloseButton"><em class="blind">닫기</em></button> 
 				</div>
 			</div>
 		</div>
@@ -330,14 +330,10 @@
         
         // --- 1. DOM 요소 선택 ---
         // '검색' 버튼 (매장 선택 옆)
-        const openButton = document.querySelector('.btn_func02'); 
-        // 풀팝업 오버레이
+        const openButton = document.querySelector('.StoreBtn'); 
         const overlay = document.querySelector('.fullPopupOverlay');
-        // X 닫기 버튼
         const closeButtonX = document.querySelector('.closeSheetButton');
-        // 하단 숨겨진 닫기 버튼 (사용자 HTML에서 id="extraCloseButton" 유지)
         const closeButtonExtra = document.querySelector('.extraCloseButton');
-        // 팝업 컨테이너 (스크롤 초기화를 위해)
         const layerContainer = document.querySelector('.layer_container');
 
         // 트랜지션 시간 (CSS와 일치해야 함)
