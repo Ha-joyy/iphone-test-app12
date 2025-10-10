@@ -117,7 +117,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  right: 0;
 }
 
 .btn_layer_wrap04 [class^="inp_check"] {
@@ -181,6 +180,7 @@
 }
 .btn_layer_wrap04 .sheet-close-button {
   position: relative;
+  right: 0;
 }
 
 /* --- 바텀 시트(Bottom Sheet) 스타일 종료 --- */
