@@ -158,11 +158,11 @@
     </div>
   <script>
     const alertPopup = document.querySelector('.bottomSheetOverlay');
-    alertPopup.classList.add('show'); 
+    alertPopup.classList.add('active'); 
     document.body.style.overflow = 'hidden';
 
     function closeAlert() {
-      alertPopup.classList.remove('show');
+      alertPopup.classList.remove('active');
       document.body.style.overflow = '';
     }
 
