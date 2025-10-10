@@ -261,7 +261,9 @@
 
 /* --- 3. 알림 팝업 스타일 --- */
 .alertPopupOverlay {
-  /* display: flex; (공통 overlay에 설정됨) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0 16px;
 }
 .alertPopup {
@@ -270,7 +272,6 @@
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
-  /* 애니메이션 설정 */
   transform: scale(0.9);
   opacity: 0;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
@@ -280,7 +281,6 @@
   opacity: 1;
 }
 
-/* 알림 팝업 버튼 스타일 오버라이드 */
 .alertPopup .btn_layer_wrap {
   padding: 0;
   border-top: 1px solid #eee;
@@ -307,5 +307,5 @@
 .alertPopup .layer_container {
   padding: 32px 24px;
   text-align: center;
-  flex-grow: 0; /* 내용이 넘치지 않으므로 grow 필요 없음 */
+  flex-grow: 0;
 }
