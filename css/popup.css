@@ -415,3 +415,8 @@
   text-align: center;
   flex-grow: 0;
 }
+
+/* 메뉴 풀팝업 */
+.mainMenu .sheet-close-button {
+  background-image: url(../img/ico_layer_close_w.png);
+}

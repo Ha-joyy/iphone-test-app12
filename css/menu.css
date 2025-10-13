@@ -223,6 +223,16 @@ body {
 }
 
 /* 하단 섹션 (약관, 로그아웃) */
+.fullPopup .layer_header {
+  display: block;
+  background-color: #015bab;
+  color: #fff;
+}
+
+.fullPopup .layer_header .user-info {
+  font-size: 1.2rem;
+}
+
 .fullPopup .layer_footer {
   flex-shrink: 0;
   padding: 1rem 1.5rem calc(1rem + var(--safe-area-bottom));
