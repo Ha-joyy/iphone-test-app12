@@ -575,7 +575,7 @@ body {
 }
 #header .header_util .btn_header_cart {
   position: relative;
-  background: url(../img/bag.svg) no-repeat center / 18px auto;
+  padding-top: 5px;
 }
 
 #header .header_util .btn_header_cart.active:before {
@@ -597,7 +597,8 @@ body {
   font-size: 0.8rem;
 }
 
-#header .header_util .btn_col {
+#header .header_util .btn-col {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
