@@ -5,9 +5,9 @@
   <!-- 핵심 설정: viewport-fit=cover로 iPhone 노치 및 하단 안전 영역 확보 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
   <title>메뉴</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/popup.css">
-  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="_css/reset.css">
+  <link rel="stylesheet" href="_css/popup.css">
+  <link rel="stylesheet" href="_css/menu.css">
 
   <!-- Noto Sans KR 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +25,15 @@
 				</button>
 				<h1 class="header_tit">메뉴</h1>
 				<div class="header_util">
-					<button type="button" class="btn_header_gnb">
-						<em class="blind">전체메뉴</em>
-					</button>
+          <div class="btn-col">
+            <button type="button" class="btn_header_cart">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <em class="blind">장바구니</em>
+            </button>
+            <button type="button" class="btn_header_gnb">
+              <em class="blind">전체메뉴</em>
+            </button>
+          </div>
 				</div>
 			</div>
 		</header>
@@ -53,7 +59,7 @@
             <div class="item-details">
                 <div class="item-name">
                     <span>카페 아메리카노</span>
-                    <span class="best-tag">Best</span>
+                    <span class="red-tag">HOT</span>
                 </div>
                 <div class="item-name-en">Caffe Americano</div>
                 <div class="item-price">4,100원</div>
@@ -67,7 +73,7 @@
             <div class="item-details">
                 <div class="item-name">
                     <span>아이스 카페 아메리카노</span>
-                    <span class="best-tag">Best</span>
+                    <span class="blue-tag">COLD</span>
                 </div>
                 <div class="item-name-en">Iced Caffe Americano</div>
                 <div class="item-price soldout">sold out</div>

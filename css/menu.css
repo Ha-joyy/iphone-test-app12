@@ -35,19 +35,18 @@ body {
 /* Tabs 영역 */
 /* ------------------------------------------------ */
 .tabs-nav {
-  position: sticky;
-  top: 44px;
-  z-index: 9;
-  display: flex;
-  flex-shrink: 0;
-  height: 48px;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  position: sticky;
+  top: 44px;
+  height: 48px;
   background-color: #fff;
-  border-bottom: #ddd;
+  border-bottom: 1px solid #ddd;
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  z-index: 9;
 }
 .tabs-nav::-webkit-scrollbar {
   display: none;
@@ -56,16 +55,15 @@ body {
 .tabs-nav button {
   flex-shrink: 0;
   width: 5rem;
-  color: #666;
+  height: 48px;
+  padding: 0 8px;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 48px;
   font-weight: 500;
   font-size: 1.05rem;
-  padding: 0 8px;
-  height: 48px;
-  line-height: 48px;
-  cursor: pointer;
-  position: relative;
-  transition: color 0.2s;
-  border-bottom: 1px solid #ddd;
+  color: #666;
 }
 
 .tabs-nav button.active {
@@ -128,10 +126,10 @@ body {
 }
 
 .item-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  /* object-fit: cover; */
   flex-shrink: 0;
   margin-left: 1rem;
 }
@@ -164,12 +162,23 @@ body {
   color: #ef4444;
 }
 
-.best-tag {
+.red_tag {
   font-size: 0.75rem;
   font-weight: 500;
   color: #d8736c;
   background-color: transparent;
   border: 1px solid #d8736c;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.blue_tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6c6cd8;
+  background-color: transparent;
+  border: 1px solid #6c6cd8;
   padding: 2px 6px;
   border-radius: 4px;
   margin-left: 8px;
