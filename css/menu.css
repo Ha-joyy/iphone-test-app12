@@ -185,20 +185,66 @@ body {
 }
 
 /* 전체메뉴 (햄버거메뉴) */
+.fullPopup .layer_container {
+  padding: 0 1.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
+  min-height: 0;
+  /* 하단 메뉴가 있으므로 safe-area-bottom은 footer에서 처리 */
+  padding-bottom: 1rem;
+}
+.fullPopup .layer_contents {
+  padding: 0; /* 컨테이너에 이미 패딩이 있으므로 0 */
+}
+
 .fullPopup .layer_contents ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
+/* 메뉴 항목 스타일 */
 .fullPopup .layer_contents li a {
-  display: block;
-  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
   font-size: 1rem;
   font-weight: 500;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
 }
-.fullPopup .layer_contents li:last-child a {
-  border-bottom: none;
-  color: #e53e3e; /* 로그아웃 강조 */
-  font-weight: 700;
+.fullPopup .layer_contents li:first-child a {
+  border-top: none; /* 첫번째 항목의 상단 구분선 제거 */
+}
+
+/* 메뉴 항목 아이콘 스타일 */
+.fullPopup .layer_contents li a svg {
+  margin-right: 12px;
+  color: #555;
+}
+
+/* 하단 섹션 (약관, 로그아웃) */
+.fullPopup .layer_footer {
+  flex-shrink: 0;
+  padding: 1rem 1.5rem calc(1rem + var(--safe-area-bottom));
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.fullPopup .layer_footer .logout-btn {
+  color: #333; /* 로그아웃 버튼 색상 유지 */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.fullPopup .layer_footer .logout-btn svg {
+  margin-left: 4px;
+  width: 14px;
+  height: 14px;
+  color: #777;
+}
+.fullPopup .layer_footer .terms-link {
+  color: #555;
 }
