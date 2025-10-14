@@ -122,9 +122,11 @@
 }
 
 .footer-content {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  position: relative;
+  bottom: -1px;
+  margin: 0 auto;
   height: auto;
   border-bottom: 1px solid #ddd;
 }
