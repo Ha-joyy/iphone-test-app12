@@ -420,3 +420,99 @@
 .mainMenu .sheet-close-button {
   background-image: url(../img/ico_layer_close_w.png);
 }
+
+/* ----------------------------------------------------------- */
+/* 공통 팝업 오버레이 스타일 (카멜케이스 적용) */
+/* ----------------------------------------------------------- */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0s 0.2s;
+}
+
+.popupOverlay.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0s 0s;
+}
+
+/* Alert 팝업 스타일 */
+.alertPopup {
+  width: 90%;
+  max-width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* 애니메이션 */
+  transform: scale(0.9);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.popupOverlay.active .alertPopup {
+  transform: scale(1);
+}
+
+/* 팝업 내부 구조 */
+.popupBox {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 팝업 헤더 */
+.popupHeader {
+  padding: 16px 20px 0;
+  text-align: center;
+}
+.popupTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 팝업 내용 */
+.popupContent {
+  padding: 10px 20px 20px;
+  text-align: center;
+}
+.popupMessage {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* 팝업 버튼 영역 */
+.popupActionsWrap {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+.popupActionButton {
+  flex: 1;
+  padding: 14px 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  transition: background-color 0.1s;
+}
+.popupActionButton:not(:last-child) {
+  border-right: 1px solid #eee;
+}
+.popupActionButton.primary {
+  color: #2c64b4;
+  font-weight: 700;
+}
+.popupActionButton:active {
+  background-color: #f0f0f0;
+}
