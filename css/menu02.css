@@ -22,7 +22,6 @@
 .info-section {
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .product-title {
@@ -123,12 +122,11 @@
 }
 
 .footer-content {
-  max-width: 448px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   height: auto;
+  border-bottom: 1px solid #ddd;
 }
 
 /* 5-1. 상단 줄: 수량 및 단가 */
@@ -136,7 +134,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 14px;
+  padding: 4px 14px;
 }
 
 .quantity-control {

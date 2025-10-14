@@ -516,3 +516,8 @@
 .popupActionButton:active {
   background-color: #f0f0f0;
 }
+
+/* 옵션 바텀시트 */
+.option .bottomSheet {
+  padding-bottom: 0;
+}
