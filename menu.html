@@ -168,6 +168,7 @@
         <div class="layer_box" tabindex="0">          
           <div class="layer_header">
             <h2 class="layer_title">옵션선택</h2> 
+            <button class="sheet-close-button closeSheetButton" aria-label="닫기"><span class="hidden">닫기</span></button>
           </div>
           <div class="layer_container">
             <div class="layer_contents">
@@ -178,8 +179,28 @@
                   <div class="option-group">
                     <h2 class="option-title">컵</h2>
                     <group class="inline-radio">
-                      <div><input type="radio" name="name03"><label>일회용컵 <span>+1000원</span></label></div>
-                      <div><input type="radio" name="name03" checked><label>텀블러 <span>+1000원</span></label></div>
+                      <div><input type="radio" name="name01"><label>기본</label></div>
+                      <div><input type="radio" name="name02" checked><label>텀블러 <span>-200원</span></label></div>
+                    </group>
+                  </div>
+                  
+                  <!-- 산미선택 -->
+                  <div class="option-group">
+                    <h2 class="option-title">산미</h2>
+                    <group class="inline-radio">
+                      <div><input type="radio" name="name03"><label>기본</label></div>
+                      <div><input type="radio" name="name04" checked><label>연하게</label></div>
+                      <div><input type="radio" name="name05" checked><label>진하게</label></div>
+                    </group>
+                  </div>
+                  
+                  <!-- 바디선택 -->
+                  <div class="option-group">
+                    <h2 class="option-title">바디</h2>
+                    <group class="inline-radio">
+                      <div><input type="radio" name="name03"><label>기본</label></div>
+                      <div><input type="radio" name="name04" checked><label>약간 진하게</label></div>
+                      <div><input type="radio" name="name05" checked><label>진하게</label></div>
                     </group>
                   </div>
               </div>
@@ -217,7 +238,6 @@
                 </div>
               </div>
             </div>
-            <button class="sheet-close-button closeSheetButton" aria-label="닫기"><span class="hidden">닫기</span></button>
 					</div>
         </div>
       </div>
