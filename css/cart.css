@@ -337,3 +337,47 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 0.8rem;
   line-height: 36px;
 }
+
+/* 포인트 사용 영역 (새로 추가) */
+.point-use-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+.point-use-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.point-current {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #777;
+}
+.point-current strong {
+  color: #2a88d1; /* 포인트 색상 */
+  font-weight: 700;
+}
+.point-input-group {
+  display: flex;
+  gap: 8px;
+}
+.point-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: right;
+}
+.btn-use-all {
+  padding: 10px 15px;
+  background-color: #eee;
+  color: #333;
+  border-radius: 8px;
+  font-weight: 500;
+  white-space: nowrap;
+}
