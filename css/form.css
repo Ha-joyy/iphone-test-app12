@@ -72,7 +72,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: url(../img/ico_checkbox.png) no-repeat center;
+  background: url(../_img/ico_checkbox.png) no-repeat center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@
 
 .checkbox_circle::after {
   content: "";
-  background: url(../img/ico_checkbox.png) no-repeat center;
+  background: url(../_img/ico_checkbox.png) no-repeat center;
   background-size: cover;
   display: none;
 }
@@ -142,7 +142,7 @@ input[type="radio"]:checked + .radio_circle::after {
   width: 50px;
   height: 44px;
   border-radius: 0 44px 44px 0;
-  background: url(../img/ico_search.png) no-repeat center / 24px auto;
+  background: url(../_img/ico_search.png) no-repeat center / 24px auto;
 }
 .inp_bundle_search [class^="inp_txt"] input {
   padding: 9px 32px 9px 15px !important;
@@ -159,7 +159,7 @@ select {
   margin-top: 0.4rem;
   padding: 15px;
   width: 100%;
-  background: #fff url(../img/arrow_btm02.png) no-repeat 95% 50%;
+  background: #fff url(../_img/arrow_btm02.png) no-repeat 95% 50%;
   background-size: 24px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -235,7 +235,7 @@ select:focus {
   height: 24px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  background: #fff url(../img/ico_checkbox.png) no-repeat 0 0 / 24px auto;
+  background: #fff url(../_img/ico_checkbox.png) no-repeat 0 0 / 24px auto;
   transition: border 0.3s ease, background 0.2s ease;
 }
 
@@ -249,7 +249,7 @@ select:focus {
   width: 0;
   height: 24px;
   border-radius: 6px;
-  background: url(../img/ico_checkbox_on.png) no-repeat 0 0 / 23px auto;
+  background: url(../_img/ico_checkbox_on.png) no-repeat 0 0 / 23px auto;
   transition: width 0.3s ease;
   transition-delay: 0.1s;
 }
@@ -394,7 +394,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
   top: 2px;
   width: 16px;
   height: 16px;
-  background: url(../img/ico_error.png) no-repeat center / 100% auto;
+  background: url(../_img/ico_error.png) no-repeat center / 100% auto;
 }
 
 [class^="mssg_error"].active {
@@ -448,7 +448,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
   top: 3px;
   width: 20px;
   height: 20px;
-  background: url(../img/ico_clock.png) no-repeat center / 100%;
+  background: url(../_img/ico_clock.png) no-repeat center / 100%;
 }
 
 /* custom input number */
