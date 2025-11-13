@@ -157,7 +157,7 @@
   height: 24px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  background: #fff url(../_img/ico_checkbox.png) no-repeat 0 0 / 24px auto;
+  background: #fff url(../img/ico_checkbox.png) no-repeat 0 0 / 24px auto;
   transition: border 0.3s ease, background 0.2s ease;
 }
 
@@ -177,7 +177,7 @@
   width: 0;
   height: 24px;
   border-radius: 6px;
-  background: url(../_img/ico_checkbox_on.png) no-repeat 0 0 / 24px auto;
+  background: url(../img/ico_checkbox_on.png) no-repeat 0 0 / 24px auto;
   transition: width 0.3s ease;
   transition-delay: 0.1s;
 }
@@ -313,7 +313,7 @@
   right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
-  background: url(../_img/ico_layer_close.png) no-repeat center;
+  background: url(../img/ico_layer_close.png) no-repeat center;
   background-size: cover;
 }
 
@@ -418,7 +418,7 @@
 
 /* 메뉴 풀팝업 */
 .mainMenu .sheet-close-button {
-  background-image: url(../_img/ico_layer_close_w.png);
+  background-image: url(../img/ico_layer_close_w.png);
 }
 
 /* ----------------------------------------------------------- */
