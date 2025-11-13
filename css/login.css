@@ -8,12 +8,17 @@ body {
   margin-top: 1rem;
 }
 
+.container {
+  justify-content: flex-start;
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
+  margin-top: 10rem;
 }
 
 .welcome-text {
@@ -142,7 +147,7 @@ body {
   left: 0;
   right: 0;
   margin: 0 32px;
-  padding: 32px 0;
+  padding: 0 0 24px;
   background-color: #fff;
 }
 
