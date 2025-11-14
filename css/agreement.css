@@ -179,3 +179,10 @@ body {
   padding: 24px 32px 0;
   background-color: #fff;
 }
+
+.fullPopup .btn_layer_wrap {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
