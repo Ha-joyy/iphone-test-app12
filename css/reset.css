@@ -364,6 +364,7 @@ body {
   justify-content: space-between;
   /* height: calc(100vh - 44px - 34px); */
   height: 100vh;
+  height: 100dvh;
   padding: 1rem 24px;
   box-sizing: border-box;
 }
