@@ -12,7 +12,10 @@ body {
   overflow-y: auto;
   min-height: 0;
   box-sizing: border-box;
-  padding-bottom: 120px;
+  margin-top: 44px;
+  padding-bottom: calc(34px + 48px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .main-content::-webkit-scrollbar {
