@@ -13,7 +13,7 @@ body {
   min-height: 0;
   box-sizing: border-box;
   margin-top: 44px;
-  padding-bottom: calc(34px + 48px);
+  padding-bottom: 10rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
