@@ -175,7 +175,7 @@ body {
 }
 
 .footer {
-  margin: 0 -32px -32px;
-  padding: 32px;
+  margin: 0 -32px;
+  padding: 24px 32px 0;
   background-color: #fff;
 }
