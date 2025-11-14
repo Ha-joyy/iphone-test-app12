@@ -3,17 +3,21 @@ body {
   /* overflow: hidden; */
 }
 
+.container {
+  height: auto;
+}
+
 .main-content {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   min-height: 0;
   box-sizing: border-box;
   margin-top: 44px;
-  padding-bottom: 13rem;
+  padding-bottom: 12rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
