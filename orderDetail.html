@@ -7,7 +7,9 @@
       <title>주문상세</title>
       <link rel="stylesheet" href="css/reset.css">
       <link rel="stylesheet" href="css/form.css">
+      <link rel="stylesheet" href="css/popup.css">
       <link rel="stylesheet" href="css/cart.css">
+      <link rel="stylesheet" href="css/oderDetail.css">
 
       <!-- Noto Sans KR 폰트 -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +49,13 @@
             <span class="info-label">주문 매장</span>
             <div style="flex-grow: 1; text-align: right;">
               <span class="info-value">강남점</span>
-              <p class="info-store-address">서울시 강남구 ***로 **길 8</p>
+              <!-- <p class="info-store-address">서울시 강남구 ***로 **길 8</p> -->
+            </div>
+          </div>
+          <div class="store-row">
+            <span class="info-label">주문 번호</span>
+            <div style="flex-grow: 1; text-align: right;">
+              <span class="info-value">123456</span>
             </div>
           </div>
             
@@ -67,17 +75,17 @@
               <!-- 메뉴 정보 -->
               <div class="menu-info">
                 <h2 class="menu-title">카라멜마끼아또</h2>
-                <p class="menu-options">
-                  <span>HOT</span>
-                  <span>라지 <b>300원</b></span>
-                  <span>일회용 <b>100원</b></span>
-                  <span>2샷 추가 <b>500원</b></span>
-                </p>
+                <div class="menu-options">
+                  <span class="option">ICE <b>4,400원 X 2</b></span>
+                  <span class="option">레귤러 <b>500원 X 2</b></span>
+                  <span class="option">매장용</span>
+                  <span class="option">2샷 <b>300원</b></span>
+                </div>
                 
                 <!-- 수량 및 가격 -->
                 <div class="quantity-row">
                   <div class="item-price">
-                      1개 4,400원
+                      4,400원
                   </div>
                 </div>
               </div>
@@ -95,18 +103,17 @@
               <!-- 메뉴 정보 -->
               <div class="menu-info">
                 <h2 class="menu-title">아메리카노</h2>
-                <p class="menu-options">
-                  <span>ICE</span>
-                  <span>레귤러 <b>100원</b></span>
-                  <span>매장용</span>
-                  <span>2샷 <b>300원</b></span>
-                  <span>쿠폰할인 <b>200원</b></span>
-                </p>
+                <div class="menu-options">
+                  <span class="option">ICE <b>4,400원 X 2</b></span>
+                  <span class="option">레귤러 <b>500원 X 2</b></span>
+                  <span class="option">매장용</span>
+                  <span class="option">2샷 <b>300원</b></span>
+                </div>
                 
                 <!-- 수량 및 가격 -->
                 <div class="quantity-row">
                   <div class="item-price">
-                      1개 4,400원
+                      4,400원
                   </div>
                 </div>
               </div>
@@ -139,8 +146,7 @@
       <!-- 고정 푸터/주문 바 영역 -->
       <footer class="footer">
         <div class="footer-content">
-          <!-- 템플릿의 불필요한 행들은 CSS로 숨겼고, 장바구니에 필요한 최종 금액과 버튼을 재정의합니다. -->
-          
+          <button class="icon-btn qr">QR<br>코드</button>
           <!-- 최종 금액 -->
           <div class="final-price-row">
             <span class="final-price-text">최종 결제 금액</span>
@@ -148,7 +154,48 @@
           </div>
         </div>
       </footer>
+
+
+
+      <div class="topSheetOverlay" id="orderQrPopup">
+        <div class="topSheet">
+          <div class="layer_box" tabindex="0">          
+            <div class="layer_header">
+              <h2 class="layer_title">주문 QR 코드</h2> 
+              <button class="sheet-close-button closeSheetButton" aria-label="닫기" onclick="closeQrPopup()">
+                <span class="hidden">닫기</span>
+              </button>
+            </div>
+            <div class="layer_container">
+              <div class="layer_contents">
+                <p class="qr_description">QR코드를 기기에 인식시켜주세요.</p>
+                <div class="qr_codeImage">
+                    <!-- 실제 QR코드는 이곳에 img 태그로 동적 삽입 -->
+                </div>
+                <p class="order_number">22021030519370962994</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
         
     </div>
+
+    <script>
+      const alertPopup = document.querySelector('.topSheetOverlay');
+      alertPopup.classList.add('active'); 
+      document.body.style.overflow = 'hidden';
+
+      function closeAlert() {
+        alertPopup.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      alertPopup.addEventListener('click', (e) => {
+        if (e.target === alertPopup) {
+          console.log("Alert 팝업은 오버레이 클릭으로는 닫히지 않습니다.");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,12 +1,18 @@
 @charset "utf-8";
 
 /*****************************
-	Base(reset) style
+  Base(reset) style
 *****************************/
 * {
+  /* box-sizing 추가: 너비/높이에 padding/border 포함 */
+  box-sizing: border-box;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+*::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라 스크롤바 숨기기 */
+}
+
 html {
   font-size: 14px;
 }
@@ -251,7 +257,7 @@ noscript p {
 }
 
 /*****************************
-	set
+  set
 *****************************/
 /* text align */
 .alignR {
@@ -321,8 +327,22 @@ noscript p {
 }
 
 :root {
-  --safe-area-top: env(safe-area-inset-top, 20px);
-  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  /* ---------------------------------------------------- */
+  /* --- [1] 안전 영역 변수: 기본값 0px로 수정 및 헤더 높이 정의 --- */
+  /* ---------------------------------------------------- */
+  --safe-area-top: env(
+    safe-area-inset-top,
+    0px
+  ); /* 노치 영역 확보 (수정됨: 20px -> 0px) */
+  --safe-area-bottom: env(
+    safe-area-inset-bottom,
+    0px
+  ); /* 하단 홈 인디케이터 영역 확보 */
+
+  --header-base-height: 44px; /* #header .header_inner의 기본 높이 */
+  --header-total-height: calc(
+    var(--header-base-height) + var(--safe-area-top)
+  ); /* 최종 헤더 높이 */
 
   --color-bg: #fff;
   --color-text: #333;
@@ -354,19 +374,28 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* padding-top: 44px;
-  padding-bottom: 34px; */
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: calc(100vh - 44px - 34px); */
   height: 100vh;
   height: 100dvh;
   padding: 1rem 24px;
   box-sizing: border-box;
+}
+
+/* ---------------------------------------------------- */
+/* --- [2] main-content 수정: 고정된 헤더 영역 확보 --- */
+/* ---------------------------------------------------- */
+.main-content {
+  /* 고정된 #header의 총 높이만큼 상단 패딩을 주어 콘텐츠 겹침 방지 */
+  padding-top: var(--header-total-height);
+  /* 하단 푸터 및 안전 영역을 고려한 패딩 */
+  padding-bottom: calc(var(--reserved-footer-space) + var(--safe-area-bottom));
+  flex-grow: 1; /* 남은 공간 차지 */
+  overflow-y: auto; /* 내용이 넘칠 경우 스크롤 가능 */
 }
 
 .header {
@@ -505,10 +534,14 @@ body {
   opacity: 0.3;
 }
 
-/* header */
+/* ---------------------------------------------------- */
+/* --- [3] #header 수정: 노치 영역 확보 및 자식 요소 정렬 --- */
+/* ---------------------------------------------------- */
 #header {
   position: fixed;
   top: 0;
+  /* 노치 영역 확보 */
+  padding-top: var(--safe-area-top);
   left: 0;
   right: 0;
   background-color: #fff;
@@ -518,7 +551,8 @@ body {
 #header .header_inner {
   position: relative;
   box-sizing: border-box;
-  min-height: 44px;
+  /* 변수로 정의된 기본 높이 사용 */
+  min-height: var(--header-base-height); /* 44px */
   padding: 0 75px;
 }
 
@@ -534,12 +568,15 @@ body {
   text-overflow: ellipsis;
 }
 
+/* 자식 요소 (버튼/로고)의 높이 및 정렬을 inner에 맞춤 */
 #header .btn_header_prev {
   position: absolute;
   left: 0;
   top: 0;
+  display: flex; /* 수직 중앙 정렬을 위해 추가 */
+  align-items: center; /* 수직 중앙 정렬 */
   width: 48px;
-  height: 44px;
+  height: 100%; /* inner 높이에 맞추기 */
   background: url(../img/ico_prev.png) no-repeat center / 24px auto;
 }
 
@@ -547,8 +584,10 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  display: flex; /* 수직 중앙 정렬을 위해 추가 */
+  align-items: center; /* 수직 중앙 정렬 */
   width: 120px;
-  height: 44px;
+  height: 100%; /* inner 높이에 맞추기 */
   background: url(../img/header_logo.png) no-repeat 14px center / auto 22px;
 }
 
@@ -556,11 +595,14 @@ body {
   position: absolute;
   right: 10px;
   top: 0;
+  height: 100%; /* inner 높이에 맞추기 */
+  display: flex; /* 버튼을 수직 정렬하기 위해 flex 사용 */
+  align-items: center; /* 수직 중앙 정렬 */
 }
 
 #header .header_util [class^="btn_header_"] {
   width: 32px;
-  height: 44px;
+  height: 44px; /* 기존 높이 유지 */
 }
 
 #header .header_util .btn_header_home {
@@ -576,7 +618,8 @@ body {
 }
 #header .header_util .btn_header_cart {
   position: relative;
-  padding-top: 5px;
+  /* height: 100%이므로 padding-top 제거 */
+  /* padding-top: 5px; */
 }
 
 #header .header_util .btn_header_cart.active:before {
@@ -584,6 +627,9 @@ body {
   content: "";
   position: absolute;
   right: 3px;
+  /* header_util에 align-items: center가 적용되었으므로 top을 다시 계산해야 함 */
+  /* 44px (header-base-height) 기준으로 10px 위치는 이제 inner 내부의 상대적인 위치가 됨 */
+  /* 중앙 정렬을 했으므로 44px 높이 내에서 상대적인 위치 조정 필요 (임시로 10px 유지) */
   top: 10px;
   width: 12px;
   height: 12px;
@@ -602,4 +648,206 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* 장바구니 카운터 */
+.cartCount {
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  background-color: #ef4444;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.a_none {
+  pointer-events: none;
+}
+
+.noneLink {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* no data */
+[class^="nodata_wrap"] {
+  padding: 120px 0;
+}
+
+[class^="nodata_wrap"] .ico_nodata {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  background: url(../img/ico_nodata.png) no-repeat center / 100%;
+}
+
+[class^="nodata_wrap"] .nodata_comt {
+  line-height: 20px;
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+}
+
+[class^="nodata_wrap"] .nodata_comt02 {
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+}
+
+[class^="nodata_wrap"] .nodata_comt03 {
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+}
+
+[class^="nodata_wrap"] .nodata_comt_error {
+  margin-top: 8px;
+  line-height: 18px;
+  color: #d21300;
+  text-align: center;
+}
+
+[class^="nodata_wrap"] [class^="nodata_comt"] + .nodata_comt {
+  margin-top: 16px;
+}
+
+[class^="nodata_wrap"] [class^="nodata_btn"] {
+  margin-top: 60px;
+}
+
+[class^="nodata_wrap"] [class^="btn_conts_box"] {
+  margin: 24px 0 0;
+}
+
+/* 전체메뉴 (햄버거메뉴) */
+.mainMenu .fullPopup .layer_contents {
+  padding: 0; /* 컨테이너에 이미 패딩이 있으므로 0 */
+}
+
+.mainMenu .fullPopup .layer_contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 메뉴 항목 스타일 */
+.mainMenu .fullPopup .layer_contents li a {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  border-top: 1px solid #f0f0f0;
+}
+.mainMenu .fullPopup .layer_contents li:first-child a {
+  border-top: none; /* 첫번째 항목의 상단 구분선 제거 */
+}
+
+/* 메뉴 항목 아이콘 스타일 */
+.mainMenu .fullPopup .layer_contents li a svg {
+  margin-right: 12px;
+  color: #555;
+}
+
+/* 하단 섹션 (약관, 로그아웃) */
+.mainMenu .fullPopup .layer_header {
+  display: block;
+  background-color: #015bab;
+  color: #fff;
+}
+
+.mainMenu .fullPopup .layer_header .user-info {
+  font-size: 1.2rem;
+}
+
+.mainMenu .fullPopup .layer_footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-shrink: 0;
+  /* 하단 안전 영역만큼 패딩 추가 */
+  padding: 1rem 1.5rem calc(1rem + var(--safe-area-bottom));
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.mainMenu .fullPopup .layer_footer .logout-btn {
+  color: #333; /* 로그아웃 버튼 색상 유지 */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.mainMenu .fullPopup .layer_footer .logout-btn svg {
+  margin-left: 4px;
+  width: 14px;
+  height: 14px;
+  color: #777;
+}
+.mainMenu .fullPopup .layer_footer .terms-link {
+  color: #555;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+/* 상단이동 버튼 */
+.top_btn {
+  position: fixed;
+  right: 20px;
+  /* 하단 안전 영역 및 모바일 GNB를 고려하여 충분히 위로 배치 */
+  bottom: calc(
+    90px + var(--safe-area-bottom)
+  ); /* 하단 safe-area-bottom 변수 적용 */
+  z-index: 100;
+  /* 초기에는 숨김 처리 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.top_btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.top_btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background-color: #fff;
+  border-radius: 50%; /* 원형 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 눈에 띄는 그림자 */
+  padding: 0;
+  transition: background-color 0.2s;
+}
+
+.top_btn button:active {
+  background-color: #f0f0f0;
+}
+
+/* SVG 아이콘 스타일 */
+.top_btn button svg {
+  width: 24px;
+  height: 24px;
+  fill: #333; /* 아이콘 색상 */
+  transform: translateY(-1px); /* 시각적 중앙 정렬 */
 }
